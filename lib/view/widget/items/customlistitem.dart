@@ -32,6 +32,7 @@ class CustomListItem extends GetView<ItemcontrollerTmp> {
               itemCount: 1,
                 itemBuilder: (BuildContext context, int index) {
                   return Container(
+
                       padding: const EdgeInsets.all(4.0),
                       child: Column(children: [
                         Card(
@@ -41,7 +42,7 @@ class CustomListItem extends GetView<ItemcontrollerTmp> {
                           height: 70,
                           width: 400,
                           decoration: BoxDecoration(
-           color: Colors.white,
+
                             borderRadius: BorderRadius.all(Radius.circular(50)),
                           ),
                         ),
