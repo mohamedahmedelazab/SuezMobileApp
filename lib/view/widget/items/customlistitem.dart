@@ -7,6 +7,7 @@ import 'package:suezproduction/linkapi.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_html/flutter_html.dart';
 import 'package:get/get.dart';
+import 'package:suezproduction/view/widget/progressbar.dart';
 
 class CustomListItem extends GetView<ItemcontrollerTmp> {
 
@@ -18,20 +19,34 @@ class CustomListItem extends GetView<ItemcontrollerTmp> {
 
     return    Column(
       children: [
-      /*  Container(
-          padding: const EdgeInsets.all(4.0),
-          child:  CachedNetworkImage(imageUrl:AppLink.imagestatic+"Items/"+ item_model.itemsImage!,
-            height: 200,
-            fit: BoxFit.fill,),
-        ),*/
+        SizedBox(
+          height: 10,
+        ),
+        //
+
+
+
+
         Expanded(
             child: ListView.builder(
               itemCount: 1,
                 itemBuilder: (BuildContext context, int index) {
                   return Container(
                       padding: const EdgeInsets.all(4.0),
-                      child: Html(
-                        data: translateDatabase(item_model.itemsDesc!,item_model.itemsDescEn!),));
+                      child: Column(children: [
+                        Card(
+                        elevation: 20,
+                        child: Container(
+                          child:   ProgramsBar(title: item_model.itemsName!,) ,
+                          height: 70,
+                          width: 400,
+                          decoration: BoxDecoration(
+           color: Colors.white,
+                            borderRadius: BorderRadius.all(Radius.circular(50)),
+                          ),
+                        ),
+                      ),Html(
+                        data: translateDatabase(item_model.itemsDesc!,item_model.itemsDescEn!),)],) );
                 }))
       ],
     );

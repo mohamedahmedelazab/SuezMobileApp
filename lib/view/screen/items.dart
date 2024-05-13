@@ -35,7 +35,7 @@ class Items extends StatelessWidget {
       body:  ListView(
           children: [
 
-            ListCategoriesItems(),
+        //    ListCategoriesItems(),
             
             GetBuilder<ItemcontrollerTmp>(
                 builder: (controller) => HandlingDataView(
