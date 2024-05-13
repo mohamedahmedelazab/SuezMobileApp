@@ -5,6 +5,7 @@ import 'package:suezproduction/core/constant/routes.dart';
 import 'package:suezproduction/data/model/items_model.dart';
 import 'package:suezproduction/view/widget/customeappbar.dart';
 import 'package:suezproduction/view/widget/customescaffoldAppbar.dart';
+import 'package:suezproduction/view/widget/home/NavDrawer.dart';
 import 'package:suezproduction/view/widget/home/appBottomView.dart';
 import 'package:suezproduction/view/widget/items/customlistitem.dart';
 import 'package:suezproduction/view/widget/items/listcategoriesitems.dart';
@@ -22,6 +23,7 @@ class Items extends StatelessWidget {
     List categories = [];
 
     return Scaffold(
+      drawer: NavDrawer(),
       appBar: appBottomView(
         gotoroot: AppRoute.items,
         myargument: {
@@ -30,7 +32,7 @@ class Items extends StatelessWidget {
           "catid": controller.catid,
 
         },
-      ),  resizeToAvoidBottomInset: false, // set it to false
+      ),  resizeToAvoidBottomInset: true, // set it to false
 
       body:  ListView(
           children: [

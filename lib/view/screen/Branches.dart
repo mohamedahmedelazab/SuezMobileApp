@@ -58,7 +58,7 @@ class Branches extends StatelessWidget {
                         itemBuilder: (context, index) => Column(
                               children: [
                                 Container(
-                                    padding: EdgeInsets.symmetric(horizontal: 10,vertical: 10),
+                                    padding: EdgeInsets.symmetric(horizontal: 5,vertical: 5),
                                     decoration: BoxDecoration(
                                         color: Colors.white,
                                         borderRadius:
@@ -67,9 +67,9 @@ class Branches extends StatelessWidget {
                                     height: 210,
                                     width: 350,
                                     child:Column(children: [
-                                      Text(controller.branchmodel_list[index].BranchName!,style: TextStyle(fontSize: 18,color: AppColor.primaryColor,fontWeight: FontWeight.bold),),
+                                      Text(controller.branchmodel_list[index].BranchName!,style: TextStyle(fontSize: 18,color: AppColor.kBlueColor,fontWeight: FontWeight.bold),),
                                       SizedBox(height: 10,),
-                                      Row( children: [Icon(Icons.fmd_good_sharp,color: AppColor.primaryColor,) ,SizedBox(width: 4,),Text(controller.branchmodel_list[index].address!,style: TextStyle(fontWeight: FontWeight.bold,fontSize: 14,color: AppColor.black),)]),
+                                      Row( children: [Icon(Icons.fmd_good_sharp,color: AppColor.primaryColor,) ,SizedBox(width: 4,),Text(controller.branchmodel_list[index].address!,style: TextStyle(fontWeight: FontWeight.bold,fontSize: 13,color: AppColor.black),)]),
                                       SizedBox(height: 10,),
                                       Row( children: [Icon(Icons.phone,color: AppColor.primaryColor),SizedBox(width: 4,),Text(controller.branchmodel_list[index].tel!,style: TextStyle(fontWeight: FontWeight.bold,fontSize: 14,color: AppColor.black),)]),
                                       SizedBox(height: 10,),

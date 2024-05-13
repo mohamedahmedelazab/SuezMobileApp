@@ -33,20 +33,9 @@ class CustomListItem extends GetView<ItemcontrollerTmp> {
                 itemBuilder: (BuildContext context, int index) {
                   return Container(
 
-                      padding: const EdgeInsets.all(4.0),
+                      padding: const EdgeInsets.only(top: 4.0),
                       child: Column(children: [
-                        Card(
-                        elevation: 20,
-                        child: Container(
-                          child:   ProgramsBar(title: item_model.itemsName!,) ,
-                          height: 70,
-                          width: 400,
-                          decoration: BoxDecoration(
-
-                            borderRadius: BorderRadius.all(Radius.circular(50)),
-                          ),
-                        ),
-                      ),Html(
+                        ProgramsBar(title: item_model.itemsName!,),Html(
                         data: translateDatabase(item_model.itemsDesc!,item_model.itemsDescEn!),)],) );
                 }))
       ],
