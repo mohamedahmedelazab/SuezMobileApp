@@ -1,0 +1,73 @@
+import 'package:suezproduction/core/class/statusrequest.dart';
+import 'package:suezproduction/core/constant/routes.dart';
+import 'package:suezproduction/core/functions/handingdatacontroller.dart';
+import 'package:suezproduction/data/datasource/remote/auth/forgetpassword/resetpasswordData.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:get/get.dart';
+
+abstract class ResetPasswordController extends GetxController {
+  resetpassword();
+  goToSuccessResetPassword();
+}
+
+class ResetPasswordControllerImp extends ResetPasswordController {
+  GlobalKey<FormState> formstate = GlobalKey<FormState>();
+
+  late TextEditingController password;
+  late TextEditingController repassword;
+  ResetpasswordData resetpassdata=new ResetpasswordData(Get.find());
+  StatusRequest? statusrequest;
+  var  email;
+  @override
+  resetpassword() {}
+
+  @override
+  goToSuccessResetPassword() async {
+
+    statusrequest=StatusRequest.loading;
+    update();
+    if (formstate.currentState!.validate()) {
+     if (password.text==repassword.text) {
+       var response=await resetpassdata.postdata(email!, password.text);
+       statusrequest=handlingData(response);
+       if (statusrequest==StatusRequest.success) {
+         if (response['status'] == "success") {
+           Get.offNamed(AppRoute.successResetpassword);
+         }
+         else {
+           Get.defaultDialog(
+               title: "Warring", middleText: "Invalid Reset password");
+           statusrequest = StatusRequest.failure;
+         }
+       }
+       else {
+         Get.defaultDialog(
+             title: "Warring", middleText: "Invalid Reset password");
+         statusrequest = StatusRequest.failure;
+       }
+     }
+
+     else
+       {
+         Get.defaultDialog(title: "خطا",middleText: "كلمتى المرور غير متطابقين");
+       }
+    } else {
+      print("Not ");
+    }
+  }
+
+  @override
+  void onInit() {
+    email=Get.arguments["email"];
+    password = TextEditingController();
+    repassword = TextEditingController();
+    super.onInit();
+  }
+
+  @override
+  void dispose() {
+    password.dispose();
+    repassword.dispose();
+    super.dispose();
+  }
+}
