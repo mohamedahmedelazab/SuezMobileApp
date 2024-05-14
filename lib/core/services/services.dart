@@ -1,3 +1,4 @@
+import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:get/get.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -13,8 +14,11 @@ class MyServices extends GetxService {
 }
 
 
-
+Future<void> FireMessagingNackgroundHandler(RemoteMessage message)
+async {
+  print(message.messageId);
+}
 initialServices() async  {
   await Get.putAsync(() => MyServices().init()) ;
-
+  FirebaseMessaging.onBackgroundMessage(FireMessagingNackgroundHandler);
 }

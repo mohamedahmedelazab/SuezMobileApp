@@ -1,3 +1,4 @@
+import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:suezproduction/core/class/statusrequest.dart';
 import 'package:suezproduction/core/constant/routes.dart';
 import 'package:suezproduction/core/functions/handingdatacontroller.dart';
@@ -38,8 +39,25 @@ bool? islog;
     islog = myServices.sharedPreferences.getBool("islog");
     myServices.sharedPreferences.setString("step","2");
   }
+  void requestPermission() async{
+    FirebaseMessaging message=FirebaseMessaging.instance;
+    NotificationSettings settings=await message.requestPermission(
+
+        alert: true,announcement: false,badge: true,carPlay: true,sound: true,criticalAlert: true
+    );
+
+    if (settings.authorizationStatus==AuthorizationStatus.authorized) {
+      print("user authorized");
+    }
+
+    FirebaseMessaging.onMessage.listen((RemoteMessage message) {
+      print(message.notification?.title);
+      print(message.notification?.body);
+    });
+  }
   void onInit()
   {
+    requestPermission();
     initialData();
     getData();
     super.onInit();
