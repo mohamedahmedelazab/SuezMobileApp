@@ -78,10 +78,10 @@ class DoctorBox extends   GetView<HomecontrollerTmp>{
                     )
                 ),
               ),
-              SizedBox(height: 10),
-              Text(doctor["categories_name"], maxLines: 1,  style: TextStyle(fontSize: 13, fontWeight: FontWeight.bold),),
+
+              Text("${translateDatabase(doctor["categories_name"],doctor["categories_name_en"])}", maxLines: 1,  style: TextStyle(fontSize: 13, fontWeight: FontWeight.bold),),
               SizedBox(height: 3),
-              Text(doctor["categories_name_en"], style: TextStyle(color: Colors.grey, fontSize: 13),),
+              Text("${translateDatabase(doctor["categories_name"],doctor["categories_name_en"])}", style: TextStyle(color: Colors.grey, fontSize: 13),),
              /* SizedBox(height: 3),
               Row(
                 children: [

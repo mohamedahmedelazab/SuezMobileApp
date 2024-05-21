@@ -1,10 +1,12 @@
 import 'package:flutter/cupertino.dart';
 
 class BranchModel {
-  final String? BranchName;
-  final String? address;
-  final String? tel;
-  final String? email;
+   String header;
+    String BranchName;
+    String address;
+     String tel;
+    String email;
+    bool isExpanded;
 
-  BranchModel({this.BranchName, this.address, this.tel,this.email});
+  BranchModel({required this.header,required this.BranchName,required  this.address, required this.tel,required this.email, this.isExpanded = false,});
 }

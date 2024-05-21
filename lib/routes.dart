@@ -3,6 +3,7 @@ import 'package:suezproduction/core/middleware/mymiddleware.dart';
 
 import 'package:suezproduction/view/screen/CheckPolicy_Result.dart';
 import 'package:suezproduction/view/screen/Home.dart';
+import 'package:suezproduction/view/screen/NewBranches.dart';
 
 import 'package:suezproduction/view/screen/Productdetail.dart';
 import 'package:suezproduction/view/screen/auth/forgetpassword/forgetpassword.dart';
@@ -42,6 +43,6 @@ List<GetPage<dynamic>>? routes = [
   GetPage(name: AppRoute.OnLinepay, page: () =>  OnLinepay()),
   GetPage(name: AppRoute.contactus, page: () =>  contactus()),
   GetPage(name: AppRoute.CheckPolicy_Result, page: () =>  CheckPolicy_Result()),
-
+  GetPage(name: AppRoute.Branches, page: () =>  NewBranches()),
 ];
  

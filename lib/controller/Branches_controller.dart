@@ -9,13 +9,19 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 
-abstract class BranchController extends GetxController {
+abstract class BranchController extends GetxController{
 
 }
-class BranchControllerTmp extends BranchController
+class BranchControllerTmp extends BranchController with GetSingleTickerProviderStateMixin
 {
+
+
+  late TabController controller;
   late StatusRequest statusRequest = StatusRequest.loading;
   late List<BranchModel> branchmodel_list;
+  late List<BranchModel> branchmodel_list_main;
+  late List<BranchModel> branchmodel_list_edary;
+
   Locale? language;
 
   MyServices myServices = Get.find();
@@ -48,21 +54,28 @@ class BranchControllerTmp extends BranchController
       appTheme = themeEnglish;
     }
     update();
-    initialData();
+   // initialData();
 
     super.onInit();
+  }
+  @override
+  void onClose() {
+    controller.dispose();
+    super.onClose();
   }
   @override
   goToHome() {
     Get.offNamed(AppRoute.home);
   }
-  initialData() {
+/*  initialData() {
     branchmodel_list = [
       BranchModel(
+
           BranchName: "BranchName1".tr,
           address: "address1".tr,
           email: "email1".tr,
-          tel: "tel1".tr
+          tel: "tel1".tr,
+
       ),
       BranchModel(
           BranchName: "BranchName2".tr,
@@ -125,7 +138,68 @@ class BranchControllerTmp extends BranchController
           tel: "tel11".tr
       )
     ];
+
+
+
+    branchmodel_list_main = [
+      BranchModel(
+          BranchName: "BranchName1".tr,
+          address: "address1".tr,
+          email: "email1".tr,
+          tel: "tel1".tr
+      ),
+
+    ];
+
+
+    branchmodel_list_edary = [
+      BranchModel(
+          BranchName: "BranchName2".tr,
+          address: "address2".tr,
+          email: "email2".tr,
+          tel: "tel2".tr
+      ),
+      BranchModel(
+          BranchName: "edary1name".tr,
+          address: "edary1address".tr,
+          email: "" ,
+          tel: "edary1tel".tr
+      ),
+      BranchModel(
+          BranchName: "edary2name".tr,
+          address: "edary2address".tr,
+          email: "",
+          tel: "edary2tel".tr
+      ),
+      BranchModel(
+          BranchName: "edary3name".tr,
+          address: "edary3address".tr,
+          email: "",
+          tel: "edary3tel".tr
+      ),
+      BranchModel(
+          BranchName: "edary4name".tr,
+          address: "edary4address".tr,
+          email: "",
+          tel: "edary4tel".tr
+      ),
+      BranchModel(
+          BranchName: "edary5name".tr,
+          address: "edary5address".tr,
+          email: "",
+          tel: "edary5tel".tr
+      ),
+      BranchModel(
+          BranchName: "edary6name".tr,
+          address: "edary6address".tr,
+          email: " ",
+          tel: "edary6tel".tr
+      ),
+
+
+
+    ];
     statusRequest = StatusRequest.success;
     update();
-  }
+  }*/
 }

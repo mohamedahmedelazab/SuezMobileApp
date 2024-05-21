@@ -28,7 +28,6 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
         Row(children: [
           MaterialButton(onPressed: (){
 
-
             localcontroller.goToSignUp();
           },child: Column(
             mainAxisSize: MainAxisSize.min,

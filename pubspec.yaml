@@ -97,6 +97,14 @@ dependencies:
   firebase_auth: ^4.17.8
   cloud_firestore: ^4.15.8
   firebase_core: ^2.24.2
+  shimmer:
+  flutter_touch_ripple: ^1.1.21
+  getwidget: ^4.0.0
+  scrollable_list_tab_scroller: ^0.2.0
+  pinch_zoom: ^2.0.0
+  dropdown_button2: ^1.9.2
+
+
 dev_dependencies:
   flutter_test:
     sdk: flutter

@@ -11,13 +11,17 @@ class LocaleController extends GetxController {
   MyServices myServices = Get.find();
 
   ThemeData appTheme = themeArabic;
+  List<String>  items = ["ar",  "en" ];
+  String? LangId;
 
-  changeLang(String langcode) {
-    Locale locale = Locale(langcode);
-    myServices.sharedPreferences.setString("lang", langcode);
-    appTheme = langcode == "ar" ? themeArabic : themeArabic;
-    Get.changeTheme(appTheme);
-    Get.updateLocale(locale);
+
+  MyServices myservices=Get.find();
+
+  changeLang(String langcode)
+  {
+    Locale local=Locale(langcode);
+    myservices.sharedPreferences.setString("lang", langcode);
+    Get.updateLocale(local);
   }
   goToSignIn() {
     Get.offNamed(AppRoute.login);
@@ -27,17 +31,23 @@ class LocaleController extends GetxController {
     Get.offNamed(AppRoute.signUp);
   }
   @override
+
   void onInit() {
-    String? sharedPrefLang = myServices.sharedPreferences.getString("lang");
-    if (sharedPrefLang == "ar") {
-      language = const Locale("ar");
-      appTheme = themeArabic;
-    } else if (sharedPrefLang == "ar") {
-      language = const Locale("ar");
-      appTheme = themeArabic;
-    } else {
-      language = Locale(Get.deviceLocale!.languageCode);
-      appTheme = themeArabic;
+    // TODO: implement onInit
+    String? sharedrefLang=myServices.sharedPreferences.getString("lang");
+    if(sharedrefLang=="ar")
+    {
+      language=Locale("ar");
+      appTheme=themeArabic;
+    }
+    else  if(sharedrefLang=="en")
+    {
+      language=Locale("en");
+      appTheme=themeEnglish;
+    }
+    else
+    {
+      language=Locale(Get.deviceLocale!.languageCode);
     }
     super.onInit();
   }

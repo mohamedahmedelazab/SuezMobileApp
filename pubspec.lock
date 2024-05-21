@@ -193,6 +193,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "4.0.6"
+  dropdown_button2:
+    dependency: "direct main"
+    description:
+      name: dropdown_button2
+      sha256: "604b87283e251e0e4a0cb1d0fdfa91fd527702b06e80999c4054cecc603e10e7"
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.9.4"
   dropdown_search:
     dependency: "direct main"
     description:
@@ -201,6 +209,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "5.0.6"
+  easy_debounce:
+    dependency: transitive
+    description:
+      name: easy_debounce
+      sha256: f082609cfb8f37defb9e37fc28bc978c6712dedf08d4c5a26f820fa10165a236
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.0.3"
   fake_async:
     dependency: transitive
     description:
@@ -528,6 +544,14 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  flutter_touch_ripple:
+    dependency: "direct main"
+    description:
+      name: flutter_touch_ripple
+      sha256: "185fbc3eae2b36272398bcea475c0a97c1c494756e094252fe7a78a6fd576f0f"
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.1.21"
   flutter_web_plugins:
     dependency: transitive
     description: flutter
@@ -645,6 +669,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "4.6.6"
+  getwidget:
+    dependency: "direct main"
+    description:
+      name: getwidget
+      sha256: "91df14a8d80e21f3ec02759295b90cc8badb8a872b90d34ad4aeb4085d833b5c"
+      url: "https://pub.dev"
+    source: hosted
+    version: "4.0.0"
   google_identity_services_web:
     dependency: transitive
     description:
@@ -1069,6 +1101,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "5.4.0"
+  pinch_zoom:
+    dependency: "direct main"
+    description:
+      name: pinch_zoom
+      sha256: "8e430a215db198099a708f334620e223cbea3fdc477b717d6535ab852994985e"
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.0.0"
   platform:
     dependency: transitive
     description:
@@ -1173,6 +1213,22 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.6.0"
+  scrollable_list_tab_scroller:
+    dependency: "direct main"
+    description:
+      name: scrollable_list_tab_scroller
+      sha256: "3befd2e368a058827cb7862f58fba0a0474050e4e8b342b74071584c44d8c6d3"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.2.0"
+  scrollable_positioned_list:
+    dependency: transitive
+    description:
+      name: scrollable_positioned_list
+      sha256: "9566352ab9ba05794ee6c8864f154afba5d36c5637d0e3e32c615ba4ceb92772"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.2.3"
   shared_preferences:
     dependency: "direct main"
     description:
@@ -1229,6 +1285,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.3.2"
+  shimmer:
+    dependency: "direct main"
+    description:
+      name: shimmer
+      sha256: "5f88c883a22e9f9f299e5ba0e4f7e6054857224976a5d9f839d4ebdc94a14ac9"
+      url: "https://pub.dev"
+    source: hosted
+    version: "3.0.0"
   show_up_animation:
     dependency: "direct main"
     description:
