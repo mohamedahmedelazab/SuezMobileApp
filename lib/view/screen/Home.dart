@@ -67,11 +67,7 @@ class HomePage extends StatelessWidget {
                       children: [
                         Icon(Icons.home),
                         Text("home".tr,
-                            style: TextStyle(
-                                fontFamily: 'Heavy',
-                                fontSize: 11,
-                                fontWeight: FontWeight.bold,
-                                color: Colors.blue.shade900))
+                            style:  Theme.of(context).textTheme.bodyText1)
                       ],
                     ),
                   )
@@ -89,11 +85,7 @@ class HomePage extends StatelessWidget {
                       children: [
                         Icon(Icons.view_compact),
                         Text("about".tr,
-                            style: TextStyle(
-                                fontFamily: 'Heavy',
-                                fontSize: 11,
-                                fontWeight: FontWeight.bold,
-                                color: Colors.blue.shade900))
+                            style:  Theme.of(context).textTheme.bodyText1)
                       ],
                     ),
                   )
@@ -116,11 +108,7 @@ class HomePage extends StatelessWidget {
                       children: [
                         Icon(Icons.perm_contact_calendar_rounded),
                         Text("profile".tr,
-                            style: TextStyle(
-                                fontFamily: 'Heavy',
-                                fontSize: 11,
-                                fontWeight: FontWeight.bold,
-                                color: Colors.blue.shade900))
+                            style:  Theme.of(context).textTheme.bodyText1)
                       ],
                     ),
                   )
@@ -138,11 +126,7 @@ class HomePage extends StatelessWidget {
                             children: [
                               Icon(Icons.output_sharp),
                               Text("خروج",
-                                  style: TextStyle(
-                                      fontFamily: 'Heavy',
-                                      fontSize: 11,
-                                      fontWeight: FontWeight.bold,
-                                      color: Colors.blue.shade900))
+                                  style:   Theme.of(context).textTheme.bodyText1)
                             ],
                           ),
                         )
@@ -155,11 +139,8 @@ class HomePage extends StatelessWidget {
                             children: [
                               Icon(Icons.account_circle_sharp),
                               Text("exit".tr,
-                                  style: TextStyle(
-                                      fontFamily: 'Heavy',
-                                      fontSize: 11,
-                                      fontWeight: FontWeight.bold,
-                                      color: Colors.blue.shade900))
+
+                                  style:  Theme.of(context).textTheme.bodyText1)
                             ],
                           ),
                         )
@@ -194,7 +175,7 @@ class HomePage extends StatelessWidget {
 
 ,
               const SizedBox(
-                height: 10,
+                height: 5,
               ),
               ListCategoriesHome(),
               const SizedBox(

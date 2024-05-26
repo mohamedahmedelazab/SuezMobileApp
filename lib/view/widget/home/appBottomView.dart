@@ -82,14 +82,14 @@ class appBottomView extends StatelessWidget implements PreferredSizeWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  'قناة السويس للتأمين',
+                  "suez".tr,
                   style: TextStyle(
                       fontSize: 22,
                       fontWeight: FontWeight.w700,
                       color: Colors.white),
                 ),
                 Text(
-                  'info@sci-egypt.com',
+                  'sci@sci-egypt.com',
                   style: TextStyle(
                     fontSize: 13,
                     color: Colors.white,

@@ -38,7 +38,7 @@ class Profile extends StatelessWidget
               child: Padding(
                   padding: EdgeInsets.only(bottom: 20),
                   child: Text(
-                    ' بروفايل',
+                    'profile'.tr,
                     style: TextStyle(
                       fontSize: 30,
                       fontWeight: FontWeight.w700,
@@ -53,9 +53,9 @@ class Profile extends StatelessWidget
                 imagePath: 'https://sci-broker.com/azab/pesonal.png',
                 onPressed: () {},
               )),
-          buildUserInfoDisplay( myServices.sharedPreferences.getString("username").toString(), 'إسم الدخول'),
-          buildUserInfoDisplay(myServices.sharedPreferences.getString("phone").toString(), 'الموبايل'),
-          buildUserInfoDisplay(myServices.sharedPreferences.getString("email").toString(), 'البريد الإلكتروني'),
+          buildUserInfoDisplay( myServices.sharedPreferences.getString("username").toString(), "20".tr),
+          buildUserInfoDisplay(myServices.sharedPreferences.getString("phone").toString(), "21".tr),
+          buildUserInfoDisplay(myServices.sharedPreferences.getString("email").toString(), "18".tr),
           SizedBox(height: 60,),
           InkWell(
             child: Card(
@@ -66,7 +66,7 @@ class Profile extends StatelessWidget
                   color: Colors.blue,
                 ),
                 title:Text(
-                  ' رجوع',
+                  'back'.tr,
                   style: TextStyle(
                       fontFamily: 'SourceSansPro',
                       fontSize: 20,

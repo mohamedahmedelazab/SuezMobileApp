@@ -42,7 +42,7 @@ class MyApp extends StatelessWidget {
           child:     GetMaterialApp(
             translations: MyTranslation(),
             debugShowCheckedModeBanner: false,
-            title: 'Suez CAnal Insurance',
+            title: 'Suez Canal Insurance',
             locale: controller.language,
             theme: controller.appTheme,
             initialBinding:InitialBindings() ,

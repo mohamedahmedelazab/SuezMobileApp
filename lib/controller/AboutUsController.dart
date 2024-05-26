@@ -2,6 +2,7 @@ import 'package:suezproduction/core/constant/routes.dart';
 import 'package:suezproduction/core/services/services.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import '../data/datasource/static/static.dart';
 
@@ -10,6 +11,7 @@ abstract class AboutUsController extends GetxController {
 }
 
 class AboutUsControllerImp extends AboutUsController {
+
 
 
   int currentPage = 0;
@@ -21,4 +23,10 @@ class AboutUsControllerImp extends AboutUsController {
     Get.offNamed(AppRoute.home);
   }
 
+  getofacbook() async {
+    final Uri url = Uri.parse('https://www.facebook.com/SCI.1979');
+    if (!await launchUrl(url)) {
+      throw Exception('Could not launch $url');
+    }
+  }
 }

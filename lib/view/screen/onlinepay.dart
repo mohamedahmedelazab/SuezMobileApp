@@ -1,4 +1,5 @@
  import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
 class OnLinepay extends StatefulWidget {
@@ -52,7 +53,7 @@ class _OnlinePayState extends State<OnLinepay> {
     Widget build(BuildContext context) {
       return Scaffold(
         appBar: AppBar(
-          title: const Text('سداد الوثيقة أون لاين'),
+          title:  Text("E_Pay".tr),
         ),
         body:  Stack(
       children: [

@@ -19,7 +19,7 @@ class ServiceController   extends GetxController with GetSingleTickerProviderSta
     );
 
     myanimation=Tween<double>(begin: 0,end: 50).animate(animationController);
-    myanimation2=Tween<double>(begin: 0,end: 14).animate(animationController);
+    myanimation2=Tween<double>(begin: 0,end: 15).animate(animationController);
     if (animationController.status==AnimationStatus.completed) {
       animationController.reverse();
 

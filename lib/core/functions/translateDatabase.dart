@@ -10,7 +10,7 @@ translateDatabase(columnar,columnen){
   }
   else
     {
-      return columnar;
-     // return  columnen;
+
+     return  columnen;
     }
 }

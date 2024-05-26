@@ -1,3 +1,4 @@
+import 'package:get/get.dart';
 import 'package:suezproduction/view/screen/Home.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_phone_direct_caller/flutter_phone_direct_caller.dart';
@@ -42,7 +43,7 @@ class  _contactus extends State<contactus>
               ),
             ),
             Text(
-              'قناة السويس للتأمين'.toUpperCase(),
+              "cardhometitle".tr,
               style: TextStyle(
                 fontSize: 20.0,
                 fontFamily: 'SourceSansPro',
@@ -114,7 +115,7 @@ class  _contactus extends State<contactus>
                       color: Colors.blue,
                     ),
                     title: Text(
-                      '31 شارع محمد كامل مرسي –  البطل احمد عبد العزيز - المهندسين – الجيزة.',
+                        "address1".tr,
                       style: TextStyle(
                           fontFamily: 'SourceSansPro',
                           fontSize: 20,
@@ -136,7 +137,7 @@ class  _contactus extends State<contactus>
                     color: Colors.blue,
                   ),
                   title:Text(
-                    ' رجوع',
+                    "back".tr,
                     style: TextStyle(
                         fontFamily: 'SourceSansPro',
                         fontSize: 20,

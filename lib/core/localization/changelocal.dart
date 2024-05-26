@@ -21,6 +21,16 @@ class LocaleController extends GetxController {
   {
     Locale local=Locale(langcode);
     myservices.sharedPreferences.setString("lang", langcode);
+    if(langcode=="ar")
+    {
+
+      appTheme=themeArabic;
+    }
+    else  if(langcode=="en")
+    {
+
+      appTheme=themeEnglish;
+    }
     Get.updateLocale(local);
   }
   goToSignIn() {

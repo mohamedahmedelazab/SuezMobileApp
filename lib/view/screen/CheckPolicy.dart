@@ -63,9 +63,9 @@ class CheckPolicy extends StatelessWidget {
                           ),
                         )),
                       const SizedBox(height: 20),
-                      CustomTextTitleAuth(text: "التحقق من صحة الوثيقة"),
+                      CustomTextTitleAuth(text: "Validate_document".tr),
                       const SizedBox(height: 10),
-                      CustomTextBodyAuth(text: "يمكنك التحقق من صحة الوثيقة الخاصة بكم عن طريق كتابة رقم الوثيقة والأستيكر."),
+                      CustomTextBodyAuth(text: "checktitle".tr),
                       const SizedBox(height: 15),
                       CustomTextFormAuth(
                         isNumber: false,
@@ -73,9 +73,9 @@ class CheckPolicy extends StatelessWidget {
                           return validInput(val!, 10, 15, "name");
                         },
                         mycontroller: controller.policyNo,
-                        hinttext: "رقم الوثيقة",
+                        hinttext: "polNo".tr,
                         iconData: Icons.padding_outlined,
-                        labeltext: "رقم الوثيقة",
+                        labeltext: "polNo".tr,
                         // mycontroller: ,
                       ),
                       const SizedBox(height: 15),
@@ -85,15 +85,15 @@ class CheckPolicy extends StatelessWidget {
                           return validInput(val!, 3, 20, "name");
                         },
                         mycontroller: controller.stickerNo,
-                        hinttext: "رقم الإستيكر",
+                        hinttext: "barcode".tr,
                         iconData: Icons.sticky_note_2,
-                        labeltext: "رقم الإستيكر",
+                        labeltext: "barcode".tr,
                         // mycontroller: ,
                       ),
 
 
                       CustomButtomAuth(
-                          text: "إستعلام",
+                          text: "submit".tr,
                           onPressed: () {
                             controller.checkpolicy();
                             print("---------");
@@ -132,7 +132,7 @@ class CheckPolicy extends StatelessWidget {
                       const SizedBox(height: 40),
                       CustomTextSignUpOrSignIn(
                         textone: "",
-                        texttwo: "رجوع",
+                        texttwo: "back".tr,
                         onTap: () {
                           controller.goToHome();
                         },

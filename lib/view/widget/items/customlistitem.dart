@@ -35,7 +35,7 @@ class CustomListItem extends GetView<ItemcontrollerTmp> {
 
                       padding: const EdgeInsets.only(top: 4.0),
                       child: Column(children: [
-                        ProgramsBar(title: item_model.itemsName!,),Html(
+                        ProgramsBar(title: "${translateDatabase(item_model.itemsName!,item_model.itemsNameEn! )}",),Html(
                         data: translateDatabase(item_model.itemsDesc!,item_model.itemsDescEn!),)],) );
                 }))
       ],

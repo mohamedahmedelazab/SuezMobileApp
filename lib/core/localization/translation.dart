@@ -6,9 +6,9 @@ class MyTranslation extends Translations {
         "ar": {
           "E_Pay":"سداد الوثيقة اون لاين",
           "Validate_document":"التأكد من صحة الوثيقة",
-          "branches":"مقرات الشركة",
-        "contact":" إتصــل بنــا",
 
+        "contact":" إتصــل بنــا",
+"polNo":"رقم الوثيقة",
           "1": "اختر اللغة",
           "2": "  راحة بالك أمانه عندنا في \n قناة السويس للتأمين . ",
           "3": "هنأمنلك على الشاليه عشان تصيف مرتاح البال ويكون متأمن ضد كافة الحوادث (سرقه - سطو - حريق  ...)    قناة السويس للتأمين بتقدملك تغطية شاملة لكافة الحوادث عشان تستمتع بجو الصيف مع عيلتك وأصحابك وسيب الباقي علينا.",
@@ -19,6 +19,7 @@ class MyTranslation extends Translations {
           "8": "متابعه",
           "9": "تسجيل الدخول",
           "10": "اهلا بك\n قناة السويس للتأمين",
+          "suez":"قناة السويس للتأمين",
           "11":
               "يمكنك تسجيل الدخول من خلال البريد وكلمة المرور او من خلال وسائل التواصل الاجتماعي",
           "12": "ادخل البريد الالكتروني",
@@ -54,18 +55,18 @@ class MyTranslation extends Translations {
           "cat":"  منتجاتنا",
           "title":"   ",
           "findproducts":"بحث عن المنتجات",
-          "cardhometitle":"   شركة قناة السويس للتأمين",
+          "cardhometitle":"   قناة السويس للتأمين",
           "cardhomebody":"حصن أمان للملايين",
-          "exit":"تسجيل الدخول",
+          "exit":" دخول",
           "home":"الرئيسية",
           "about":"من نحن",
           "profile":"بروفايل",
           "news":"أحدث الأخبار",
-          "branches":"فروع الشركة",
+          "branches":"مقرات الشركة",
           "BranchName1":"المركز الرئيسي",
           "BranchName2":"الملحق الإداري",
           "BranchName3":"فرع القاهرة  الكبرى",
-        "BranchName4":" الوجه البحرى",
+         "BranchName4":" الوجه البحرى",
          "BranchName5":"   الأسكندرية",
           "BranchName6":"   القنــاة",
           "BranchName7":"   الوجه القبلي",
@@ -134,11 +135,14 @@ class MyTranslation extends Translations {
           "alex5address":"العنوان: 2ميدان توفيق الحكيم – \n – دمنهور – البحيرة",
 
           "cario1address":"العنوان : 4 شارع ابن الوليد \n ميدان ابن عفان- الدقي",
-          "cario2address":"العنوان: 5 شارع النهضة عمارات هئية التدريس – \nالدور 15 – الدقي – الجيزة",
+          "cario2address":"العنوان: 5 شارع النهضة عمارات هئية التدريس – \ الدقي",
           "cario3address":"العنوان : 17 ش دوليتان الدور الاول\n ميدان الخلفاوى - شبرا",
           "cario4address":"العنوان : 49شارع نوبار باب اللوق  ",
           "cario5address":"العنوان : 1 ش الجزاير الدور الثانى",
-          "cario6address":"العنوان : 2 شارع سيد أبو شادي –\n  خلف مدرسة ليسية الحرية –\n  مصر الجديدة – القاهرة",
+          "cario6address":"العنوان : 2 شارع سيد أبو شادي –\n  خلف مدرسة ليسية الحرية –  مصر الجديدة",
+          "cario7address":"العنوان: 15 أ شارع الأهرام\n  – مصر الجديدة – القاهرة",
+          "cario8address":"العنوان: سلفر مول – الدور الرابع –  \n أكتوبر",
+          "cario9address":"المشروع الاستثماري الأردني رقم (2) عمارة رقم 11  \n العاشر من رمضان  ",
 
           "canal1address":"العنوان: 144 شارع التحرير –\n أمام بنك مصر  – الإسماعيلية",
           "canal2address":"العنوان: شارع جمال عبد الناصر – \n برج العشري بلازا –    الإسماعيلية",
@@ -297,8 +301,26 @@ class MyTranslation extends Translations {
 
           "Checkcode2":"من فضلك أكتب كود التفعيل المرسل للبريد",
           "Checkcode3":"تفعيل البريد الإلكترونى",
+          "back":"رجــوع",
+          "barcode":"رقم الباركود",
+          "submit":"إستعــلام",
+          "checktitle":"يمكنك التحقق من صحة الوثيقة الخاصة بكم عن طريق كتابة رقم الوثيقة رقم الباركود.",
+          "menu":"القائمة",
+          "wait":'جاري تحميل البيانات...',
+          "about":"من نحن",
+          "aboutustitle":"نبذة عن شركة قناة السويس للتأمين",
+          "aboutussub":"هي شـركة مسـاهمة مصـرية تأسست في 10أكتوبر لعام 1979، طبقًا لأحكام القانون رقم(159) لسنة 1981، وقانون الإشراف والرقابة رقم (10) لسنة 1981، وهي أول شركة تأمين من القطاع الخاص في مصر، تأسست تحت مظلة المقاولون العرب، وهيئة قناة السويس. \n   ومنذ تأسيس شركة قنـاة السويس للتأمين في السوق المصرية وهي تحقق النموذج الأمثل والخبرة الشاملة في تقديم الخدمات التأمينية المتميزة للمشروعات القومية، ومشروعات القطاع الخاص، والإستثمار، وغيرهم، لذا تمتد فروعها ل40 فرعًا في جميع محافظات جمهورية مصر العربية دعمًا وحرصًا على سلامة الاقتصاد القومي لتحقيق إنجازات عالية. \n  يبلغ رأس المال المصرح به للشركة 500 مليون جنيه مصري، ورأس المال المدفوع 5.203 مليون جنيه مصري، وإجمالي قيمة الأصول 1.892 مليار جنيه مصري، وبلغ إجمالي الاستثمارات 1.359 مليار جنيه مصري. \n   وحققت شركة قناة السويس صافي ربح قدره 8.38 مليون جنيه وعائد حقوق ملكية 2.14٪ للعام المالي 2020/2021.",
+
+          "FOLLOW":"تابعنا علي الفيس بوك",
+          "Clients":"عملائنا",
+          "Branches":"فروعنا",
+          "profile":"بروفايل"
         },
         "en": {
+          "checktitle":"You can verify the authenticity of your document by typing the document number and barcode number",
+          "submit":"submit",
+          "polNo":"Pol No",
+          "barcode":"BarCode No",
           "E_Pay":"E-Pay",
           "Validate_document":"Validate document",
           "branches":"SCI Locations",
@@ -313,8 +335,7 @@ class MyTranslation extends Translations {
           "8": "Continue",
           "9": "Sign In",
           "10": "Welcome Back",
-          "11":
-              "Sign In Your Email And Password Or  Continue With Social Media",
+          "11":"Sign In Your Email And Password Or  Continue With Social Media",
           "12": "Enter Your Email",
           "13": "Enter Your Password",
           "14": "Forget Password",
@@ -331,6 +352,7 @@ class MyTranslation extends Translations {
               "Sign Up With Your Email And Password OR Continue With Social Media",
           "25": " have an account ? ",
           "26": "SignIn",
+          "suez":"Suez Canal Insurance",
           "27": "Check Email",
           "28": "Account successfully created",
           "29": "please Enter Your Email Address To Recive A verification code",
@@ -355,84 +377,261 @@ class MyTranslation extends Translations {
           "about":"About Us",
           "profile":"Profile",
           "news":"news",
-          "branches":"Branches",
-          "BranchName1":"Headquarter",
-          "BranchName2":"Administrative Annex",
-          "BranchName3":"Cairo Branch",
-          "BranchName4":"Heliopolis Triumph Branch",
-          "BranchName5":"Heliopolis Al-Ahram Branch",
-          "BranchName6":"Sixth of October Branch",
-          "BranchName7":"Shobra Branch",
-          "BranchName8":"Executive Business Branch",
-          "BranchName9":"Messadaq Branch",
-          "BranchName10":"Nobar Office",
-          "BranchName11":"Maadi office",
-          "address1":" Address:31 Mohamed Kamel Morsi Street \n Mohandessin ",
-          "address4":"Address:2 Sayed Abou Shadi St. Triumph Sq.,\n Heliopolis, Behind Lycée Al-Horreya School",
-          "address5":"Address:15a Al-Ahram St., Heliopolis",
-          "address6":"Address:Al Mehwar Al Markazi - Silver Mall \n Next to City Escape - Floor 4 - Unit 2",
-          "address7":"Address:17 Dolitian\n st. First Floor El-Khalafawy square\n Shobra",
-          "address8":"Address:4 Ibn Al Waleed St, Ibn A'ffan Sq, Dokki",
-          "address9":"Address:5 Messadaq Branch, Dokki\n front of El Zeraeyeen Hospital",
-          "address10":" Address:49 Nobar St. Bab El Louk, Cairo",
-          "address11":"Address:1 El-Gazair St., second floor",
-          "tel1":"Tel: 37601051 - 37606868",
-          "tel2":"Tel: 37492703  - 33371807",
-          "tel3":"Tel: 33382543  - 37601789",
-          "tel4":"Tel: 24171695  - 24171681",
-          "tel5":"Tel: 24191729 - 24191758",
-          "tel6":"Tel: 38332226",
-          "tel7":"Tel: 24596915  - 24584057",
-          "tel8":"Tel: 33360683  - 33360684",
-          "tel9":"Tel: 33366859  - 0123415572",
-          "tel0":"Tel: 27942749",
-          "tel11":"Tel: 25193493",
-          "email1":"فاكس : 33350981 – 33354070",
-          "email2":"Fax: (+202)37602734",
-          "email3":"Fax: (+202)37482970",
-          "email4":"",
-          "email5":"",
-          "email6":" Fax: (+202)38332225",
-          "email7":" Fax: (+202)24585385",
-          "email8":"Fax: (+202)33360682",
-          "email9":"Fax: (+202) 33365289",
-          "email0":"Fax: (+202)27942317",
-          "email11":"Fax: (+202) 25193492",
+
+
+          "BranchName1":"Head Quarters",
+          "BranchName2":"Annex Building",
+          "BranchName3":"Greater Cairo",
+          "BranchName4":"Lower Egypt  ",
+          "BranchName5":" Alexandria",
+          "BranchName6":"Canal Cities",
+          "BranchName7":"Upper Egypt",
+
+          "cario1name":"Business Men",
+          "cario2name":"Mossadaq",
+          "cario3name":"Shobra",
+          "cario4name":"Nobar",
+          "cario5name":"Maadi",
+          "cario6name":"Heliopolis   Triumph",
+          "cario7name":"Heliopolis El Ahram",
+          "cario8name":"6th of October",
+          "cario9name":"10th of Ramadan  ",
+
+
+          "bahary1name":"Banha",
+          "bahary2name":"Shebeen El Kom  ",
+          "bahary3name":"Tanta",
+          "bahary4name":"El Mansoura  ",
+          "bahary5name":"Kafr El Sheikh",
+          "bahary6name":"Zagazig",
+
+
+          "alex1name":"El Azarita",
+          "alex2name":"El Amreya  ",
+          "alex3name":"Borg El Arab",
+          "alex4name":"Damanhour  ",
+          "alex5name":"Damanhour Attaché",
+
+          "canal1name":"Ismailia",
+          "canal2name":"Ismailia Attaché",
+          "canal3name":"General Authority for Invesments in Ismailia",
+          "canal4name":"Suez",
+          "canal5name":"Adabya Port Office",
+          "canal6name":"Port Said",
+          "canal7name":"New Damietta",
+          "canal8name":"Hurghada",
+
+          "qbly1name":"Fayoum",
+          "qbly2name":"Beni Suef",
+          "qbly3name":"Minya",
+          "qbly4name":"Assiut",
+          "qbly5name":"Suhag",
+          "qbly6name":"Luxor",
+          "qbly7name":"Aswan",
+
+
+          "address1":"31 Mohamed Kamel Morsi St. \n El Batal Ahmed Abdelaziz St.  Mohandeseen – Giz ",
+          "address2":"16 Mohamed Hafez St. \n Intersecting with El Thawra St.  Dokki – Giza",
+          "address3":"114 Tahrir Street, Dokki ",
+          "address5":"539 Mokarar  \n  El Horreya Rd   Gleem ",
+
+
+
+          "bahary1address":"3 Saad Zaghloul St.\n Banha  Qalyoubia",
+          "bahary2address":"Sharaf Square \n Shebeen El Kom  El Menoufya",
+          "bahary3address":"El Saraya Tower \n  El Bahr St. Infront of the Main Central6th ",
+          "bahary4address":"25 El Gaish St. \n Infront of El Nasr Mosque El Mansoura ",
+          "bahary5address":" Bldg 6  \n Itihad Molak 25 Jan Bldgs    Kafr El Sheikh",
+          "bahary6address":"91 Saad Zaghloul St.  \n  Zagazig   El Sharqiya",
+
+          "alex1address":"27 El Sultan Abdelaziz \n Infront of Kouta  El Azarita ",
+          "alex2address":"Public Free Zone \n  Insurance Hall  El Amreya",
+          "alex3address":"Ibn Abi Taleb St. \n 6th Neighboring  Borg El Ara",
+          "alex4address":"Adawy Tower  \n Infront of the Governor  Rest Area    ",
+          "alex5address":"2 Tawfik El Hakim Square \n Infront of El Nasr Cinema",
+
+          "cario1address":"4 Ibn El Walid St. \n  Ibn Affan Square  Dokki ",
+          "cario2address":"5 El Nahda St.,\n El Tadrees Bldg   Dokki ",
+          "cario3address":"17 Doltian St.  \n El Khalafawy Square  Shobra ",
+          "cario4address":"49 Nobar St. \n Bab El Louq  Cairo  ",
+          "cario5address":"1 El Gazayir St. \n  New Maadi  Cairo",
+          "cario6address":"2 Sayed Abo Shady St. \n Behind Lycee El Horeya School  Heliopolis  ",
+          "cario7address":"15A El Ahram St. \n Infront of Normandy Cinema  Heliopolis",
+          "cario8address":"Silver Mall  \n   Next to City Scape Square October",
+          "cario9address":"Jordanian Investment Project \n 10th of Ramadan City ",
+
+
+          "canal1address":"144 Tahrir St. \n Infront of Banque Misr  Ismailia",
+          "canal2address":"Gamal Abdel Nasser St. \n El Ashry Plaza Tower ",
+          "canal3address":" Free Zone \n Next to Banque Misr Ismailia",
+          "canal4address":"325 El Geish St. \n El Yasmine Tower  Suez",
+          "canal5address":"Free Zone  \n Adabya Port   Suez",
+          "canal6address":"2 Ahmed Orabi St. \n  Abou El Feda  Port Said",
+          "canal7address":"Plot 3/12  Phase 2 \n Central Area  ",
+          "canal8address":"Amr Ibn El Khattab St. –\n  Suez Canal Insurance Tower – Hurghada",
+
+          "qbly1address":"17 Tanzim \n  El Horreya St. Bandar El Fayoum Fayoum",
+          "qbly2address":"Mohamed Metwalli El Shaarawi St. \n  Villas District  Beni Suef",
+          "qbly3address":"Palace Square \n  Miami Center Tower \ Minya",
+          "qbly4address":"El Gomhorya St.   \n Near the Army Recruitment Area   Assiut",
+          "qbly5address":"87 Mahatta St. \n El Geziri Tower  Suhag",
+          "qbly6address":"Fayrouz Luxor Project \n El Awamya Zone  Unit #1  Luxor",
+          "qbly7address":"Ali Eissa St. \n Infront of the Security Bldgs  Aswan",
+
+
+
+          "tel1":" Tel :   37601056   02-   37491365 02",
+          "tel2":"Tel :   37492703 02-  37492703 02",
+          "tel3":"Tel :   33382543 02-  37601789 02",
+          "tel5":"Tel: 035820589  – 035845818",
+
+          "cario1tel":"Tel: 33360683 – 33360684 ",
+          "cario2tel":"Tel: 37602894",
+          "cario3tel":" Tel: 21960343  – 21960344 – 21960264",
+          "cario4tel":"Tel: 27942317 – 27926230",
+          "cario5tel":"Tel: 25172609 –  25173740",
+          "cario6tel":"Tel: 24171681 – 24171063 ",
+          "cario7tel":"Tel: 24191758 – 24191729 – 22911694",
+          "cario8tel":"Tel: 38332225 – 38332226 – 38332227",
+          "cario9tel":"Tel: 0554369143",
+
+
+          "bahary1tel":"Tel: 0133250056 – 0133274550",
+          "bahary2tel":"Tel: 0482232336",
+          "bahary3tel":" Tel:  0403350829 -21960264",
+          "bahary4tel":"Tel: 0502312193 – 0502101561",
+          "bahary5tel":"Tel: 0473144491  – 0473144493",
+          "bahary6tel":"Tel: 0552309391 – 0552386469",
+
+          "alex1tel":"Tel:  034874720 – 034867985",
+          "alex2tel":"Tel: 034500161 –  034500494",
+          "alex3tel":"Tel: 034593180 – 034593181",
+          "alex4tel":"Tel: 0453310051 – 0453310061",
+          "alex5tel":"Tel: 0453319258",
+
+
+          "canal1tel":"Tel: 0643914971  – 0643913199",
+          "canal2tel":"Tel: 0643921718",
+          "canal3tel":"Tel: 0643488629",
+          "canal4tel":"Tel: 0623193511 – 0623197131 ",
+          "canal5tel":"Mobile: 01000423556",
+          "canal6tel":"Tel: 0663202645  – 0663233516",
+          "canal7tel":"Tel: 0572228193 – 0572232616",
+          "canal8tel":"Tel: 0653545750   – 0653551414",
+
+          "qbly1tel":"Tel: 0842065208 – 0842065209",
+          "qbly2tel":"Tel: 0822215292 – 0822215328",
+          "qbly3tel":"Tel: 0862320282 – 0862372497",
+          "qbly4tel":"Tel: 088237900 – 0882061665",
+          "qbly5tel":"Tel: 0932160118",
+          "qbly6tel":"Tel: 0952270394",
+          "qbly7tel":"Tel: 0972440089",
+
+          "canal1fax":"Fax: 0643916527",
+          "canal2fax":"Fax: 0643108553",
+          "canal3fax":"",
+          "canal4fax":"Fax: 0623196640",
+          "canal5fax":"",
+          "canal6fax":"",
+          "canal7fax":"Fax: 0572227116",
+          "canal8fax":"",
+
+
+          "qbly1fax":"Fax: 0842065207",
+          "qbly2fax":"",
+          "qbly3fax":"Fax: 0862372498",
+          "qbly4fax":"Fax: 0882061669",
+          "qbly5fax":"Fax: 0932160275",
+          "qbly6fax":"Fax: 0952273959",
+          "qbly7fax":"",
+
+
+
+          "email1":"Fax : 33350981 – 33354070",
+          "email2":"Fax :   37602734  ",
+          "email3":"Fax :  33371794 02",
+          "email5":"Fax: 035836783",
+
+
+          "cario1fax":"Fax: 33360682",
+          "cario2fax":"Fax :   33366859 02",
+          "cario3fax":"Fax :   21960342 02",
+          "cario4fax":"Fax :   27942749 02",
+          "cario5fax":"Fax :   25193492 02",
+          "cario6fax":"Fax :   24179663 02",
+          "cario7fax":"",
+          "cario8fax":"",
+          "cario9fax":"Fax :   0554363393 02",
+
+
+
+
+          "bahary1fax":"Fax: 0133261131",
+          "bahary2fax":"Fax: 0482223271",
+          "bahary3fax":"Fax: 0403348896",
+          "bahary4fax":"Fax: 0502310480",
+          "bahary5fax":"",
+          "bahary6fax":"Fax: 0552349281",
+
+
+
+          "edary1name":"Public Relations",
+          "edary1address":"",
+          "edary1tel":"Tel: 37492732",
+          "edary1fax":"Fax: 37492674",
+
+
+          "edary2name":"HR ",
+          "edary2address":"",
+
+          "edary2tel":"Tel: 33381720 – 37491359",
+          "edary2fax":"",
+
+
+          "edary3name":"Car Insurance Issuance",
+          "edary3address":"",
+          "edary3tel":"Tel: 01001798904-37491396",
+          "edary3fax":"Fax: 37602734",
+
+          "alex1fax":"Fax: 035836783",
+          "alex2fax":"",
+          "alex3fax":"Fax: 034481451",
+          "alex4fax":"Fax: 045333856",
+          "alex5fax":"",
+
+          "edary4name":"Car Compensation",
+          "edary4address":"",
+          "edary4tel":"Tel: 33365517 – 37617135",
+          "edary4fax":"Fax: 37617133",
+
+          "edary5name":"Medical Insurance",
+          "edary5address":"",
+          "edary5tel":"Tel: 33380990 – 37494485",
+          "edary5fax":"",
+
+
+          "edary6name":"Computer",
+          "edary6address":"",
+          "edary6tel":"Tel: 37492045 – 37492069 ",
+          "edary6fax":"",
+
+
+
           "Checkcode":"Check code",
           "Checkcode2":"Please Enter The Digit Code Sent To",
           "Checkcode3":"Verification Code",
 
+"wait":'Awaiting result...',
 
-          "edary1name":"",
-          "edary1tel":"",
-          "edary1fax":"",
-
-
-          "edary2name":"",
-          "edary2tel":"",
-          "edary2fax":"",
-
-
-          "edary3name":"",
-          "edary3tel":"",
-          "edary3fax":"",
-
-
-          "edary4name":"",
-          "edary4tel":"",
-          "edary4fax":"",
-
-
-          "edary5name":"",
-          "edary5tel":"",
-          "edary5fax":"",
-
-
-          "edary6name":"",
-          "edary6tel":"",
-          "edary6fax":"",
-
-
+          "back":"back",
+"menu":"Menu",
+          "about":"About Us",
+          "aboutustitle":"SCI Company Is",
+          "aboutussub":"An Egyptian joint stock company, established on October 10, 1979, following the provisions of Law No. 159 of 1981 and Law No. 10 of 1981. Being the first private sector insurance company in Egypt, established under the umbrella of Arab Contractors and the Suez Canal Authority. \n  Since the establishment of the Suez Canal Insurance Company in the Egyptian market, it has been achieving the optimal model and comprehensive experience in providing distinguished insurance services for national projects, private sector projects, investments, and others.\n Suez Canal Insurance Company’s branches extend to more than 40 branches and offices.",
+          "FOLLOW":"FOLLOW Us On Facebook",
+          "Clients":"Clients",
+          "Branches":"Branches",
+          "profile":"Profile"
         }
       };
 }

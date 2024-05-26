@@ -3,8 +3,9 @@ import 'package:get/get.dart';
 import 'package:pinch_zoom/pinch_zoom.dart';
 import 'package:suezproduction/controller/Branches_controller.dart';
 import 'package:suezproduction/core/constant/color.dart';
-import 'package:suezproduction/data/model/branchmodel.dart';
+
 import 'package:suezproduction/view/screen/Home.dart';
+
 
 class NewBranches extends StatelessWidget {
   BranchControllerTmp controller= Get.put(BranchControllerTmp());
@@ -14,8 +15,8 @@ class NewBranches extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('فروع الشركة')),
-      body: const Steps(),
+      appBar: AppBar(title:  Text("branches".tr)),
+      body: const FutureBuilderExample(),
     );
   }
 }
@@ -113,67 +114,118 @@ List<Step> getSteps() {
   ];
 }
 
-class Steps extends StatefulWidget {
-  const Steps({Key? key}) : super(key: key);
+
+class FutureBuilderExample extends StatefulWidget {
+  const FutureBuilderExample({super.key});
+
   @override
-  State<Steps> createState() => _StepsState();
+  State<FutureBuilderExample> createState() => _FutureBuilderExampleState();
 }
 
-class _StepsState extends State<Steps> {
-  final List<Step> _steps = getSteps();
+class _FutureBuilderExampleState extends State<FutureBuilderExample> {
+  final Future<String> _calculation = Future<String>.delayed(
+    const Duration(seconds: 1),
+        () => 'Data Loaded',
+  );
+
   @override
   Widget build(BuildContext context) {
+    final List<Step> _steps = getSteps();
     return SingleChildScrollView(
-      child: Column(children: [
 
-        PinchZoom(
-          child: Image.asset('assets/images/map.png'),
-          maxScale: 6.5,
-          onZoomStart: (){
+      child: FutureBuilder<String>(
+        future: _calculation, // a previously-obtained Future<String> or null
+        builder: (BuildContext context, AsyncSnapshot<String> snapshot) {
+          List<Widget> children;
+          if (snapshot.hasData) {
+            children = <Widget>[
+              Column(children: [
 
-          },
-          onZoomEnd: (){
+                PinchZoom(
+                  child: Image.asset('assets/images/map.png'),
+                  maxScale: 6.5,
+                  onZoomStart: (){
 
-          },
-        )
-        ,
-        Container(
-            child: _renderSteps(_steps)
-        ),
-        InkWell(
-          child: Card(
-           color: Colors.white,
-            margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 25.0),
-            child: ListTile(
+                  },
+                  onZoomEnd: (){
 
-              leading: Icon(
-                Icons.arrow_back_ios_outlined,
-                color: Colors.blue,
+                  },
+                )
+                ,
+                Container(
+                    child: _renderSteps(_steps)
+                ),
+                InkWell(
+                  child: Card(
+                    color: Colors.white,
+                    margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 25.0),
+                    child: ListTile(
+
+                      leading: Icon(
+                        Icons.arrow_back_ios_outlined,
+                        color: Colors.blue,
+                      ),
+                      title:Text(
+                        "back".tr,
+                        style: TextStyle(
+                            fontFamily: 'SourceSansPro',
+                            fontSize: 20,
+                            color: Colors.blue.shade900),
+                      ),
+                    ),
+                  ),
+                  onTap: (){
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => HomePage()));
+                    //  _launchURL('mailto: info@sci-egypt.com ?subject=from user mobile application&body=Please contact me');
+                  },
+                )
+              ],)
+
+            ];
+          } else if (snapshot.hasError) {
+            children = <Widget>[
+              const Icon(
+                Icons.error_outline,
+                color: Colors.red,
+                size: 60,
               ),
-              title:Text(
-                ' رجوع',
-                style: TextStyle(
-                    fontFamily: 'SourceSansPro',
-                    fontSize: 20,
-                    color: Colors.blue.shade900),
+              Padding(
+                padding: const EdgeInsets.only(top: 16),
+                child: Text('Error: ${snapshot.error}'),
               ),
+            ];
+          } else {
+            children =  <Widget>[
+              SizedBox(
+                width: 60,
+                height: 60,
+                child: CircularProgressIndicator(),
+              ),
+              Padding(
+                padding: EdgeInsets.only(top: 16),
+                child: Text("wait".tr),
+              ),
+            ];
+          }
+          return Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: children,
             ),
-          ),
-          onTap: (){
-            Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => HomePage()));
-            //  _launchURL('mailto: info@sci-egypt.com ?subject=from user mobile application&body=Please contact me');
-          },
-        )
-      ],),
+          );
+        },
+      ),
     );
   }
 
   Widget _renderSteps(List<Step> steps) {
+
     return ExpansionPanelList.radio(
       children: steps.map<ExpansionPanelRadio>((Step step) {
         return ExpansionPanelRadio(
+
             headerBuilder: (BuildContext context, bool isExpanded) {
               return ListTile(
                 title: Text(step.BranchName,style: TextStyle(
@@ -207,6 +259,100 @@ class _StepsState extends State<Steps> {
     );
   }
 }
+
+
+/**/
+/*
+class _StepsState extends State<Steps> {
+  final List<Step> _steps = getSteps();
+  @override
+  Widget build(BuildContext context) {
+    return SingleChildScrollView(
+      child: Column(children: [
+
+        PinchZoom(
+          child: Image.asset('assets/images/map.png'),
+          maxScale: 6.5,
+          onZoomStart: (){
+
+          },
+          onZoomEnd: (){
+
+          },
+        )
+        ,
+        Container(
+            child: _renderSteps(_steps)
+        ),
+        InkWell(
+          child: Card(
+           color: Colors.white,
+            margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 25.0),
+            child: ListTile(
+
+              leading: Icon(
+                Icons.arrow_back_ios_outlined,
+                color: Colors.blue,
+              ),
+              title:Text(
+                "back".tr,
+                style: TextStyle(
+                    fontFamily: 'SourceSansPro',
+                    fontSize: 20,
+                    color: Colors.blue.shade900),
+              ),
+            ),
+          ),
+          onTap: (){
+            Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => HomePage()));
+            //  _launchURL('mailto: info@sci-egypt.com ?subject=from user mobile application&body=Please contact me');
+          },
+        )
+      ],),
+    );
+  }
+
+  Widget _renderSteps(List<Step> steps) {
+
+    return ExpansionPanelList.radio(
+      children: steps.map<ExpansionPanelRadio>((Step step) {
+        return ExpansionPanelRadio(
+
+            headerBuilder: (BuildContext context, bool isExpanded) {
+              return ListTile(
+                title: Text(step.BranchName,style: TextStyle(
+                    fontSize: step.ismain=="1"? 18:16,
+                    color:step.ismain=="1"? Colors.blue.shade900:Colors.blue)),
+              );
+            },
+            body: ListTile(
+                title:       Container(
+                    padding: EdgeInsets.symmetric(horizontal: 5,vertical: 5),
+                    decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius:
+                        BorderRadius.circular(20)),
+
+                    height: step.ishasdata=="0"? 0:160,
+                    width: 360,
+                    child:Column(children: [
+
+                      step.address==''?Row():   Row( children: [Icon(Icons.fmd_good_sharp,color: AppColor.primaryColor,) ,SizedBox(width: 4,),Text(step.address,style: TextStyle(fontWeight: FontWeight.bold,fontSize: 13,color: AppColor.black),)]),
+                      SizedBox(height: 10,),
+                      step.tel==''?Row(): Row( children: [Icon(Icons.phone,color: AppColor.primaryColor),SizedBox(width: 4,),Text(step.tel,style: TextStyle(fontWeight: FontWeight.bold,fontSize: 14,color: AppColor.black),)]),
+                      SizedBox(height: 10,),
+                      step.email==''?Row(): Row( children: [Icon(Icons.fax,color: AppColor.primaryColor),SizedBox(width: 4,),Text(step.email,style: TextStyle(fontWeight: FontWeight.bold,fontSize: 14,color: AppColor.black))]),
+                    ],)),
+                subtitle: _renderSteps(step.subSteps)
+            ),
+            value: step.BranchName
+        );
+      }).toList(),
+    );
+  }
+}*/
   //final List<BranchModel> _data =  branchmodel_list_main;
 
 

@@ -26,9 +26,7 @@ class Services2 extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Expanded(
-                  child: TouchRipple(
-
-                      child: Column(
+                child: Column(
                         children: [
                           Center(
                             child: InkWell(
@@ -82,7 +80,7 @@ class Services2 extends StatelessWidget {
                                           "Validate_document".tr,
                                           textAlign: TextAlign.center,
                                           style: TextStyle(
-                                              fontFamily: 'Heavy',
+                                             
                                               fontSize: mycontroller
                                                   .myanimation2.value,
                                               fontWeight: FontWeight.bold,
@@ -92,12 +90,10 @@ class Services2 extends StatelessWidget {
                             ),
                           )
                         ],
-                      ))),
+                      )),
               Expanded(
                   child:
-                  TouchRipple(
-
-                      child:Column(
+                  Column(
                 children: [
                   InkWell(
                       onTap: () {
@@ -139,7 +135,7 @@ class Services2 extends StatelessWidget {
                                   "branches".tr,
                                   textAlign: TextAlign.center,
                                   style: TextStyle(
-                                      fontFamily: 'Heavy',
+                                     
                                       fontSize: mycontroller.myanimation2.value,
                                       fontWeight: FontWeight.bold,
                                       color: Colors.blue.shade900),
@@ -148,13 +144,13 @@ class Services2 extends StatelessWidget {
                         ),
                       )))
                 ],
-    )  ))
+    )  )
             ],
           ),
           Row(
             children: [
               Expanded(
-                  child:  TouchRipple(
+
 
                       child:Column(
                 children: [
@@ -204,7 +200,7 @@ class Services2 extends StatelessWidget {
                                   "E_Pay".tr,
                                   textAlign: TextAlign.center,
                                   style: TextStyle(
-                                      fontFamily: 'Heavy',
+                                     
                                       fontSize: mycontroller.myanimation2.value,
                                       fontWeight: FontWeight.bold,
                                       color: Colors.blue.shade900),
@@ -213,9 +209,9 @@ class Services2 extends StatelessWidget {
                         ),
                       ))
                 ],
-              ))),
+              )),
               Expanded(
-                  child:  TouchRipple(
+
 
                       child:Column(
                 children: [
@@ -264,8 +260,7 @@ class Services2 extends StatelessWidget {
                                   "contact".tr,
                                   textAlign: TextAlign.center,
                                   style: TextStyle(
-                                      fontFamily: 'Heavy',
-                                      fontSize: mycontroller.myanimation2.value,
+                                     fontSize: mycontroller.myanimation2.value,
                                       fontWeight: FontWeight.bold,
                                       color: Colors.blue.shade900),
                                 );
@@ -273,7 +268,7 @@ class Services2 extends StatelessWidget {
                     ),
                   )
                 ],
-              )))
+              ))
             ],
           )
         ],

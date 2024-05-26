@@ -15,7 +15,7 @@ class ProgramsBar extends StatelessWidget {
         children: [
           Text(
             title,
-            style: TextStyle( fontFamily: 'Hacen',color:Colors.blue.shade900,fontWeight: FontWeight.bold,fontSize: 23),
+            style: TextStyle(  color:Colors.blue.shade900,fontWeight: FontWeight.bold,fontSize: 23),
           ),
 
         ],
