@@ -156,6 +156,9 @@ class HomePage extends StatelessWidget {
             statusRequest: controller.statusRequest,
             widget: SingleChildScrollView(
                 child: Column(children: <Widget>[
+                  mycontroller.name != null ?
+                  Container( child: Text("hello".tr+mycontroller.name.toString(),style: TextStyle(color: AppColor.primaryColor,fontSize: 14),)):
+                  Row(),
               customappbar(
                 titleapp: "findproducts".tr,
                 onPressedicon: () {},

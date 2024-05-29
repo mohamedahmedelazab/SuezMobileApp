@@ -13,6 +13,8 @@ class AboutUs extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
+    
     final _width = MediaQuery.of(context).size.width;
     final _height = MediaQuery.of(context).size.height;
     final String imgUrl = 'https://www.sci-egypt.net/frontdesign/wp-content/uploads/2023/03/about-strateg-768x768.png';
@@ -31,6 +33,7 @@ class AboutUs extends StatelessWidget {
               borderRadius: BorderRadius.all(Radius.circular(50.0)),
             ),)),
       new Scaffold(
+
           appBar: new AppBar(
             title: new Text("about".tr),
             centerTitle: false,

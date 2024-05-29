@@ -314,7 +314,10 @@ class MyTranslation extends Translations {
           "FOLLOW":"تابعنا علي الفيس بوك",
           "Clients":"عملائنا",
           "Branches":"فروعنا",
-          "profile":"بروفايل"
+          "profile":"بروفايل",
+          "hello":"مرحبا:-  ",
+          "active":"لديك حساب لكنه غير مفعل ",
+          "toactive":"للتفعيل إضغط هنا "
         },
         "en": {
           "checktitle":"You can verify the authenticity of your document by typing the document number and barcode number",
@@ -351,6 +354,7 @@ class MyTranslation extends Translations {
           "24":
               "Sign Up With Your Email And Password OR Continue With Social Media",
           "25": " have an account ? ",
+          "active":"Your account Not Active",
           "26": "SignIn",
           "suez":"Suez Canal Insurance",
           "27": "Check Email",
@@ -377,7 +381,7 @@ class MyTranslation extends Translations {
           "about":"About Us",
           "profile":"Profile",
           "news":"news",
-
+          "toactive":"Active Your Account",
 
           "BranchName1":"Head Quarters",
           "BranchName2":"Annex Building",
@@ -631,7 +635,8 @@ class MyTranslation extends Translations {
           "FOLLOW":"FOLLOW Us On Facebook",
           "Clients":"Clients",
           "Branches":"Branches",
-          "profile":"Profile"
+          "profile":"Profile",
+          "hello":"Hello  :-"
         }
       };
 }

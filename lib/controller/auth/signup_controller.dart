@@ -31,12 +31,13 @@ class SignUpControllerImp extends SignUpController {
       statusRequest = handlingData(response);
       if (StatusRequest.success == statusRequest) {
         if (response['status'] == "success") {
-          //data.addAll(response['data']);
+         data.addAll(response['data']);
+
           Get.offNamed(AppRoute.verfiyCodeSignUp,arguments: {
             "email":email.text
           });
         }
-       else if (response['status'] == "Email Or phone is Exit") {
+       else if (response['status'] == "exist_before") {
           statusRequest = StatusRequest.ExitEmail;
           Get.defaultDialog(
               title: "Warring", middleText: "Email Or phone is Exit");

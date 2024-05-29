@@ -1,4 +1,5 @@
 import 'package:suezproduction/controller/auth/forgetpassword/forgetpassword_controller.dart';
+import 'package:suezproduction/core/class/handlingdataview.dart';
 import 'package:suezproduction/core/constant/color.dart';
 import 'package:suezproduction/view/widget/auth/custombuttonauth.dart';
 import 'package:suezproduction/view/widget/auth/customtextbodyauth.dart';
@@ -25,7 +26,10 @@ class ForgetPassword extends StatelessWidget {
                 .headline1!
                 .copyWith(color: AppColor.grey)),
       ),
-      body: Container(
+      body: GetBuilder<ForgetPasswordControllerImp>(
+    builder: (controller) => HandlingDataRequest(
+    statusRequest: controller.statusRequest,
+    widget:Container(
         padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 30),
         child: Form(
           key: controller.formstate,
@@ -54,7 +58,7 @@ class ForgetPassword extends StatelessWidget {
             const SizedBox(height: 40),
           ]),
         ),
-      ),
-    );
+      ))
+    ));
   }
 }

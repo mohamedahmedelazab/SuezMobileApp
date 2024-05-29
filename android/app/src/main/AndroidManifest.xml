@@ -2,7 +2,7 @@
     package="com.producer.suezproduction">
 
     <application
-        android:label="MySCI"
+        android:label="@string/appName"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

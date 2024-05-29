@@ -1,3 +1,4 @@
+import 'package:suezproduction/view/screen/auth/re_activation.dart';
 import 'package:suezproduction/core/constant/routes.dart';
 import 'package:suezproduction/core/middleware/mymiddleware.dart';
 
@@ -44,5 +45,6 @@ List<GetPage<dynamic>>? routes = [
   GetPage(name: AppRoute.contactus, page: () =>  contactus()),
   GetPage(name: AppRoute.CheckPolicy_Result, page: () =>  CheckPolicy_Result()),
   GetPage(name: AppRoute.Branches, page: () =>  NewBranches()),
+  GetPage(name: AppRoute.ReActivation, page: () =>  ReActivation()),
 ];
  

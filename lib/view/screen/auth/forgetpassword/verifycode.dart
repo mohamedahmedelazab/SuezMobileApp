@@ -1,4 +1,5 @@
  import 'package:suezproduction/controller/auth/forgetpassword/verifycode_controller.dart';
+import 'package:suezproduction/core/class/statusrequest.dart';
 import 'package:suezproduction/core/constant/color.dart';
 import 'package:suezproduction/view/widget/auth/customtextbodyauth.dart';
 import 'package:suezproduction/view/widget/auth/customtexttitleauth.dart';
@@ -24,17 +25,20 @@ class VerfiyCode extends StatelessWidget {
                 .headline1!
                 .copyWith(color: AppColor.grey)),
       ),
-      body: Container(
+      body:GetBuilder<VerifyCodeControllerImp>(builder: (controller)=>
+    controller.statusrequest==StatusRequest.loading ?
+    Center(child: Text("loading..."),)
+        : Container(
         padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 30),
         child: ListView(children: [
           const SizedBox(height: 20),
           const CustomTextTitleAuth(text: "Check code"),
           const SizedBox(height: 10),
-          const CustomTextBodyAuth(
+           CustomTextBodyAuth(
               text:
-                  "Please Enter The Digit Code Sent To wael@gmail.com"),
+                  "Please Enter The Digit Code Sent To ${controller.email }"),
           const SizedBox(height: 15),
-            OtpTextField(
+          new Directionality(textDirection: TextDirection.ltr, child:  OtpTextField(
               
                 fieldWidth: 50.0,
                 borderRadius: BorderRadius.circular(20),
@@ -50,10 +54,10 @@ class VerfiyCode extends StatelessWidget {
                 onSubmit: (String verificationCode) {
                      controller.goToResetPassword(verificationCode) ;
                 }, // end onSubmit
-              ), 
+              )   ),
           const SizedBox(height: 40),
         ]),
       ),
-    );
+      ) );
   }
 }

@@ -19,6 +19,7 @@ class VerifyCodeSignUpControllerImp extends VerifyCodeSignUpController {
 
   @override
   goToSuccessSignUp(String verifycode) async {
+    print(verifycode);
     statusRequest = StatusRequest.loading;
     update();
     var response = await Verifysignupdata.postData(email!, verifycode);

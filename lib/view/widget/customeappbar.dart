@@ -1,3 +1,5 @@
+import 'package:get/get.dart';
+import 'package:suezproduction/controller/home_controller.dart';
 import 'package:suezproduction/core/constant/color.dart';
 import 'package:suezproduction/core/constant/imgaeasset.dart';
 import 'package:flutter/material.dart';
@@ -11,6 +13,7 @@ class customappbar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    HomecontrollerTmp mycontroller=  Get.put(HomecontrollerTmp());
     return Container(
       margin:const EdgeInsets.only(top: 15),
       child: ImageSlideshow(

@@ -3,6 +3,7 @@ import 'package:suezproduction/core/constant/imgaeasset.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:path/path.dart';
+import 'package:suezproduction/core/localization/changelocal.dart';
 
 class appBottomView extends StatelessWidget implements PreferredSizeWidget {
   @override
@@ -15,7 +16,8 @@ class appBottomView extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   Widget build(BuildContext context) {
-    HomecontrollerTmp mycontroller=  Get.put(HomecontrollerTmp());
+
+    LocaleController localcontroller = Get.put(LocaleController());
 
     return AppBar(
 
@@ -48,28 +50,75 @@ class appBottomView extends StatelessWidget implements PreferredSizeWidget {
         ),
       )*/
       actions: [
-        mycontroller.name != null ?
-            Container(padding: EdgeInsets.only(left: 50), child: Text("مرحبا:-  "+mycontroller.name.toString(),style: TextStyle(color: Colors.white),)):
-        InkWell(
-          onTap: () {
-            mycontroller.goToSignIn();
-          },
-          child: Padding(
-            padding: EdgeInsets.only(left: 30),
+        Container(
+          padding: EdgeInsets.only(left: 30,top: 3),
+          child: InkWell(child: Icon(Icons.language,color: Colors.white,),onTap: (){
 
-            
-          ),
-        )
-    ,
+            showModalBottomSheet<void>(
+              context: context,
+              builder: (BuildContext context) {
+                return SizedBox(
+                  height: 200,
+                  child: Center(
+
+                    child: Column(
+
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      mainAxisSize: MainAxisSize.min,
+                      children: <Widget>[
+
+                        ListTile(
+                            leading: ClipOval(
+
+                              child: Image.asset(
+
+                                AppImageAsset.en,width: 20,
+                              ),
+                            ),
+                            title: Text("English (إنجليزي)",  style: TextStyle(
+                              fontSize: 14,
+
+                            )),
+                            onTap: () =>
+                            {
+                              localcontroller.changeLang("en")
+                            }
+                        ),
+                        ListTile(
+                            leading: ClipOval(
+
+                              child: Image.asset(
+
+                                AppImageAsset.ar,width: 20,
+                              ),
+                            ),
+                            title: Text("Arabic  (عربي)",  style: TextStyle(
+                              fontSize: 14,
+
+                            )),
+                            onTap: () =>
+                            {
+                              localcontroller.changeLang("ar")
+                            }
+                        ),
+                      ],
+                    ),
+                  ),
+                );
+              },
+            );
+          },),
+        ),
+
       ],
       bottom: PreferredSize(
-          child: getAppBottomView(),
+          child: getAppBottomView(context),
           preferredSize: Size.fromHeight(MediaQuery.of(context).size.height * 0.02)),
     );
   }
 
 
-  Widget getAppBottomView() {
+  Widget getAppBottomView(BuildContext context) {
     return Container(
 
         padding: EdgeInsets.only(left: 30, bottom: 20),
@@ -81,12 +130,18 @@ class appBottomView extends StatelessWidget implements PreferredSizeWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
-                  "suez".tr,
-                  style: TextStyle(
-                      fontSize: 22,
-                      fontWeight: FontWeight.w700,
-                      color: Colors.white),
+                Row(
+                  children: [
+                    Text(
+                      "suez".tr,
+                      style: TextStyle(
+                          fontSize: 22,
+                          fontWeight: FontWeight.w700,
+                          color: Colors.white),
+                    ),
+
+                  ],
+
                 ),
                 Text(
                   'sci@sci-egypt.com',

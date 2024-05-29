@@ -19,6 +19,7 @@ ThemeData themeEnglish = ThemeData(
 );
 
 ThemeData themeArabic = ThemeData(
+
   fontFamily: "Tajawal",
   textTheme: const TextTheme(
 

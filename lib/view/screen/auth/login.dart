@@ -31,15 +31,15 @@ class Login extends StatelessWidget {
         ),
         body: WillPopScope(
             onWillPop: alertExitApp,
-            child: GetBuilder<LoginControllerImp>(
-              builder: (controller) => HandlingDataRequest(
-                  statusRequest: controller.statusRequest,
-                  widget: Container(
+            child:  Container(
                     padding: const EdgeInsets.symmetric(
                         vertical: 15, horizontal: 30),
                     child: Form(
                       key: controller.formstate_asd,
-                      child: ListView(children: [
+                      child: GetBuilder<LoginControllerImp>(
+                          builder: (controller) => HandlingDataRequest(
+                              statusRequest: controller.statusRequest,
+                              widget:ListView(children: [
                         const LogoAuth(),
                         const SizedBox(height: 20),
                         CustomTextTitleAuth(text: "10".tr),
@@ -106,9 +106,9 @@ class Login extends StatelessWidget {
                           },
                         )
 
-                      ]),
+                      ]))),
                     ),
                   )),
-            )));
+            );
   }
 }

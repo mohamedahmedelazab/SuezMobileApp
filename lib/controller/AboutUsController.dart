@@ -13,7 +13,6 @@ abstract class AboutUsController extends GetxController {
 class AboutUsControllerImp extends AboutUsController {
 
 
-
   int currentPage = 0;
 
   MyServices myServices = Get.find() ;
@@ -28,5 +27,12 @@ class AboutUsControllerImp extends AboutUsController {
     if (!await launchUrl(url)) {
       throw Exception('Could not launch $url');
     }
+  }
+
+  @override
+  void onInit() {
+    // TODO: implement onInit
+    
+    super.onInit();
   }
 }

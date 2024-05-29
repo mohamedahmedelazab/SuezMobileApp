@@ -1,4 +1,5 @@
 import 'package:suezproduction/controller/auth/forgetpassword/resetpassword_controller.dart';
+import 'package:suezproduction/core/class/handlingdataview.dart';
 import 'package:suezproduction/core/constant/color.dart';
 import 'package:suezproduction/core/functions/validinput.dart';
 import 'package:suezproduction/view/widget/auth/custombuttonauth.dart';
@@ -28,7 +29,10 @@ class ResetPassword extends StatelessWidget {
       ),
       body: Container(
         padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 30),
-        child: Form(
+        child: GetBuilder<ResetPasswordControllerImp>(
+            builder: (controller) => HandlingDataRequest(
+                statusRequest: controller.statusrequest,
+                widget:Form(
           key: controller.formstate,
           child: ListView(children: [
             const SizedBox(height: 20),
@@ -66,7 +70,7 @@ class ResetPassword extends StatelessWidget {
                 }),
             const SizedBox(height: 40),
           ]),
-        ),
+        )))
       ),
     );
   }
