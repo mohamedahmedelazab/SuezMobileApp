@@ -50,6 +50,7 @@ class MyTranslation extends Translations {
           "36": "تم اعادة تعيين كلمة المرور بنجاح",
           "37": "تهانينا",
           "38": "تم التسجيل بنجاح",
+          "39":"الدخول كضيف",
           "offers":"عملائنا",
           "ourproduct":"منتجات تهمك",
           "cat":"  منتجاتنا",
@@ -317,9 +318,11 @@ class MyTranslation extends Translations {
           "profile":"بروفايل",
           "hello":"مرحبا:-  ",
           "active":"لديك حساب لكنه غير مفعل ",
-          "toactive":"للتفعيل إضغط هنا "
+          "toactive":"للتفعيل إضغط هنا ",
+          "msglogin":"لهذه الخدمة يرجى تسجيل الدخول أولا"
         },
         "en": {
+  "msglogin":"To use this service , please login in",
           "checktitle":"You can verify the authenticity of your document by typing the document number and barcode number",
           "submit":"submit",
           "polNo":"Pol No",
@@ -369,6 +372,7 @@ class MyTranslation extends Translations {
           "36": "Password has been reset successfully",
           "37": "congratulations",
           "38": "successfully registered",
+          "39":"Guest Login",
           "offers":"Our Client",
           "ourproduct":"our Products",
           "findproducts":"find products",

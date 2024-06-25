@@ -43,7 +43,7 @@ class NavDrawer extends StatelessWidget {
                 context,
                 MaterialPageRoute(builder: (context) => AboutUs()))},
           ),
-          ListTile(
+          localcontroller.isLogin()==false? Row():ListTile(
             leading: Icon(Icons.verified_user),
             title: Text("Validate_document".tr,  style: TextStyle(
               fontSize: 14,
@@ -57,7 +57,7 @@ class NavDrawer extends StatelessWidget {
             context,
             MaterialPageRoute(builder: (context) => CheckPolicy()))},
           ),
-          ListTile(
+    localcontroller.isLogin()==false? Row(): ListTile(
             leading: Icon(Icons.shopify_rounded),
             title: Text("E_Pay".tr,  style: TextStyle(
               fontSize: 14,

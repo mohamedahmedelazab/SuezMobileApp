@@ -44,7 +44,7 @@ class SuccessSignUp extends StatelessWidget {
                 text: "31".tr,
                 onPressed: () {
                   controller.goToPageLogin();
-                }),
+                },color: AppColor.primaryColor,),
           ),
           const SizedBox(height: 30)
         ]),

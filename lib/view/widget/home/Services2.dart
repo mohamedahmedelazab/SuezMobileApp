@@ -9,7 +9,7 @@ import 'package:suezproduction/view/screen/contactus.dart';
 import 'package:suezproduction/view/screen/onlinepay.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:getwidget/getwidget.dart';
+
 
 
 class Services2 extends StatelessWidget {
@@ -28,16 +28,40 @@ class Services2 extends StatelessWidget {
               Expanded(
                 child: Column(
                         children: [
+
                           Center(
                             child: InkWell(
                                 onTap: () {
-                                  Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                          builder: (context) => CheckPolicy()));
-                                  //  _launchURL('mailto: info@sci-egypt.com ?subject=from user mobile application&body=Please contact me');
-                                },
-                                child: Card(
+                                  if (mycontroller.isLogin()==false) {
+
+                                    const snackBar = SnackBar(
+                                      content: Text("يرجى تسجيل الدخول أولا ",),
+                                    );
+
+                                    ScaffoldMessenger.of(context).showSnackBar(snackBar);
+
+
+                                  }
+                                  else {
+                                    Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) =>
+                                                CheckPolicy()));
+                                    //  _launchURL('mailto: info@sci-egypt.com ?subject=from user mobile application&body=Please contact me');
+                                  }
+                                  },
+                                child: mycontroller.isLogin()==false ? ColorFiltered(
+                                  colorFilter: ColorFilter.mode(
+                                    Colors.grey,
+                                    BlendMode.saturation,
+                                  ),
+                                  child: Image.asset(
+                                    'assets/images/producers.png',
+                                    width:50,
+                                    height:50,
+                                  ),
+                                ) : Card(
                                   shape: RoundedRectangleBorder(
                                       borderRadius:
                                           BorderRadius.circular(10.0)),
@@ -65,12 +89,22 @@ class Services2 extends StatelessWidget {
                               alignment: Alignment.bottomCenter,
                               child: InkWell(
                                   onTap: () {
-                                    Navigator.push(
-                                        context,
-                                        MaterialPageRoute(
-                                            builder: (context) =>
-                                                CheckPolicy()));
-                                    //  _launchURL('mailto: info@sci-egypt.com ?subject=from user mobile application&body=Please contact me');
+                                    if (mycontroller.isLogin()==false) {
+                                      const snackBar = SnackBar(
+                                        content: Text("يرجى تسجيل الدخول أولا "),
+                                      );
+
+                                      ScaffoldMessenger.of(context).showSnackBar(snackBar);
+
+                                    }
+                                    else {
+                                      Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                              builder: (context) =>
+                                                  CheckPolicy()));
+                                      //  _launchURL('mailto: info@sci-egypt.com ?subject=from user mobile application&body=Please contact me');
+                                    }
                                   },
                                   child: AnimatedBuilder(
                                       animation: mycontroller.myanimation2,
@@ -84,7 +118,7 @@ class Services2 extends StatelessWidget {
                                               fontSize: mycontroller
                                                   .myanimation2.value,
                                               fontWeight: FontWeight.bold,
-                                              color: Colors.blue.shade900),
+                                              color: mycontroller.isLogin()==false ?AppColor.grey: Colors.blue.shade900),
                                         );
                                       })),
                             ),
@@ -157,13 +191,39 @@ class Services2 extends StatelessWidget {
                   Center(
                     child: InkWell(
                         onTap: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => OnLinepay()));
-                          //  _launchURL('mailto: info@sci-egypt.com ?subject=from user mobile application&body=Please contact me');
-                        },
-                        child: Card(
+
+                          if (mycontroller.isLogin()==false) {
+                            const snackBar = SnackBar(
+                              content: Text("يرجى تسجيل الدخول أولا "),
+                            );
+
+                            ScaffoldMessenger.of(context).showSnackBar(snackBar);
+
+                          }
+                          else {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) =>
+                                        OnLinepay()));
+                           }
+
+
+
+                         },
+                        child:  mycontroller.isLogin()==false ? ColorFiltered(
+                          colorFilter: ColorFilter.mode(
+                            Colors.grey,
+                            BlendMode.saturation,
+                          ),
+                          child: Image.asset(
+                            'assets/images/22.png',
+                            width:
+                            50,
+                            height:
+                            50,
+                          ),
+                        ) :Card(
                           shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(10.0)),
                           elevation: 5,
@@ -183,10 +243,21 @@ class Services2 extends StatelessWidget {
                   ),
                   InkWell(
                       onTap: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => OnLinepay()));
+                        if (mycontroller.isLogin()==false) {
+                          const snackBar = SnackBar(
+                            content: Text("يرجى تسجيل الدخول أولا "),
+                          );
+
+                          ScaffoldMessenger.of(context).showSnackBar(snackBar);
+
+                        }
+                        else {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) =>
+                                      OnLinepay()));
+                        }
                         //  _launchURL('mailto: info@sci-egypt.com ?subject=from user mobile application&body=Please contact me');
                       },
                       child: Padding(
@@ -203,7 +274,7 @@ class Services2 extends StatelessWidget {
                                      
                                       fontSize: mycontroller.myanimation2.value,
                                       fontWeight: FontWeight.bold,
-                                      color: Colors.blue.shade900),
+                                      color: mycontroller.isLogin()==false ?AppColor.grey:Colors.blue.shade900),
                                 );
                               }),
                         ),

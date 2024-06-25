@@ -23,7 +23,6 @@ class ResetPasswordControllerImp extends ResetPasswordController {
 
   @override
   goToSuccessResetPassword() async {
-
     statusrequest=StatusRequest.loading;
     update();
     if (formstate.currentState!.validate()) {
@@ -52,7 +51,7 @@ class ResetPasswordControllerImp extends ResetPasswordController {
          Get.defaultDialog(title: "خطا",middleText: "كلمتى المرور غير متطابقين");
        }
     } else {
-      print("Not ");
+
     }
   }
 

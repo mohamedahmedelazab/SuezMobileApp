@@ -20,10 +20,13 @@ class HomecontrollerTmp extends Homecontroller
   String? lang;
   HomeData homeData = HomeData(Get.find());
 bool? islog;
- // List data = [];
+
+  ////////////////////////////////
   List categories = [];
   List items = [];
   List items_discount = [];
+
+
   sharedrefrense_clear()
   {
     myServices.sharedPreferences.clear();
@@ -37,7 +40,8 @@ bool? islog;
     name=myServices.sharedPreferences.getString("username");
     lang = myServices.sharedPreferences.getString("lang");
     islog = myServices.sharedPreferences.getBool("islog");
-    myServices.sharedPreferences.setString("step","2");
+update();
+
   }
   void requestPermission() async{
     FirebaseMessaging message=FirebaseMessaging.instance;

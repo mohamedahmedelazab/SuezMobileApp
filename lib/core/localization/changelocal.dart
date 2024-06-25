@@ -61,4 +61,15 @@ class LocaleController extends GetxController {
     }
     super.onInit();
   }
+
+  isLogin()
+  {
+    if (myServices.sharedPreferences.getBool("islog")==true) {
+      return true;
+    }
+    else
+    {
+      return false;
+    }
+  }
 }

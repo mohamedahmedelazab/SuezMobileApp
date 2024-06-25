@@ -49,6 +49,7 @@ class LoginControllerImp extends LoginController {
           myServices.sharedPreferences.setString("phone", response['data']['MobileNo']);
           myServices.sharedPreferences.setString("email",response['data']['Email']);
           myServices.sharedPreferences.setBool("islog",true);
+          myServices.sharedPreferences.setString("step", "3") ;
           Get.offNamed(AppRoute.home,arguments: {
             "email":email.text
           });
@@ -59,7 +60,7 @@ class LoginControllerImp extends LoginController {
           Get.defaultDialog(
               title: "Warring", middleText: response['status']);
           statusRequest = StatusRequest.failure;
-update();
+         update();
           if (response['status']=="المستخدم صحيح ولكنه غير مفعل") {
             Get.offNamed(AppRoute.ReActivation,arguments: {
               "email":email.text

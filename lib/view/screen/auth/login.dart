@@ -1,7 +1,6 @@
 import 'package:suezproduction/controller/auth/login_controller.dart';
 import 'package:suezproduction/core/class/handlingdataview.dart';
 import 'package:suezproduction/core/constant/color.dart';
-import 'package:suezproduction/core/functions/alertexitapp.dart';
 import 'package:suezproduction/core/functions/validinput.dart';
 import 'package:suezproduction/view/widget/auth/custombuttonauth.dart';
 import 'package:suezproduction/view/widget/auth/customtextbodyauth.dart';
@@ -19,27 +18,41 @@ class Login extends StatelessWidget {
   Widget build(BuildContext context) {
     LoginControllerImp controller = Get.put(LoginControllerImp());
     return Scaffold(
-        appBar: AppBar(
-          centerTitle: true,
-          backgroundColor: AppColor.backgroundcolor,
-          elevation: 0.0,
-          title: Text('تسجيل الدخول',
-              style: Theme.of(context)
-                  .textTheme
-                  .headline1!
-                  .copyWith(color: AppColor.grey)),
-        ),
-        body: WillPopScope(
-            onWillPop: alertExitApp,
-            child:  Container(
-                    padding: const EdgeInsets.symmetric(
-                        vertical: 15, horizontal: 30),
-                    child: Form(
-                      key: controller.formstate_asd,
-                      child: GetBuilder<LoginControllerImp>(
-                          builder: (controller) => HandlingDataRequest(
-                              statusRequest: controller.statusRequest,
-                              widget:ListView(children: [
+      appBar: AppBar(
+        centerTitle: true,
+        backgroundColor: AppColor.backgroundcolor,
+        elevation: 0.0,
+        title: Text('تسجيل الدخول',
+            style: Theme.of(context)
+                .textTheme
+                .headline1!
+                .copyWith(color: AppColor.grey)),
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
+      floatingActionButton: CustomButtomWithIcon(
+        text: "39".tr,
+        onPressed: () {
+          controller.gotohome();
+        },
+        color: AppColor.kGreenColor,
+        myicon: Icon(Icons.account_circle),
+      ),
+      body: WillPopScope(
+          onWillPop: () async {
+            // Your custom logic to handle back button press
+            // Return true to allow back navigation, false to block it
+            // Example:
+            Navigator.of(context).pop();
+            return true;
+          },
+          child: Container(
+            padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 30),
+            child: Form(
+              key: controller.formstate_asd,
+              child: GetBuilder<LoginControllerImp>(
+                  builder: (controller) => HandlingDataRequest(
+                      statusRequest: controller.statusRequest,
+                      widget: ListView(children: [
                         const LogoAuth(),
                         const SizedBox(height: 20),
                         CustomTextTitleAuth(text: "10".tr),
@@ -88,7 +101,8 @@ class Login extends StatelessWidget {
                             text: "15".tr,
                             onPressed: () {
                               controller.login();
-                            }),
+                            },
+                            color: AppColor.primaryColor),
                         const SizedBox(height: 40),
                         CustomTextSignUpOrSignIn(
                           textone: "16".tr,
@@ -97,18 +111,17 @@ class Login extends StatelessWidget {
                             controller.goToSignUp();
                           },
                         ),
-                        const SizedBox(height: 40),
+                        /*   const SizedBox(height: 40),
                         CustomTextSignUpOrSignIn(
                           textone: "",
                           texttwo: "رجوع",
                           onTap: () {
                             controller.gotohome();
                           },
-                        )
-
+                        )*/
                       ]))),
-                    ),
-                  )),
-            );
+            ),
+          )),
+    );
   }
 }

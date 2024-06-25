@@ -101,7 +101,8 @@ class CheckPolicy extends StatelessWidget {
 
 
 
-                          }),
+                          },
+                      color: AppColor.primaryColor,),
                       controller.status !="" ?
                       controller.status=="success"?
 

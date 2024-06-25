@@ -1,6 +1,9 @@
+import 'dart:async';
+
 import 'package:flutter/services.dart';
 import 'package:flutter_touch_ripple/components/behavior.dart';
 import 'package:flutter_touch_ripple/flutter_touch_ripple.dart';
+import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:suezproduction/controller/home_controller.dart';
 import 'package:suezproduction/core/class/handlingdataview.dart';
 import 'package:suezproduction/core/constant/color.dart';
@@ -27,7 +30,8 @@ import 'package:suezproduction/view/widget/progressbar.dart';
 
 
 class HomePage extends StatelessWidget {
-  const HomePage({Key? key}) : super(key: key);
+
+    HomePage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -180,6 +184,7 @@ class HomePage extends StatelessWidget {
               const SizedBox(
                 height: 5,
               ),
+
               ListCategoriesHome(),
               const SizedBox(
                 height: 10,
@@ -188,4 +193,6 @@ class HomePage extends StatelessWidget {
           );
         })));
   }
+
+
 }

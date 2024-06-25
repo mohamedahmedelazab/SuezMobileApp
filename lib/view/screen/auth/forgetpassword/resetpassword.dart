@@ -67,7 +67,7 @@ class ResetPassword extends StatelessWidget {
                 text: "33".tr,
                 onPressed: () {
                   controller.goToSuccessResetPassword();
-                }),
+                },color: AppColor.primaryColor,),
             const SizedBox(height: 40),
           ]),
         )))

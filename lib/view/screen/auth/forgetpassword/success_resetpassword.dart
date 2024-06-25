@@ -44,7 +44,7 @@ class SuccessResetPassword extends StatelessWidget {
                 text: "31".tr,
                 onPressed: () {
                   controller.goToPageLogin();
-                }),
+                },color: AppColor.primaryColor,),
           ),
         ]),
       ),

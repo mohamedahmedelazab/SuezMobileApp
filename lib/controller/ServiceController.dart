@@ -1,9 +1,10 @@
 import 'package:flutter/animation.dart';
 import 'package:get/get.dart';
 import 'package:suezproduction/core/constant/routes.dart';
+import 'package:suezproduction/core/services/services.dart';
 
 class ServiceController   extends GetxController with GetSingleTickerProviderStateMixin {
-
+  MyServices myServices=Get.find();
   late AnimationController animationController;
   late Animation<double> myanimation;
   late Animation<double> myanimation2;
@@ -35,6 +36,17 @@ class ServiceController   extends GetxController with GetSingleTickerProviderSta
   @override
   goToBranches() {
     Get.offNamed(AppRoute.Branches);
+  }
+
+  isLogin()
+  {
+    if (myServices.sharedPreferences.getBool("islog")==true) {
+      return true;
+    }
+    else
+      {
+        return false;
+      }
   }
 
 }

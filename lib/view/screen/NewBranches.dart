@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:pinch_zoom/pinch_zoom.dart';
 import 'package:suezproduction/controller/Branches_controller.dart';
 import 'package:suezproduction/core/constant/color.dart';
+import 'package:suezproduction/view/screen/GoogleMap.dart';
 
 import 'package:suezproduction/view/screen/Home.dart';
 
@@ -15,7 +16,12 @@ class NewBranches extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title:  Text("branches".tr)),
+      appBar: AppBar(title:  Text("branches".tr),  leading: IconButton(
+        icon: Icon(Icons.arrow_back, color: Colors.black),
+        onPressed: () =>   Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => HomePage())),
+      )),
       body: const FutureBuilderExample(),
     );
   }
@@ -245,7 +251,16 @@ class _FutureBuilderExampleState extends State<FutureBuilderExample> {
                     width: 360,
                     child:Column(children: [
 
-                      step.address==''?Row():   Row( children: [Icon(Icons.fmd_good_sharp,color: AppColor.primaryColor,) ,SizedBox(width: 4,),Text(step.address,style: TextStyle(fontWeight: FontWeight.bold,fontSize: 13,color: AppColor.black),)]),
+                      InkWell(
+                        onTap: (){
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) => MapSample()));
+
+                        },
+                        child: step.address==''?Row():
+                        Row( children: [Icon(Icons.fmd_good_sharp,color: AppColor.primaryColor,) ,SizedBox(width: 4,),Text(step.address,style: TextStyle(fontWeight: FontWeight.bold,fontSize: 13,color: AppColor.black),)]),
+                      ),
                       SizedBox(height: 10,),
                       step.tel==''?Row(): Row( children: [Icon(Icons.phone,color: AppColor.primaryColor),SizedBox(width: 4,),Text(step.tel,style: TextStyle(fontWeight: FontWeight.bold,fontSize: 14,color: AppColor.black),)]),
                       SizedBox(height: 10,),

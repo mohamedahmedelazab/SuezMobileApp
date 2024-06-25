@@ -54,7 +54,7 @@ class ForgetPassword extends StatelessWidget {
                 text: "30".tr,
                 onPressed: () {
                   controller.goToVerfiyCode();
-                }),
+                },color: AppColor.primaryColor,),
             const SizedBox(height: 40),
           ]),
         ),

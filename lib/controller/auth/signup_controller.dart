@@ -18,38 +18,33 @@ class SignUpControllerImp extends SignUpController {
   late TextEditingController password;
   List data = [];
   SignupData signupdata = new SignupData(Get.find());
-   StatusRequest? statusRequest;
+  StatusRequest? statusRequest;
 
   @override
   signUp() async {
     if (formstate.currentState!.validate()) {
       statusRequest = StatusRequest.loading;
-      update();
+       update();
       var response = await signupdata.postData(
           username.text, password.text, email.text, phone.text);
       print(response);
       statusRequest = handlingData(response);
       if (StatusRequest.success == statusRequest) {
         if (response['status'] == "success") {
-         data.addAll(response['data']);
+          data.addAll(response['data']);
 
-          Get.offNamed(AppRoute.verfiyCodeSignUp,arguments: {
-            "email":email.text
-          });
-        }
-       else if (response['status'] == "exist_before") {
+          Get.offNamed(AppRoute.verfiyCodeSignUp,
+              arguments: {"email": email.text});
+        } else if (response['status'] == "exist_before") {
           statusRequest = StatusRequest.ExitEmail;
           Get.defaultDialog(
               title: "Warring", middleText: "Email Or phone is Exit");
         } else {
-          Get.defaultDialog(
-              title: "Warring", middleText: "failure");
+          Get.defaultDialog(title: "Warring", middleText: "failure");
           statusRequest = StatusRequest.failure;
         }
       }
       update();
-
-
     } else {}
   }
 

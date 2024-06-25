@@ -95,7 +95,7 @@ class SignUp extends StatelessWidget {
                   text: "17".tr,
                   onPressed: () {
                     controller.signUp();
-                  }),
+                  },color: AppColor.primaryColor,),
               const SizedBox(height: 40),
               CustomTextSignUpOrSignIn(
                 textone: "25".tr,
