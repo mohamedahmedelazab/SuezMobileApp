@@ -2,7 +2,7 @@
 class AppLink {
 
 static const String server = "https://sci-egypt.net/mainpage/ecommerce/";
- static const String server2 = "http://broker.sci-broker.com/AspNetWebApiRest/Api/ListItems";
+ static const String server2 = "https://sci-ebusiness.com/AspNetWebApiRest/Api/ListItems";
 static const String imagestatic = "https://sci-broker.com/ecommerce_files/";
 
 /////////////
@@ -21,7 +21,8 @@ static const String items = "$server/items";
 static const String productdetail = "$server/productdetail";
 static const String CheckPolicyData = "$server2/checkpolicy";
 static const String producers = "$server2/producers";
-
+ static const String Brands = "$server2/getcardata";
+ static const String priceme = "$server2/priceme";
 
 
 }

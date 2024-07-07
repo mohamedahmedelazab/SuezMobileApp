@@ -47,12 +47,12 @@ class LocaleController extends GetxController {
     String? sharedrefLang=myServices.sharedPreferences.getString("lang");
     if(sharedrefLang=="ar")
     {
-      language=Locale("ar");
+      language=const Locale("ar");
       appTheme=themeArabic;
     }
     else  if(sharedrefLang=="en")
     {
-      language=Locale("en");
+      language=const Locale("en");
       appTheme=themeEnglish;
     }
     else

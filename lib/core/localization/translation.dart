@@ -117,7 +117,7 @@ class MyTranslation extends Translations {
 
           "address1":"العنوان : 31 شارع محمد كامل مرسي  \n المهندسين ",
           "address2":"العنوان : 16 شارع محمد حافظ –متفرع من ش الثورة \n الدقي – الجيزة",
-          "address3":"العنوان : 114شارع التحرير الدقي ",
+          "address3":"العنوان :10 شارع ايران الدقى ",
           "address5":"العنوان: 539 مكرر – طريق الحرية –\n  جليم – الاسكندرية",
 
 
@@ -141,7 +141,7 @@ class MyTranslation extends Translations {
           "cario4address":"العنوان : 49شارع نوبار باب اللوق  ",
           "cario5address":"العنوان : 1 ش الجزاير الدور الثانى",
           "cario6address":"العنوان : 2 شارع سيد أبو شادي –\n  خلف مدرسة ليسية الحرية –  مصر الجديدة",
-          "cario7address":"العنوان: 15 أ شارع الأهرام\n  – مصر الجديدة – القاهرة",
+          "cario7address":"العنوان:عمارة رقم 9 \n  – عمارات بانورما الجبل الاخضر علي طريق النصر",
           "cario8address":"العنوان: سلفر مول – الدور الرابع –  \n أكتوبر",
           "cario9address":"المشروع الاستثماري الأردني رقم (2) عمارة رقم 11  \n العاشر من رمضان  ",
 
@@ -319,7 +319,8 @@ class MyTranslation extends Translations {
           "hello":"مرحبا:-  ",
           "active":"لديك حساب لكنه غير مفعل ",
           "toactive":"للتفعيل إضغط هنا ",
-          "msglogin":"لهذه الخدمة يرجى تسجيل الدخول أولا"
+          "msglogin":"لهذه الخدمة يرجى تسجيل الدخول أولا",
+          "priceshow":"احصل علي التأمين اليوم"
         },
         "en": {
   "msglogin":"To use this service , please login in",
@@ -440,7 +441,7 @@ class MyTranslation extends Translations {
 
           "address1":"31 Mohamed Kamel Morsi St. \n El Batal Ahmed Abdelaziz St.  Mohandeseen – Giz ",
           "address2":"16 Mohamed Hafez St. \n Intersecting with El Thawra St.  Dokki – Giza",
-          "address3":"114 Tahrir Street, Dokki ",
+          "address3":"10 Iran Street, Dokki ",
           "address5":"539 Mokarar  \n  El Horreya Rd   Gleem ",
 
 
@@ -464,7 +465,7 @@ class MyTranslation extends Translations {
           "cario4address":"49 Nobar St. \n Bab El Louq  Cairo  ",
           "cario5address":"1 El Gazayir St. \n  New Maadi  Cairo",
           "cario6address":"2 Sayed Abo Shady St. \n Behind Lycee El Horeya School  Heliopolis  ",
-          "cario7address":"15A El Ahram St. \n Infront of Normandy Cinema  Heliopolis",
+          "cario7address":"Building No. 9 - \nPanorama Mountain Green Buildings \n on Al-Nasr Road",
           "cario8address":"Silver Mall  \n   Next to City Scape Square October",
           "cario9address":"Jordanian Investment Project \n 10th of Ramadan City ",
 

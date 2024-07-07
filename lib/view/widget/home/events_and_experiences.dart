@@ -1,4 +1,6 @@
  import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:suezproduction/view/screen/pol_pricing.dart';
 
 class EventsAndExperiences extends StatelessWidget {
   const EventsAndExperiences({Key? key}) : super(key: key);
@@ -14,27 +16,27 @@ class EventsAndExperiences extends StatelessWidget {
           children: const [
             EventsAndExperiencesItems(
               newnumber:'1',
-              title: 'عربيتك في أمان',
-              description: 'قناة السويس للتأمين تحقق 1.37 مليار جنيه أقساط.. وتسدد 353 مليونا لعملائها.',
-              lessonsCount: '13 Feb, Sunday ',
-              imagePath: 'assets/images/news3.jpg',
+              title: 'تأمين السيارة',
+              description: 'يمكنك الان الحصول علي عرض سعر لتأمين سياراتك وسنتواصل معك في أقرب وقت',
+              lessonsCount: ' ',
+              imagePath: 'assets/images/auo-2nn.png',
 
             ),
-            EventsAndExperiencesItems(
+           EventsAndExperiencesItems(
               newnumber:'2',
-              title: 'عربيتك في أمان',
-              description: 'شركة جو جلوبال للاستشارات العامة  وبالتعاون مع شركة HM Actuarial Consultancy  بقيادة د. حسين عبد الغفار تفخر بأن تطبق المعيار " IFRS 17"',
-              lessonsCount: '13 Feb, Sunday ',
-              imagePath: 'assets/images/news1.jpg',
+              title: 'تأمين   الحوادث الشخصيه لمدربي الغوص والسنوركل',
+              description: ' يمكنك الحصول علي عرض سعر لتأمين الحوادث الشخصيه لمدربي الغوص والسنوركل',
+              lessonsCount: '',
+              imagePath: 'assets/images/news22.png',
 
             ),
-            EventsAndExperiencesItems(
+            /*    EventsAndExperiencesItems(
               newnumber:'3',
               title: 'وفر وقتك واشتري رحلتك',
               description: 'دلوقتي تقدر تسدد وثيقة التأمين الخاصة بيك بطريقة اسهل و اسرع .              من خلال موقعنا الالكتروني',
               lessonsCount: '13 Feb, Sunday',
               imagePath: 'assets/images/news2.jpg',
-            ),
+            ),*/
 
           ],
         ),
@@ -57,7 +59,30 @@ class EventsAndExperiencesItems extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {},
+      onTap: () {
+        if(newnumber=="1")
+          {
+            Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => PolpricingForm()));
+          }
+        else
+          {
+
+            Get.dialog(AlertDialog(
+              title: Text('رسالة '),
+              content: Text('        سوف يعرض في وقت قريب'),
+              actions: <Widget>[
+                TextButton(
+                  child: Text('إغلاق'),
+                  onPressed: () {
+                    Get.back();
+                  },
+                ),
+              ],
+            ));
+          }
+      },
       child: Container(
         margin: const EdgeInsets.only(right: 20,bottom: 20),
         width: 250,

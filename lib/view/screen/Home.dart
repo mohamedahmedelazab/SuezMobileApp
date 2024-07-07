@@ -19,6 +19,7 @@ import 'package:suezproduction/view/widget/home/NavDrawer.dart';
 
 import 'package:suezproduction/view/widget/home/Services2.dart';
 import 'package:suezproduction/view/widget/home/appBottomView.dart';
+import 'package:suezproduction/view/widget/home/events_and_experiences.dart';
 
 import 'package:suezproduction/view/widget/home/listcategorieshome.dart';
 
@@ -174,7 +175,17 @@ class HomePage extends StatelessWidget {
                 height: 10,
               ),
               Services2(),
+                  const SizedBox(
+                    height: 5,
+                  ),
 
+                  ProgramsBar2(
+                    title: "priceshow".tr,
+                  ) // <- this your widget!
+
+
+                  ,
+                  EventsAndExperiences(),
                     ProgramsBar(
                         title: "cat".tr,
                       ) // <- this your widget!

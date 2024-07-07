@@ -1,6 +1,7 @@
 import 'package:suezproduction/controller/auth/login_controller.dart';
 import 'package:suezproduction/core/class/handlingdataview.dart';
 import 'package:suezproduction/core/constant/color.dart';
+import 'package:suezproduction/core/functions/alertexitapp.dart';
 import 'package:suezproduction/core/functions/validinput.dart';
 import 'package:suezproduction/view/widget/auth/custombuttonauth.dart';
 import 'package:suezproduction/view/widget/auth/customtextbodyauth.dart';
@@ -38,13 +39,7 @@ class Login extends StatelessWidget {
         myicon: Icon(Icons.account_circle),
       ),
       body: WillPopScope(
-          onWillPop: () async {
-            // Your custom logic to handle back button press
-            // Return true to allow back navigation, false to block it
-            // Example:
-            Navigator.of(context).pop();
-            return true;
-          },
+          onWillPop:ExitApp,
           child: Container(
             padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 30),
             child: Form(

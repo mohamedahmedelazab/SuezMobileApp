@@ -17,4 +17,6 @@ class AppRoute {
   static const String CheckPolicy_Result = "/CheckPolicy_Result";
   static const String Branches = "/Branches";
   static const String ReActivation = "/ReActivation";
+  static const String MapSample = "/MapSample";
+  static const String showprice = "/showprice";
 }

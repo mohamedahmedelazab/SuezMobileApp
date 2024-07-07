@@ -67,6 +67,17 @@ class BranchControllerTmp extends BranchController with GetSingleTickerProviderS
   goToHome() {
     Get.offNamed(AppRoute.home);
   }
+
+  goToMap(String branchName,  String lat,String lnd){
+    Get.toNamed(
+      AppRoute.MapSample,
+      arguments: {
+        'branchName': branchName,
+        'lat': lat,
+        'lnd': lnd
+      },
+    );
+  }
 /*  initialData() {
     branchmodel_list = [
       BranchModel(

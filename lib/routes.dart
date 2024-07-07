@@ -1,3 +1,7 @@
+import 'package:suezproduction/controller/stepper_controller.dart';
+import 'package:suezproduction/view/fingerprint.dart';
+import 'package:suezproduction/view/screen/GoogleMap.dart';
+import 'package:suezproduction/view/screen/ShowPrice.dart';
 import 'package:suezproduction/view/screen/auth/re_activation.dart';
 import 'package:suezproduction/core/constant/routes.dart';
 import 'package:suezproduction/core/middleware/mymiddleware.dart';
@@ -21,13 +25,15 @@ import 'package:suezproduction/view/screen/onboarding.dart';
 import 'package:suezproduction/view/screen/onlinepay.dart';
 import 'package:get/get.dart';
 import 'package:suezproduction/view/screen/items.dart';
+import 'package:suezproduction/view/screen/pol_pricing.dart';
 
 
 List<GetPage<dynamic>>? routes = [
+
    GetPage(name: "/", page: () => const OnBoarding() , middlewares: [
   MyMiddleWare()
   ]),
-//   GetPage(name: "/", page: () => TestView()),
+    //GetPage(name: "/", page: () => PolpricingForm()),
 
   GetPage(name: AppRoute.login, page: () => const Login()),
   GetPage(name: AppRoute.signUp, page: () => const SignUp()),
@@ -46,5 +52,8 @@ List<GetPage<dynamic>>? routes = [
   GetPage(name: AppRoute.CheckPolicy_Result, page: () =>  CheckPolicy_Result()),
   GetPage(name: AppRoute.Branches, page: () =>  NewBranches()),
   GetPage(name: AppRoute.ReActivation, page: () =>  ReActivation()),
+  GetPage(name: AppRoute.MapSample, page: () =>  MapSample()),
+  GetPage(name: AppRoute.showprice, page: () =>  showprice()),
+
 ];
  
