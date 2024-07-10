@@ -33,7 +33,7 @@ class ResetPassword extends StatelessWidget {
             builder: (controller) => HandlingDataRequest(
                 statusRequest: controller.statusrequest,
                 widget:Form(
-          key: controller.formstate,
+          key: controller.formstate_restpassword,
           child: ListView(children: [
             const SizedBox(height: 20),
             CustomTextTitleAuth(text: "35".tr),

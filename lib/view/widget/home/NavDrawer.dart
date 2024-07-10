@@ -4,6 +4,7 @@ import 'package:suezproduction/core/localization/changelocal.dart';
 import 'package:suezproduction/view/screen/AboutUs.dart';
 import 'package:suezproduction/view/screen/Branches.dart';
 import 'package:suezproduction/view/screen/CheckPolicy.dart';
+import 'package:suezproduction/view/screen/NewBranches.dart';
 import 'package:suezproduction/view/screen/onlinepay.dart';
 import 'package:flutter/material.dart';
 import 'package:dropdown_button2/dropdown_button2.dart';
@@ -43,7 +44,7 @@ class NavDrawer extends StatelessWidget {
                 context,
                 MaterialPageRoute(builder: (context) => AboutUs()))},
           ),
-          localcontroller.isLogin()==false? Row():ListTile(
+         localcontroller.isLogin()==false? Row():ListTile(
             leading: Icon(Icons.verified_user),
             title: Text("Validate_document".tr,  style: TextStyle(
               fontSize: 14,
@@ -79,7 +80,7 @@ class NavDrawer extends StatelessWidget {
             )),
             onTap: () => {  Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => Branches()))},
+                MaterialPageRoute(builder: (context) => NewBranches()))},
           ),
           SizedBox(height: 10,),
 

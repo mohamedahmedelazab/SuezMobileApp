@@ -11,14 +11,18 @@ import 'package:suezproduction/view/widget/auth/logoauth.dart';
 import 'package:suezproduction/view/widget/auth/textsignup.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:suezproduction/view/widget/auth/touch_id_button.dart';
 
 class Login extends StatelessWidget {
   const Login({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    LoginControllerImp controller = Get.put(LoginControllerImp());
-    return Scaffold(
+
+
+    LoginControllerImp logincontroller = Get.put(LoginControllerImp());
+    return GetBuilder<LoginControllerImp>(
+      builder: (controller) => Scaffold(
       appBar: AppBar(
         centerTitle: true,
         backgroundColor: AppColor.backgroundcolor,
@@ -30,7 +34,7 @@ class Login extends StatelessWidget {
                 .copyWith(color: AppColor.grey)),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
-      floatingActionButton: CustomButtomWithIcon(
+     floatingActionButton: CustomButtomWithIcon(
         text: "39".tr,
         onPressed: () {
           controller.gotohome();
@@ -40,14 +44,13 @@ class Login extends StatelessWidget {
       ),
       body: WillPopScope(
           onWillPop:ExitApp,
-          child: Container(
+          child:  HandlingDataRequest(
+              statusRequest: controller.statusRequest,
+              widget:Container(
             padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 30),
             child: Form(
-              key: controller.formstate_asd,
-              child: GetBuilder<LoginControllerImp>(
-                  builder: (controller) => HandlingDataRequest(
-                      statusRequest: controller.statusRequest,
-                      widget: ListView(children: [
+              key: controller.formstate_login,
+              child:  ListView(children: [
                         const LogoAuth(),
                         const SizedBox(height: 20),
                         CustomTextTitleAuth(text: "10".tr),
@@ -66,8 +69,7 @@ class Login extends StatelessWidget {
                           labeltext: "18".tr,
                           // mycontroller: ,
                         ),
-                        GetBuilder<LoginControllerImp>(
-                          builder: (controller) => CustomTextFormAuth(
+                        CustomTextFormAuth(
                             obscureText: controller.isshowpassword,
                             onTapIcon: () {
                               controller.showPassword();
@@ -82,7 +84,7 @@ class Login extends StatelessWidget {
                             labeltext: "19".tr,
                             // mycontroller: ,
                           ),
-                        ),
+
                         InkWell(
                           onTap: () {
                             controller.goToForgetPassword();
@@ -92,12 +94,18 @@ class Login extends StatelessWidget {
                             textAlign: TextAlign.right,
                           ),
                         ),
-                        CustomButtomAuth(
-                            text: "15".tr,
-                            onPressed: () {
-                              controller.login();
-                            },
-                            color: AppColor.primaryColor),
+
+
+                            CustomButtomAuth(
+                                text: "15".tr,
+                                onPressed: () {
+                                  controller.login();
+                                },
+                                color: AppColor.primaryColor),
+                        const SizedBox(height: 10),
+                            controller.StoredEmail !=null &&    controller.StoredPassword !=null?  LoginTouchIDButton():Row()    ,
+
+
                         const SizedBox(height: 40),
                         CustomTextSignUpOrSignIn(
                           textone: "16".tr,
@@ -106,16 +114,16 @@ class Login extends StatelessWidget {
                             controller.goToSignUp();
                           },
                         ),
-                        /*   const SizedBox(height: 40),
-                        CustomTextSignUpOrSignIn(
+                           const SizedBox(height: 40),
+                /*        CustomTextSignUpOrSignIn(
                           textone: "",
                           texttwo: "رجوع",
                           onTap: () {
                             controller.gotohome();
                           },
                         )*/
-                      ]))),
-            ),
+                      ])),
+          ) ),
           )),
     );
   }

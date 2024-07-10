@@ -11,7 +11,7 @@ abstract class ResetPasswordController extends GetxController {
 }
 
 class ResetPasswordControllerImp extends ResetPasswordController {
-  GlobalKey<FormState> formstate = GlobalKey<FormState>();
+  GlobalKey<FormState> formstate_restpassword = GlobalKey<FormState>();
 
   late TextEditingController password;
   late TextEditingController repassword;
@@ -25,7 +25,7 @@ class ResetPasswordControllerImp extends ResetPasswordController {
   goToSuccessResetPassword() async {
     statusrequest=StatusRequest.loading;
     update();
-    if (formstate.currentState!.validate()) {
+    if (formstate_restpassword.currentState!.validate()) {
      if (password.text==repassword.text) {
        var response=await resetpassdata.postdata(email!, password.text);
        statusrequest=handlingData(response);

@@ -26,16 +26,17 @@ import 'package:suezproduction/view/screen/onlinepay.dart';
 import 'package:get/get.dart';
 import 'package:suezproduction/view/screen/items.dart';
 import 'package:suezproduction/view/screen/pol_pricing.dart';
+import 'package:suezproduction/view/splash_screen.dart';
 
 
 List<GetPage<dynamic>>? routes = [
 
-   GetPage(name: "/", page: () => const OnBoarding() , middlewares: [
+  /* GetPage(name: "/", page: () => const OnBoarding() , middlewares: [
   MyMiddleWare()
-  ]),
-    //GetPage(name: "/", page: () => PolpricingForm()),
+  ]),*/
+    GetPage(name: "/", page: () => SplashScreen()),
 
-  GetPage(name: AppRoute.login, page: () => const Login()),
+  GetPage(name: AppRoute.login, page: () =>  Login()),
   GetPage(name: AppRoute.signUp, page: () => const SignUp()),
   GetPage(name: AppRoute.forgetPassword, page: () => const ForgetPassword()),
   GetPage(name: AppRoute.verfiyCode, page: () => const VerfiyCode()),

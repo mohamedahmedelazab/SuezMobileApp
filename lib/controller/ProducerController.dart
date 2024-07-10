@@ -18,7 +18,7 @@ class ProducerControllerTmp extends ProducerController {
   MyServices myServices=Get.find();
 
   ProducersData Producersdata = ProducersData(Get.find());
-  GlobalKey<FormState> formstate_asd = GlobalKey<FormState>();
+
 
   late TextEditingController email;
   void onInit()

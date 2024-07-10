@@ -11,7 +11,7 @@ abstract class SignUpController extends GetxController {
 }
 
 class SignUpControllerImp extends SignUpController {
-  GlobalKey<FormState> formstate = GlobalKey<FormState>();
+  GlobalKey<FormState> formstate_signup = GlobalKey<FormState>();
   late TextEditingController username;
   late TextEditingController email;
   late TextEditingController phone;
@@ -22,7 +22,7 @@ class SignUpControllerImp extends SignUpController {
 
   @override
   signUp() async {
-    if (formstate.currentState!.validate()) {
+    if (formstate_signup.currentState!.validate()) {
       statusRequest = StatusRequest.loading;
        update();
       var response = await signupdata.postData(

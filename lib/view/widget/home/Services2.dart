@@ -1,23 +1,17 @@
-import 'package:flutter_touch_ripple/flutter_touch_ripple.dart';
 import 'package:suezproduction/controller/ServiceController.dart';
 import 'package:suezproduction/core/constant/color.dart';
-import 'package:suezproduction/data/datasource/static/static.dart';
-import 'package:suezproduction/view/screen/Branches.dart';
 import 'package:suezproduction/view/screen/CheckPolicy.dart';
-import 'package:suezproduction/view/screen/NewBranches.dart';
 import 'package:suezproduction/view/screen/contactus.dart';
 import 'package:suezproduction/view/screen/onlinepay.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
-
 
 class Services2 extends StatelessWidget {
   @override
   ServiceController mycontroller = Get.put(ServiceController());
   Widget build(BuildContext context) {
     // TODO: implement build
-    return  Container(
+    return Container(
       color: Colors.blue.shade50,
       padding: const EdgeInsets.all(10.0),
       child: Column(
@@ -26,108 +20,101 @@ class Services2 extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Expanded(
-                child: Column(
-                        children: [
+                  child: Column(
+                children: [
+                  Center(
+                    child: InkWell(
+                        onTap: () {
+                          if (mycontroller.isLogin() == false) {
+                            const snackBar = SnackBar(
+                              content: Text(
+                                "يرجى تسجيل الدخول أولا ",
+                              ),
+                            );
 
-                          Center(
-                            child: InkWell(
-                                onTap: () {
-                                  if (mycontroller.isLogin()==false) {
-
-                                    const snackBar = SnackBar(
-                                      content: Text("يرجى تسجيل الدخول أولا ",),
-                                    );
-
-                                    ScaffoldMessenger.of(context).showSnackBar(snackBar);
-
-
-                                  }
-                                  else {
-                                    Navigator.push(
-                                        context,
-                                        MaterialPageRoute(
-                                            builder: (context) =>
-                                                CheckPolicy()));
-                                    //  _launchURL('mailto: info@sci-egypt.com ?subject=from user mobile application&body=Please contact me');
-                                  }
-                                  },
-                                child: mycontroller.isLogin()==false ? ColorFiltered(
-                                  colorFilter: ColorFilter.mode(
-                                    Colors.grey,
-                                    BlendMode.saturation,
-                                  ),
-                                  child: Image.asset(
-                                    'assets/images/producers.png',
-                                    width:50,
-                                    height:50,
-                                  ),
-                                ) : Card(
-                                  shape: RoundedRectangleBorder(
-                                      borderRadius:
-                                          BorderRadius.circular(10.0)),
-                                  elevation: 5,
-                                  child: AnimatedBuilder(
-                                      animation: mycontroller.myanimation,
-                                      builder: (BuildContext context,
-                                          Widget? child) {
-                                        return Padding(
-                                          padding: const EdgeInsets.all(10.0),
-                                          child:  Image.asset(
-                                            'assets/images/producers.png',
-                                            width:
-                                                mycontroller.myanimation.value,
-                                            height:
-                                                mycontroller.myanimation.value,
-                                          ),
-                                        );
-                                      }),
-                                )),
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.all(10.0),
-                            child: Container(
-                              alignment: Alignment.bottomCenter,
-                              child: InkWell(
-                                  onTap: () {
-                                    if (mycontroller.isLogin()==false) {
-                                      const snackBar = SnackBar(
-                                        content: Text("يرجى تسجيل الدخول أولا "),
+                            ScaffoldMessenger.of(context)
+                                .showSnackBar(snackBar);
+                          } else {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => CheckPolicy()));
+                            //  _launchURL('mailto: info@sci-egypt.com ?subject=from user mobile application&body=Please contact me');
+                          }
+                        },
+                        child: mycontroller.isLogin() == false
+                            ? ColorFiltered(
+                                colorFilter: ColorFilter.mode(
+                                  Colors.grey,
+                                  BlendMode.saturation,
+                                ),
+                                child: Image.asset(
+                                  'assets/images/producers.png',
+                                  width: 50,
+                                  height: 50,
+                                ),
+                              )
+                            : Card(
+                                shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(10.0)),
+                                elevation: 5,
+                                child: AnimatedBuilder(
+                                    animation: mycontroller.myanimation,
+                                    builder:
+                                        (BuildContext context, Widget? child) {
+                                      return Padding(
+                                        padding: const EdgeInsets.all(10.0),
+                                        child: Image.asset(
+                                          'assets/images/producers.png',
+                                          width: mycontroller.myanimation.value,
+                                          height:
+                                              mycontroller.myanimation.value,
+                                        ),
                                       );
+                                    }),
+                              )),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(10.0),
+                    child: Container(
+                      alignment: Alignment.bottomCenter,
+                      child: InkWell(
+                          onTap: () {
+                            if (mycontroller.isLogin() == false) {
+                              const snackBar = SnackBar(
+                                content: Text("يرجى تسجيل الدخول أولا "),
+                              );
 
-                                      ScaffoldMessenger.of(context).showSnackBar(snackBar);
-
-                                    }
-                                    else {
-                                      Navigator.push(
-                                          context,
-                                          MaterialPageRoute(
-                                              builder: (context) =>
-                                                  CheckPolicy()));
-                                      //  _launchURL('mailto: info@sci-egypt.com ?subject=from user mobile application&body=Please contact me');
-                                    }
-                                  },
-                                  child: AnimatedBuilder(
-                                      animation: mycontroller.myanimation2,
-                                      builder: (BuildContext context,
-                                          Widget? child) {
-                                        return Text(
-                                          "Validate_document".tr,
-                                          textAlign: TextAlign.center,
-                                          style: TextStyle(
-                                             
-                                              fontSize: mycontroller
-                                                  .myanimation2.value,
-                                              fontWeight: FontWeight.bold,
-                                              color: mycontroller.isLogin()==false ?AppColor.grey: Colors.blue.shade900),
-                                        );
-                                      })),
-                            ),
-                          )
-                        ],
-                      )),
+                              ScaffoldMessenger.of(context)
+                                  .showSnackBar(snackBar);
+                            } else {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => CheckPolicy()));
+                              //  _launchURL('mailto: info@sci-egypt.com ?subject=from user mobile application&body=Please contact me');
+                            }
+                          },
+                          child: AnimatedBuilder(
+                              animation: mycontroller.myanimation2,
+                              builder: (BuildContext context, Widget? child) {
+                                return Text(
+                                  "Validate_document".tr,
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                      fontSize: mycontroller.myanimation2.value,
+                                      fontWeight: FontWeight.bold,
+                                      color: mycontroller.isLogin() == false
+                                          ? AppColor.grey
+                                          : Colors.blue.shade900),
+                                );
+                              })),
+                    ),
+                  )
+                ],
+              )),
               Expanded(
-                  child:
-                  Column(
+                  child: Column(
                 children: [
                   InkWell(
                       onTap: () {
@@ -169,7 +156,6 @@ class Services2 extends StatelessWidget {
                                   "branches".tr,
                                   textAlign: TextAlign.center,
                                   style: TextStyle(
-                                     
                                       fontSize: mycontroller.myanimation2.value,
                                       fontWeight: FontWeight.bold,
                                       color: Colors.blue.shade900),
@@ -178,85 +164,76 @@ class Services2 extends StatelessWidget {
                         ),
                       )))
                 ],
-    )  )
+              ))
             ],
           ),
           Row(
             children: [
               Expanded(
-
-
-                      child:Column(
+                  child: Column(
                 children: [
                   Center(
                     child: InkWell(
                         onTap: () {
-
-                          if (mycontroller.isLogin()==false) {
+                          if (mycontroller.isLogin() == false) {
                             const snackBar = SnackBar(
                               content: Text("يرجى تسجيل الدخول أولا "),
                             );
 
-                            ScaffoldMessenger.of(context).showSnackBar(snackBar);
-
-                          }
-                          else {
+                            ScaffoldMessenger.of(context)
+                                .showSnackBar(snackBar);
+                          } else {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) =>
-                                        OnLinepay()));
-                           }
-
-
-
-                         },
-                        child:  mycontroller.isLogin()==false ? ColorFiltered(
-                          colorFilter: ColorFilter.mode(
-                            Colors.grey,
-                            BlendMode.saturation,
-                          ),
-                          child: Image.asset(
-                            'assets/images/22.png',
-                            width:
-                            50,
-                            height:
-                            50,
-                          ),
-                        ) :Card(
-                          shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(10.0)),
-                          elevation: 5,
-                          child: AnimatedBuilder(
-                              animation: mycontroller.myanimation,
-                              builder: (BuildContext context, Widget? child) {
-                                return Padding(
-                                  padding: const EdgeInsets.all(10.0),
-                                  child: Image.asset(
-                                    'assets/images/22.png',
-                                    width: mycontroller.myanimation.value,
-                                    height: mycontroller.myanimation.value,
-                                  ),
-                                );
-                              }),
-                        )),
+                                    builder: (context) => OnLinepay()));
+                          }
+                        },
+                        child: mycontroller.isLogin() == false
+                            ? ColorFiltered(
+                                colorFilter: ColorFilter.mode(
+                                  Colors.grey,
+                                  BlendMode.saturation,
+                                ),
+                                child: Image.asset(
+                                  'assets/images/22.png',
+                                  width: 50,
+                                  height: 50,
+                                ),
+                              )
+                            : Card(
+                                shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(10.0)),
+                                elevation: 5,
+                                child: AnimatedBuilder(
+                                    animation: mycontroller.myanimation,
+                                    builder:
+                                        (BuildContext context, Widget? child) {
+                                      return Padding(
+                                        padding: const EdgeInsets.all(10.0),
+                                        child: Image.asset(
+                                          'assets/images/22.png',
+                                          width: mycontroller.myanimation.value,
+                                          height:
+                                              mycontroller.myanimation.value,
+                                        ),
+                                      );
+                                    }),
+                              )),
                   ),
                   InkWell(
                       onTap: () {
-                        if (mycontroller.isLogin()==false) {
+                        if (mycontroller.isLogin() == false) {
                           const snackBar = SnackBar(
                             content: Text("يرجى تسجيل الدخول أولا "),
                           );
 
                           ScaffoldMessenger.of(context).showSnackBar(snackBar);
-
-                        }
-                        else {
+                        } else {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) =>
-                                      OnLinepay()));
+                                  builder: (context) => OnLinepay()));
                         }
                         //  _launchURL('mailto: info@sci-egypt.com ?subject=from user mobile application&body=Please contact me');
                       },
@@ -271,10 +248,11 @@ class Services2 extends StatelessWidget {
                                   "E_Pay".tr,
                                   textAlign: TextAlign.center,
                                   style: TextStyle(
-                                     
                                       fontSize: mycontroller.myanimation2.value,
                                       fontWeight: FontWeight.bold,
-                                      color: mycontroller.isLogin()==false ?AppColor.grey:Colors.blue.shade900),
+                                      color: mycontroller.isLogin() == false
+                                          ? AppColor.grey
+                                          : Colors.blue.shade900),
                                 );
                               }),
                         ),
@@ -282,12 +260,9 @@ class Services2 extends StatelessWidget {
                 ],
               )),
               Expanded(
-
-
-                      child:Column(
+                  child: Column(
                 children: [
                   InkWell(
-
                       onTap: () {
                         Navigator.push(
                             context,
@@ -331,7 +306,7 @@ class Services2 extends StatelessWidget {
                                   "contact".tr,
                                   textAlign: TextAlign.center,
                                   style: TextStyle(
-                                     fontSize: mycontroller.myanimation2.value,
+                                      fontSize: mycontroller.myanimation2.value,
                                       fontWeight: FontWeight.bold,
                                       color: Colors.blue.shade900),
                                 );
@@ -348,8 +323,5 @@ class Services2 extends StatelessWidget {
   }
 }
 
-/*, Icon(
-                               menuList[position].icon,
-                               size: 50,
-                               color: AppColor.primaryColor,
-                             )*/
+
+

@@ -101,17 +101,18 @@ class _LoginPageState extends State<LoginPage> {
   }
 
   Future<void> _login() async {
-    final String userId = "example_user_id"; // عرّف معرف المستخدم هنا
-    final url = 'http://localhost:3000/auth-status';
+    final String userId = "112233"; // عرّف معرف المستخدم هنا
+print(_authenticated);
+    /*   final url = 'http://localhost:3000/auth-status';
     final response = await http.post(
       Uri.parse(url),
       headers: <String, String>{
         'Content-Type': 'application/json; charset=UTF-8',
       },
       body: '{"userId": "$userId", "authenticated": $_authenticated}',
-    );
+    );*/
 
-    if (response.statusCode == 200) {
+    if (1==1) {
       SharedPreferences prefs = await SharedPreferences.getInstance();
       prefs.setBool('isLoggedIn', true);
       setState(() {
@@ -126,7 +127,7 @@ class _LoginPageState extends State<LoginPage> {
       setState(() {
         _loginStatus = 'Failed to log in';
       });
-      print("Failed to log in. Status code: ${response.statusCode}");
+      //print("Failed to log in. Status code: ${response.statusCode}");
     }
   }
 

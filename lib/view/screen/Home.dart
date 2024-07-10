@@ -4,6 +4,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_touch_ripple/components/behavior.dart';
 import 'package:flutter_touch_ripple/flutter_touch_ripple.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:suezproduction/controller/ServiceController.dart';
 import 'package:suezproduction/controller/home_controller.dart';
 import 'package:suezproduction/core/class/handlingdataview.dart';
 import 'package:suezproduction/core/constant/color.dart';
@@ -13,6 +14,7 @@ import 'package:suezproduction/core/localization/changelocal.dart';
 
 import 'package:suezproduction/view/screen/AboutUs.dart';
 import 'package:suezproduction/view/screen/Profile.dart';
+import 'package:suezproduction/view/widget/auth/touch_id_button.dart';
 import 'package:suezproduction/view/widget/customeappbar.dart';
 
 import 'package:suezproduction/view/widget/home/NavDrawer.dart';
@@ -36,11 +38,13 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Get.put(HomecontrollerTmp());
+
 
     HomecontrollerTmp mycontroller = Get.put(HomecontrollerTmp());
-
-    return Scaffold(
+    ServiceController servicecontroller = Get.put(ServiceController());
+    return GetBuilder<HomecontrollerTmp>(builder: (controller) {
+// print(AppLink.imagesItems+"/"+controller.items[0]["items_image"]);
+      return Scaffold(
         drawer: NavDrawer(),
         appBar: appBottomView(
           gotoroot: AppRoute.home,
@@ -101,7 +105,7 @@ class HomePage extends StatelessWidget {
                 children: [
                   MaterialButton(
                     onPressed: () {
-                      mycontroller.name != null
+                      servicecontroller.isLogin()== true
                           ? Navigator.push(
                               context,
                               MaterialPageRoute(
@@ -121,7 +125,7 @@ class HomePage extends StatelessWidget {
               ),
               Row(
                 children: [
-                  mycontroller.name != null
+                  servicecontroller.isLogin()== true
                       ? MaterialButton(
                           onPressed: () {
                             mycontroller.sharedrefrense_clear();
@@ -155,13 +159,12 @@ class HomePage extends StatelessWidget {
           ),
         ),
         body: SingleChildScrollView(
-            child: GetBuilder<HomecontrollerTmp>(builder: (controller) {
-// print(AppLink.imagesItems+"/"+controller.items[0]["items_image"]);
-          return HandlingDataView(
+            child: HandlingDataView(
             statusRequest: controller.statusRequest,
             widget: SingleChildScrollView(
                 child: Column(children: <Widget>[
-                  mycontroller.name != null ?
+                   controller.StoredPassword.toString() != 'null' ?Row() : TouchIDButton(),
+                  servicecontroller.isLogin()==true ?
                   Container( child: Text("hello".tr+mycontroller.name.toString(),style: TextStyle(color: AppColor.primaryColor,fontSize: 14),)):
                   Row(),
               customappbar(
@@ -179,7 +182,7 @@ class HomePage extends StatelessWidget {
                     height: 5,
                   ),
 
-                  ProgramsBar2(
+                 ProgramsBar2(
                     title: "priceshow".tr,
                   ) // <- this your widget!
 
@@ -201,9 +204,9 @@ class HomePage extends StatelessWidget {
                 height: 10,
               )
             ]))
-          );
-        })));
-  }
+          )
+        ));});
 
+  }
 
 }

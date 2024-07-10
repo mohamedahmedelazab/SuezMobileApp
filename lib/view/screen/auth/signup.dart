@@ -39,7 +39,7 @@ class SignUp extends StatelessWidget {
             : Container(
           padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 30),
           child: Form(
-            key: controller.formstate,
+            key: controller.formstate_signup,
             child: ListView(children: [
               const SizedBox(height: 20),
               CustomTextTitleAuth(text: "10".tr),

@@ -105,7 +105,7 @@ class MapSample extends StatelessWidget {
           ))
         ],
       ),
-      floatingActionButton: FloatingActionButton.extended(
+   /*   floatingActionButton: FloatingActionButton.extended(
         onPressed: () async {
           final GoogleMapController controller = await _controller.future;
           await controller.animateCamera(
@@ -113,7 +113,7 @@ class MapSample extends StatelessWidget {
         },
         label: const Text('Zoom'),
         icon: const Icon(Icons.directions_boat),
-      ),
+      )*/
     );
   }
 }

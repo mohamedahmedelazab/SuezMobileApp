@@ -2,6 +2,7 @@ import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:suezproduction/core/class/statusrequest.dart';
 import 'package:suezproduction/core/constant/routes.dart';
 import 'package:suezproduction/core/functions/handingdatacontroller.dart';
+import 'package:suezproduction/core/services/secure_storage.dart';
 import 'package:suezproduction/core/services/services.dart';
 import 'package:suezproduction/data/datasource/remote/home_data.dart';
 import 'package:get/get.dart';
@@ -26,7 +27,8 @@ bool? islog;
   List items = [];
   List items_discount = [];
 
-
+     String? StoredEmail;
+     String? StoredPassword;
   sharedrefrense_clear()
   {
     myServices.sharedPreferences.clear();
@@ -40,7 +42,8 @@ bool? islog;
     name=myServices.sharedPreferences.getString("username");
     lang = myServices.sharedPreferences.getString("lang");
     islog = myServices.sharedPreferences.getBool("islog");
-update();
+ update();
+
 
   }
   void requestPermission() async{
@@ -64,10 +67,17 @@ update();
     requestPermission();
     initialData();
     getData();
+    getStoredData();
     super.onInit();
+    update();
   }
 
+getStoredData() async{
+  SecureStorage storage = SecureStorage();
+  StoredEmail = await storage.getEmail();
+  StoredPassword = await storage.getPassword();
 
+}
   @override
   goToSignIn() {
     Get.offNamed(AppRoute.login);
@@ -75,7 +85,7 @@ update();
   getData() async {
     statusRequest = StatusRequest.loading;
     var response = await homeData.getData();
-    print("=============================== Controller $response ");
+
     statusRequest = handlingData(response);
     if (StatusRequest.success == statusRequest) {
       if (response['status'] == "success") {

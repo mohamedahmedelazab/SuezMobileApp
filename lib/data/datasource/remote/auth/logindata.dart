@@ -12,7 +12,7 @@ class SigninData {
       "password":password
 
     });
-    print(response);
+
     return response.fold((l) => l, (r) => r);
   }
 }
