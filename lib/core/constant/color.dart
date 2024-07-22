@@ -10,7 +10,7 @@ class AppColor {
 
 
   static const Color thirdColor = Color(0xff94CFF8);
-  
+  static final Color scaffoldBackgroundColor = Color.fromRGBO(245, 247, 249, 1);
   
     static const kBackgroundColor = Color(0xffF6F6F6);
   static const kAccentColor = Color(0xff03A5E1);

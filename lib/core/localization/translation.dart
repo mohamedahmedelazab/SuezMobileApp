@@ -6,7 +6,7 @@ class MyTranslation extends Translations {
         "ar": {
           "E_Pay":"سداد الوثيقة اون لاين",
           "Validate_document":"التأكد من صحة الوثيقة",
-
+"claimtitle":"متابعة  تعويض سياراتك",
         "contact":" إتصــل بنــا",
 "polNo":"رقم الوثيقة",
           "1": "اختر اللغة",
@@ -320,9 +320,11 @@ class MyTranslation extends Translations {
           "active":"لديك حساب لكنه غير مفعل ",
           "toactive":"للتفعيل إضغط هنا ",
           "msglogin":"لهذه الخدمة يرجى تسجيل الدخول أولا",
-          "priceshow":"احصل علي التأمين اليوم"
+          "priceshow":"احصل علي التأمين اليوم",
+          "chassNo":"رقم الشاسية"
         },
         "en": {
+  "claimtitle":"your car compensation",
   "msglogin":"To use this service , please login in",
           "checktitle":"You can verify the authenticity of your document by typing the document number and barcode number",
           "submit":"submit",
@@ -641,7 +643,8 @@ class MyTranslation extends Translations {
           "Clients":"Clients",
           "Branches":"Branches",
           "profile":"Profile",
-          "hello":"Hello  :-"
+          "hello":"Hello  :-",
+          "chassNo":"Chassis No "
         }
       };
 }

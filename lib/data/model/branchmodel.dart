@@ -10,3 +10,6 @@ class BranchModel {
 
   BranchModel({required this.header,required this.BranchName,required  this.address, required this.tel,required this.email, this.isExpanded = false,});
 }
+
+
+

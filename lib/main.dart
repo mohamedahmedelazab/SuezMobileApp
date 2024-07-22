@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:suezproduction/bindings/intialbindings.dart';
 import 'package:suezproduction/core/localization/translation.dart';
 import 'package:suezproduction/core/services/services.dart';
@@ -36,8 +37,10 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       builder: (context, child) {
-        return MediaQuery(
-          child:     GetMaterialApp(
+        return ScreenUtilInit(
+          designSize: Size(375, 812),
+          builder: (BuildContext context, Widget? child) {
+            return   GetMaterialApp(
             translations: MyTranslation(),
             debugShowCheckedModeBanner: false,
             title: 'Suez Canal Insurance',
@@ -46,8 +49,8 @@ class MyApp extends StatelessWidget {
             initialBinding:InitialBindings() ,
             // routes: routes,
             getPages: routes,
-          ),
-          data: MediaQuery.of(context).copyWith(textScaleFactor: 1.0),
+            );}
+
         );
       },
     );

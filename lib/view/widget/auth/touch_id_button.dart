@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:suezproduction/controller/TouchIDController.dart';
 import 'package:suezproduction/controller/auth/login_controller.dart';
 
 class TouchIDButton extends StatelessWidget {
 
 
-  LoginControllerImp controller = Get.put(LoginControllerImp());
+  TouchIDController controller = Get.put(TouchIDController());
 
   @override
   Widget build(BuildContext context) {
@@ -51,7 +52,7 @@ class TouchIDButton extends StatelessWidget {
 class LoginTouchIDButton extends StatelessWidget {
 
 
-  LoginControllerImp controller = Get.put(LoginControllerImp());
+  TouchIDController controller = Get.put(TouchIDController());
 
   @override
   Widget build(BuildContext context) {

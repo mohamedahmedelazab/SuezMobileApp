@@ -23,6 +23,7 @@ static const String CheckPolicyData = "$server2/checkpolicy";
 static const String producers = "$server2/producers";
  static const String Brands = "$server2/getcardata";
  static const String priceme = "$server2/priceme";
+ static const String getpolicyclaim = "$server2/getpolicyclaim";
 
 
 }

@@ -19,6 +19,8 @@ import 'package:suezproduction/view/screen/auth/forgetpassword/success_resetpass
 import 'package:suezproduction/view/screen/auth/success_signup.dart';
 import 'package:suezproduction/view/screen/auth/forgetpassword/verifycode.dart';
 import 'package:suezproduction/view/screen/auth/verifycodesignup.dart';
+import 'package:suezproduction/view/screen/claimpage.dart';
+import 'package:suezproduction/view/screen/claimpage_result.dart';
 import 'package:suezproduction/view/screen/contactus.dart';
 
 import 'package:suezproduction/view/screen/onboarding.dart';
@@ -55,6 +57,8 @@ List<GetPage<dynamic>>? routes = [
   GetPage(name: AppRoute.ReActivation, page: () =>  ReActivation()),
   GetPage(name: AppRoute.MapSample, page: () =>  MapSample()),
   GetPage(name: AppRoute.showprice, page: () =>  showprice()),
+  GetPage(name: AppRoute.ClaimpageResult, page: () =>  ClaimpageResult()),
+  GetPage(name: AppRoute.claimpage, page: () =>  claimpage()),
 
 ];
  

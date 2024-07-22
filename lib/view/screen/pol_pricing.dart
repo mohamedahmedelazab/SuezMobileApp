@@ -28,15 +28,16 @@ class PolpricingForm extends StatelessWidget {
                 return Row(
                   children: <Widget>[
                     TextButton(
-                      onPressed: details.onStepContinue,
-                      child: const Text('التالي'),
-                      style: TextButton.styleFrom(primary: Colors.lightGreen),
-                    ),
-                    TextButton(
                       onPressed: details.onStepCancel,
                       child: const Text('رجوع'),
                       style: TextButton.styleFrom(primary: Colors.orange),
                     ),
+                    TextButton(
+                      onPressed: details.onStepContinue,
+                      child: const Text('التالي'),
+                      style: TextButton.styleFrom(primary: Colors.lightGreen),
+                    ),
+
                   ],
                 );
               },

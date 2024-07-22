@@ -19,4 +19,6 @@ class AppRoute {
   static const String ReActivation = "/ReActivation";
   static const String MapSample = "/MapSample";
   static const String showprice = "/showprice";
+  static const String ClaimpageResult = "/ClaimpageResult";
+  static const String claimpage = "/claimpage";
 }
