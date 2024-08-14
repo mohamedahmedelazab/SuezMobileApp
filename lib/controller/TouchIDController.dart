@@ -89,15 +89,15 @@ class TouchIDController extends GetxController
 
     if (statusRequest == StatusRequest.success) {
       if (response['status'] == "success") {
-        myServices.sharedPreferences.setString("id", response['data']['UID']);
+        myServices.sharedPreferences.setString("id", response['data']['users_id']);
         myServices.sharedPreferences
-            .setString("username", response['data']['username']);
+            .setString("username", response['data']['user_name']);
         myServices.sharedPreferences
-            .setString("password", response['data']['password']);
+            .setString("password", response['data']['users_password']);
         myServices.sharedPreferences
-            .setString("phone", response['data']['MobileNo']);
+            .setString("phone", response['data']['users_phone']);
         myServices.sharedPreferences
-            .setString("email", response['data']['Email']);
+            .setString("email", response['data']['users_email']);
         myServices.sharedPreferences.setBool("islog", true);
         myServices.sharedPreferences.setString("step", "3");
         Get.offNamed(AppRoute.home, arguments: {"email": email});

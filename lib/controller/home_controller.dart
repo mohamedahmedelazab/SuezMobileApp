@@ -10,7 +10,7 @@ import 'package:get/get.dart';
 abstract class Homecontroller extends GetxController{
   initialData();
   getData();
-gotoitems(List categories,int selectedcat, String categoryid);
+gotoitems(List categories,int selectedcat, String categoryid,String categoryname,String email);
 }
 
 class HomecontrollerTmp extends Homecontroller
@@ -100,12 +100,14 @@ getStoredData() async{
   }
 
   @override
-  gotoitems(categories, selectedcat, categoryid) {
+  gotoitems(categories, selectedcat, categoryid,categoryname,email) {
     // TODO: implement gotoitems
   Get.toNamed(AppRoute.items, arguments: {
 "categories":categories,
     "selectedcat":selectedcat,
-    "catid": categoryid
+    "catid": categoryid,
+    "categoryname":categoryname,
+    "email":email
   });
   }
 }

@@ -8,9 +8,6 @@ import 'package:suezproduction/data/model/carBrand.dart';
 
 class PolpricingForm extends StatelessWidget {
   final StepperController _controller = Get.put(StepperController());
-
-
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(

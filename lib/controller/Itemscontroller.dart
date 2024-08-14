@@ -1,10 +1,13 @@
 
 import 'package:flutter/widgets.dart';
+import 'package:suezproduction/controller/ServiceController.dart';
 import 'package:suezproduction/core/class/statusrequest.dart';
 import 'package:suezproduction/core/constant/routes.dart';
 import 'package:suezproduction/core/functions/handingdatacontroller.dart';
+import 'package:suezproduction/core/services/services.dart';
 import 'package:suezproduction/data/datasource/remote/item_data.dart';
 import 'package:get/get.dart';
+import 'package:suezproduction/data/datasource/remote/sendEmailToEdara.dart';
 
 abstract class Itemscontroller extends GetxController {
 initialData();
@@ -14,14 +17,21 @@ productDetail(String productId);
 
 class ItemcontrollerTmp extends Itemscontroller
 {
-
+  final GlobalKey<FormState> formKeyitem = GlobalKey<FormState>();
+  final TextEditingController nameController = TextEditingController();
+  final TextEditingController subjectController = TextEditingController();
   ScrollController scrollController = ScrollController();
   List categories = [];
   List data = [];
   ItemData itemData=ItemData(Get.find());
+  SendEmailToedara sendemailtoedara=SendEmailToedara(Get.find());
   late StatusRequest statusRequest;
   int? selectedCat;
   String? catid;
+  String? categoryname;
+  String? email;
+  MyServices myServices = Get.find();
+
   @override
   void onInit() {
     // TODO: implement onInit
@@ -44,6 +54,8 @@ class ItemcontrollerTmp extends Itemscontroller
     categories=Get.arguments["categories"];
     selectedCat=Get.arguments["selectedcat"];
     catid=Get.arguments["catid"];
+    categoryname=Get.arguments["categoryname"];
+    email=Get.arguments["email"];
     update();
 
     getitems(catid!);
@@ -82,6 +94,20 @@ class ItemcontrollerTmp extends Itemscontroller
 
 
   }
+
+  void sendEmail() async{
+    final String name = nameController.text;
+    final String subject = subjectController.text;
+
+    var response = await sendemailtoedara.postData(name,subject, myServices.sharedPreferences.getString("email")!,email!);
+
+    statusRequest = handlingData(response);
+
+    if (statusRequest == StatusRequest.success) {
+
+    }
+    }
+
 
   productDetail(productId){
     // TODO: implement gotoitems

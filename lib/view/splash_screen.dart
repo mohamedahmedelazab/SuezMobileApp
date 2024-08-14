@@ -61,6 +61,9 @@ class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderSt
               "suez".tr,
               style: TextStyle(fontSize: 24, color: Colors.blue.shade900),
             ),
+            Center(child: Text("تأسست في اكتوبر ١٩٧٩ و مسجلة تحت رقم (٥) بالهيئة\n العامة للرقابة المالية و خاضعة لرقابتها و أشرافها",
+                style: TextStyle(fontSize: 14, color: Colors.blue.shade900)),)
+
           ],
         ),
       ),

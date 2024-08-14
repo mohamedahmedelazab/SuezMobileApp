@@ -33,15 +33,18 @@ class Login extends StatelessWidget {
                 .headline1!
                 .copyWith(color: AppColor.grey)),
       ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
-     floatingActionButton: CustomButtomWithIcon(
-        text: "39".tr,
-        onPressed: () {
-          controller.gotohome();
-        },
-        color: AppColor.kGreenColor,
-        myicon: Icon(Icons.account_circle),
-      ),
+          floatingActionButton: FloatingActionButton.extended(
+            onPressed: () {
+              // Action to be taken when the button is pressed
+              controller.gotohome();
+
+            },
+            icon: Icon(Icons.account_circle),
+            label: Text( "39".tr,style: TextStyle(color: Colors.white,fontSize:12)),
+            backgroundColor:  AppColor.kGreenColor, // Background color of the button
+          )
+
+    ,
       body: WillPopScope(
           onWillPop:ExitApp,
           child:  HandlingDataRequest(
@@ -103,7 +106,10 @@ class Login extends StatelessWidget {
                                 },
                                 color: AppColor.primaryColor),
                         const SizedBox(height: 10),
-                            controller.StoredEmail !=null &&    controller.StoredPassword !=null?  LoginTouchIDButton():Row()    ,
+
+                controller.showfinger()==true? LoginTouchIDButton():Row(),
+
+
 
 
                         const SizedBox(height: 40),

@@ -1,4 +1,6 @@
+import 'package:flutter_html/flutter_html.dart';
 import 'package:suezproduction/controller/Itemscontroller.dart';
+import 'package:suezproduction/controller/ServiceController.dart';
 import 'package:suezproduction/core/class/handlingdataview.dart';
 import 'package:suezproduction/core/constant/color.dart';
 import 'package:suezproduction/core/constant/routes.dart';
@@ -14,22 +16,46 @@ import 'package:get/get.dart';
 
 
 class Items extends StatelessWidget {
-  const Items({Key? key}) : super(key: key);
 
+  ItemcontrollerTmp controller = Get.put(ItemcontrollerTmp());
+  ServiceController servicecontroller = Get.put(ServiceController());
   @override
   Widget build(BuildContext context) {
     final orientation = MediaQuery.of(context).orientation;
-    ItemcontrollerTmp controller = Get.put(ItemcontrollerTmp());
+
     List categories = [];
 
     return Scaffold(
-      drawer: NavDrawer(),
+        floatingActionButton: FloatingActionButton.extended(
+        onPressed: () {
+      // Action to be taken when the button is pressed
+          if (  servicecontroller.isLogin()== true) {
+            _showPopup(context);
+          }
+          else {
+
+            ScaffoldMessenger.of(context).showSnackBar(
+              SnackBar(
+                content: Text('يجب عليك التسجيل أولا'),
+                backgroundColor: Colors.red,
+              ),
+            );
+          }
+
+
+        },
+    icon: Icon(Icons.email),
+    label: Text(" ارسل رسالة",style: TextStyle(color: Colors.white,fontSize:12)),
+    backgroundColor: Colors.blue, // Background color of the button
+        ),
+    drawer: NavDrawer(),
       appBar: appBottomView(
         gotoroot: AppRoute.items,
         myargument: {
           "categories": controller.categories,
           "selectedcat": controller.selectedCat,
           "catid": controller.catid,
+
 
         },
       ),  resizeToAvoidBottomInset: true, // set it to false
@@ -53,6 +79,78 @@ class Items extends StatelessWidget {
                           return   CustomListItem(item_model: itemsmodel.fromJson(controller.data[index]),);
                         }) ))
           ]),
+    );
+  }
+
+  void _showPopup(BuildContext context) {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: Text('إرسال رسالة لإدارة'+ controller.categoryname.toString() ),
+          content: Form(
+            key: controller.formKeyitem,
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: <Widget>[
+                Text(controller.email!,style: TextStyle(color: Colors.blue,fontSize: 14),),
+                TextFormField(
+                  controller: controller.nameController,
+                  decoration: InputDecoration(
+                    labelText: 'الإسم',
+                  ),
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return 'من فضلك أدخل الإسم';
+                    }
+                    return null;
+                  },
+                ),
+                TextFormField(
+                  controller: controller.subjectController,
+                  decoration: InputDecoration(
+                    labelText: 'موضوع الرسالة',
+                  ),
+                  maxLines: 5, // Allows the text field to expand as a textarea
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return 'من فضلك أدخل الرسالة';
+                    }
+                    return null;
+                  },
+                ),
+              ],
+            ),
+          ),
+          actions: <Widget>[
+            TextButton(
+              child: Text('إلغاء'),
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+            ),
+            ElevatedButton(
+              onPressed: () {
+                if (controller.formKeyitem.currentState!.validate()) {
+                  controller.sendEmail();
+                  Navigator.of(context).pop();
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(
+                      content: Text('تم إرسال الرسالة بنجاح'),
+                      backgroundColor: Colors.green,
+                    ),
+                  );
+
+                }
+              },
+              style: ElevatedButton.styleFrom(
+                primary: Colors.blue, // Set the button color to blue
+              ),
+              child: Text('إرسل',style: TextStyle(color: Colors.white),),
+            ),
+          ],
+        );
+      },
     );
   }
 }

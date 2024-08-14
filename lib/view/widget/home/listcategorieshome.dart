@@ -44,7 +44,7 @@ class DoctorBox extends   GetView<HomecontrollerTmp>{
   Widget build(BuildContext context) {
     return InkWell(
       onTap: (){
-        controller.gotoitems(controller.categories,index!, doctor["categories_id"]);
+        controller.gotoitems(controller.categories,index!, doctor["categories_id"],doctor["categories_name"],doctor["email"]);
 
       },
       child: Container(

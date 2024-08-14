@@ -15,7 +15,7 @@ abstract class LoginController extends GetxController {
 }
 
 class LoginControllerImp extends LoginController {
-    GlobalKey<FormState> formstate_login = GlobalKey<FormState>();
+  final  GlobalKey<FormState> formstate_login = GlobalKey<FormState>();
 
   late TextEditingController email;
   late TextEditingController password;
@@ -24,18 +24,44 @@ class LoginControllerImp extends LoginController {
   bool isshowpassword = true;
   StatusRequest statusRequest = StatusRequest.none;
   MyServices myServices = Get.find();
-  String StoredEmail="";
-  String StoredPassword="";
+    String? StoredEmail;
+    String? StoredPassword;
   showPassword() {
     isshowpassword = isshowpassword == true ? false : true;
     update();
   }
-  getStoredData() async{
-    SecureStorage storage = SecureStorage();
-    StoredEmail = (await storage.getEmail())!;
-    StoredPassword = (await storage.getPassword())!;
 
+  showfinger() {
+   if (this.StoredEmail ==null  && this.StoredPassword ==null )
+     return false ;
+
+   else
+     return true;
+   update();
   }
+    Future<void> getStoredData() async {
+      try {
+        SecureStorage storage = SecureStorage();
+
+        // Retrieve email and password
+        StoredEmail = await storage.getEmail();
+        StoredPassword = await storage.getPassword();
+
+
+        // Handle cases where data might be null
+        if (StoredEmail == null || StoredPassword == null) {
+          // Handle the case where email or password is not available
+          // For example, you can log a message or set default values
+          print('Stored email or password is not available.');
+          // Optionally, set default values or notify the user
+        }
+
+      } catch (e) {
+        // Handle any errors that occur during secure storage access
+        print('Error retrieving stored data: $e');
+      }
+    }
+
   @override
   login() async {
     var formdata = formstate_login.currentState;
@@ -52,22 +78,22 @@ class LoginControllerImp extends LoginController {
 
 
         if (response['status'] == "success") {
-          myServices.sharedPreferences.setString("id", response['data']['UID']);
+          myServices.sharedPreferences.setString("id", response['data']['users_id']);
           myServices.sharedPreferences
-              .setString("username", response['data']['username']);
+              .setString("username", response['data']['user_name']);
           myServices.sharedPreferences
-              .setString("password", response['data']['password']);
+              .setString("password", response['data']['users_password']);
           myServices.sharedPreferences
-              .setString("phone", response['data']['MobileNo']);
+              .setString("phone", response['data']['users_phone']);
           myServices.sharedPreferences
-              .setString("email", response['data']['Email']);
+              .setString("email", response['data']['users_email']);
           myServices.sharedPreferences.setBool("islog", true);
           myServices.sharedPreferences.setString("step", "3");
           Get.offNamed(AppRoute.home, arguments: {"email": email.text});
           statusRequest = StatusRequest.success;
           update();
         } else {
-          Get.defaultDialog(title: "Warring", middleText: response['status']);
+          Get.defaultDialog(title: "رسالة خطأ", middleText: "البريد الألكترونى أو كلمة المرور غير صحيحة");
           statusRequest = StatusRequest.failure;
           update();
           if (response['status'] == "المستخدم صحيح ولكنه غير مفعل") {
@@ -92,6 +118,7 @@ class LoginControllerImp extends LoginController {
     email = TextEditingController();
     password = TextEditingController();
     getStoredData();
+    showfinger();
     super.onInit();
   }
 

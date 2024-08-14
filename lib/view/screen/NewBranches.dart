@@ -60,7 +60,7 @@ List<Step> getSteps() {
 
     Step("BranchName1".tr, "address1".tr,"01005385718", "tel1".tr,"email1".tr,"30.051333361189382","31.208407896642054","1","1"),
 
-    Step("BranchName2".tr, "address2".tr,"", "tel2".tr,"email2".tr,"30.017010","31.135000","1","1",[
+    Step("BranchName2".tr, "address2".tr,"", "tel2".tr,"email2".tr,"30.04793119575894","31.207289957671193","1","1",[
       Step("edary1name".tr, '',"0237492732","edary1tel".tr,"edary1fax".tr,"","","0","1"),
       Step("edary2name".tr, '',"0237491359","edary2tel".tr,"edary2fax".tr,"","","0","1"),
       Step("edary3name".tr, '',"0237491396","edary3tel".tr,"edary3fax".tr,"","","0","1"),

@@ -18,7 +18,7 @@ class SignupData {
       "username":username,
       "password":password,
       "email":email,
-      "mobile":phone
+      "phone":phone
         });
 
 

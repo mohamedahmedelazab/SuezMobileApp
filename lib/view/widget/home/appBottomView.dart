@@ -9,6 +9,8 @@ class appBottomView extends StatelessWidget implements PreferredSizeWidget {
   @override
   final String gotoroot;
   final Map<String, dynamic> myargument;
+
+
   const appBottomView({Key? key, required this.gotoroot, required this.myargument}) : super(key: key);
   @override
   // TODO: implement preferredSize
@@ -119,6 +121,7 @@ class appBottomView extends StatelessWidget implements PreferredSizeWidget {
 
 
   Widget getAppBottomView(BuildContext context) {
+    final double screenWidth = MediaQuery.of(context).size.width;
     return Container(
 
         padding: EdgeInsets.only(left: 30, bottom: 20),
@@ -134,28 +137,20 @@ class appBottomView extends StatelessWidget implements PreferredSizeWidget {
                   children: [
                     Text(
                       "suez".tr,
-                      style: TextStyle(
-                          fontSize: 22,
-                          fontWeight: FontWeight.w700,
-                          color: Colors.white),
-                    ),
+                      style:   TextStyle(color: Colors.white, fontSize: screenWidth * 0.05),
+                         ),
+
 
                   ],
 
                 ),
                 Text(
                   'sci@sci-egypt.com',
-                  style: TextStyle(
-                    fontSize: 13,
-                    color: Colors.white,
-                  ),
+                  style:  TextStyle(color: Colors.white, fontSize: screenWidth * 0.03),
                 ),
                 Text(
                   '16569',
-                  style: TextStyle(
-                    fontSize: 13,
-                    color: Colors.white,
-                  ),
+                  style:  TextStyle(color: Colors.white, fontSize: screenWidth * 0.03),
                 ),
               ],
             ),

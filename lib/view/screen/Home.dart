@@ -11,6 +11,7 @@ import 'package:suezproduction/core/constant/color.dart';
 
 import 'package:suezproduction/core/constant/routes.dart';
 import 'package:suezproduction/core/localization/changelocal.dart';
+import 'package:suezproduction/core/services/services.dart';
 
 import 'package:suezproduction/view/screen/AboutUs.dart';
 import 'package:suezproduction/view/screen/Profile.dart';
@@ -39,7 +40,7 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
-
+    MyServices myServices=Get.find();
     HomecontrollerTmp mycontroller = Get.put(HomecontrollerTmp());
     ServiceController servicecontroller = Get.put(ServiceController());
     return GetBuilder<HomecontrollerTmp>(builder: (controller) {
@@ -163,7 +164,10 @@ class HomePage extends StatelessWidget {
             statusRequest: controller.statusRequest,
             widget: SingleChildScrollView(
                 child: Column(children: <Widget>[
-                   controller.StoredPassword.toString() != 'null' ?Row() : TouchIDButton(),
+                  if(controller.StoredPassword == null && myServices.sharedPreferences.getBool("islog")==true )
+                    TouchIDButton()
+                  else
+                      Row() ,
                   servicecontroller.isLogin()==true ?
                   Container( child: Text("hello".tr+mycontroller.name.toString(),style: TextStyle(color: AppColor.primaryColor,fontSize: 14),)):
                   Row(),
@@ -182,13 +186,13 @@ class HomePage extends StatelessWidget {
                     height: 5,
                   ),
 
-                 ProgramsBar2(
+          /*       ProgramsBar2(
                     title: "priceshow".tr,
                   ) // <- this your widget!
 
 
                   ,
-                  EventsAndExperiences(),
+                  EventsAndExperiences(),*/
                     ProgramsBar(
                         title: "cat".tr,
                       ) // <- this your widget!
