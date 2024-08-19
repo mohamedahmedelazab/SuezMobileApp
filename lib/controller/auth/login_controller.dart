@@ -31,14 +31,28 @@ class LoginControllerImp extends LoginController {
     update();
   }
 
-  showfinger() {
-   if (this.StoredEmail ==null  && this.StoredPassword ==null )
-     return false ;
+  Future<bool> showfinger() async {
+    SecureStorage storage = SecureStorage();
 
-   else
-     return true;
-   update();
-  }
+    // Retrieve email and password
+    StoredEmail = await storage.getEmail();
+    StoredPassword = await storage.getPassword();
+
+print(StoredEmail);print(StoredPassword);
+    // Handle cases where data might be null
+    if (StoredEmail == null || StoredPassword == null) {
+      return false;
+    }
+    else
+      {
+        return true;
+      }
+    update();
+    }
+
+
+
+
     Future<void> getStoredData() async {
       try {
         SecureStorage storage = SecureStorage();
@@ -118,7 +132,7 @@ class LoginControllerImp extends LoginController {
     email = TextEditingController();
     password = TextEditingController();
     getStoredData();
-    showfinger();
+    update();
     super.onInit();
   }
 

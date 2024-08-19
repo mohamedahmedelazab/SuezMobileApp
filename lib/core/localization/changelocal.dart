@@ -57,7 +57,8 @@ class LocaleController extends GetxController {
     }
     else
     {
-      language=Locale(Get.deviceLocale!.languageCode);
+      language=const Locale("ar");
+      appTheme=themeArabic;
     }
     super.onInit();
   }

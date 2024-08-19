@@ -55,6 +55,7 @@ class appBottomView extends StatelessWidget implements PreferredSizeWidget {
         Container(
           padding: EdgeInsets.only(left: 30,top: 3),
           child: InkWell(child: Icon(Icons.language,color: Colors.white,),onTap: (){
+            final double screenWidth = MediaQuery.of(context).size.width;
 
             showModalBottomSheet<void>(
               context: context,
@@ -78,7 +79,7 @@ class appBottomView extends StatelessWidget implements PreferredSizeWidget {
                               ),
                             ),
                             title: Text("English (إنجليزي)",  style: TextStyle(
-                              fontSize: 14,
+                              fontSize: screenWidth * 0.05,
 
                             )),
                             onTap: () =>
@@ -95,7 +96,7 @@ class appBottomView extends StatelessWidget implements PreferredSizeWidget {
                               ),
                             ),
                             title: Text("Arabic  (عربي)",  style: TextStyle(
-                              fontSize: 14,
+                             fontSize: screenWidth * 0.05,
 
                             )),
                             onTap: () =>

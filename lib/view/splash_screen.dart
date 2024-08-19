@@ -42,6 +42,8 @@ class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderSt
 
   @override
   Widget build(BuildContext context) {
+    final double screenWidth = MediaQuery.of(context).size.width;
+
     return Scaffold(
       body: Center(
         child: Column(
@@ -59,10 +61,10 @@ class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderSt
             ),
             Text(
               "suez".tr,
-              style: TextStyle(fontSize: 24, color: Colors.blue.shade900),
+              style: TextStyle(fontSize: screenWidth * 0.05, color: Colors.blue.shade900),
             ),
             Center(child: Text("تأسست في اكتوبر ١٩٧٩ و مسجلة تحت رقم (٥) بالهيئة\n العامة للرقابة المالية و خاضعة لرقابتها و أشرافها",
-                style: TextStyle(fontSize: 14, color: Colors.blue.shade900)),)
+                style: TextStyle(fontSize: screenWidth * 0.04, color: Colors.blue.shade900,)),)
 
           ],
         ),

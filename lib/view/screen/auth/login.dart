@@ -21,6 +21,10 @@ class Login extends StatelessWidget {
 
 
     LoginControllerImp logincontroller = Get.put(LoginControllerImp());
+
+    final double screenWidth = MediaQuery.of(context).size.width;
+
+
     return GetBuilder<LoginControllerImp>(
       builder: (controller) => Scaffold(
       appBar: AppBar(
@@ -40,7 +44,7 @@ class Login extends StatelessWidget {
 
             },
             icon: Icon(Icons.account_circle),
-            label: Text( "39".tr,style: TextStyle(color: Colors.white,fontSize:12)),
+            label: Text( "39".tr,style: TextStyle(color: Colors.white, fontSize: screenWidth * 0.03)),
             backgroundColor:  AppColor.kGreenColor, // Background color of the button
           )
 
@@ -107,12 +111,12 @@ class Login extends StatelessWidget {
                                 color: AppColor.primaryColor),
                         const SizedBox(height: 10),
 
-                controller.showfinger()==true? LoginTouchIDButton():Row(),
+                controller.StoredPassword !=null? LoginTouchIDButton():Row(),
 
 
 
 
-                        const SizedBox(height: 40),
+                        const SizedBox(height: 30),
                         CustomTextSignUpOrSignIn(
                           textone: "16".tr,
                           texttwo: "17".tr,
@@ -120,7 +124,8 @@ class Login extends StatelessWidget {
                             controller.goToSignUp();
                           },
                         ),
-                           const SizedBox(height: 40),
+
+
                 /*        CustomTextSignUpOrSignIn(
                           textone: "",
                           texttwo: "رجوع",

@@ -632,7 +632,7 @@ class MyTranslation extends Translations {
           "Checkcode2":"Please Enter The Digit Code Sent To",
           "Checkcode3":"Verification Code",
 
-"wait":'Awaiting result...',
+"wait":'Please wait  ...',
 
           "back":"back",
 "menu":"Menu",

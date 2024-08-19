@@ -44,7 +44,7 @@ class MyApp extends StatelessWidget {
             translations: MyTranslation(),
             debugShowCheckedModeBanner: false,
             title: 'Suez Canal Insurance',
-            locale: controller.language,
+            locale: Locale("ar"),
             theme: controller.appTheme,
             initialBinding:InitialBindings() ,
             // routes: routes,

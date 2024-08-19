@@ -59,6 +59,7 @@ class CheckPolicyControllerImp extends CheckPolicyController {
           PrintedSerials_res=policyInfo_model.printedSerials!;
           Activecom_res=policyInfo_model.activecom!;
           CurrName_res=policyInfo_model.CurrName!;
+       
           // Get.toNamed(AppRoute.CheckPolicy_Result, arguments: {
           //   "data":data
         //   });
@@ -68,6 +69,7 @@ class CheckPolicyControllerImp extends CheckPolicyController {
           status="faild";
           Get.defaultDialog(
               title: "Warring", middleText: "هذه الوثيقة غير موجودة");
+
         } else {
           Get.defaultDialog(
               title: "Warring", middleText: "failure");
@@ -91,7 +93,9 @@ class CheckPolicyControllerImp extends CheckPolicyController {
   void onInit() {
     policyNo = TextEditingController();
     stickerNo = TextEditingController();
+
     status="";
+    update();
     super.onInit();
   }
 
