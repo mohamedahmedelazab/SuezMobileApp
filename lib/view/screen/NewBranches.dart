@@ -5,6 +5,7 @@ import 'package:pinch_zoom/pinch_zoom.dart';
 import 'package:suezproduction/controller/Branches_controller.dart';
 import 'package:suezproduction/core/constant/color.dart';
  import 'package:suezproduction/view/screen/Home.dart';
+import 'package:suezproduction/view/screen/homescreen.dart';
 
 
 class NewBranches extends StatelessWidget {

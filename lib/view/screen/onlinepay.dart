@@ -1,5 +1,6 @@
  import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:suezproduction/core/functions/translateDatabase.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
 class OnLinepay extends StatefulWidget {
@@ -47,7 +48,7 @@ class _OnlinePayState extends State<OnLinepay> {
         ),
       )
       ..loadRequest(Uri.parse(
-          'https://sci-ebusiness.com/Electronicpay/pages/dashboard.aspx'));
+          "${translateDatabase('https://sci-ebusiness.com/Electronicpay/pages/dashboard.aspx','https://sci-ebusiness.com/Electronicpay/pages/dashboard.aspx?lang=en')}"));
   }
     @override
     Widget build(BuildContext context) {

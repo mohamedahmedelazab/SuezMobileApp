@@ -22,13 +22,14 @@ import 'package:suezproduction/view/screen/auth/verifycodesignup.dart';
 import 'package:suezproduction/view/screen/claimpage.dart';
 import 'package:suezproduction/view/screen/claimpage_result.dart';
 import 'package:suezproduction/view/screen/contactus.dart';
+import 'package:suezproduction/view/screen/homescreen.dart';
 
 import 'package:suezproduction/view/screen/onboarding.dart';
 import 'package:suezproduction/view/screen/onlinepay.dart';
 import 'package:get/get.dart';
 import 'package:suezproduction/view/screen/items.dart';
-import 'package:suezproduction/view/screen/pol_pricing.dart';
-import 'package:suezproduction/view/splash_screen.dart';
+import 'package:suezproduction/view/screen/ourproducts.dart';
+
 
 
 List<GetPage<dynamic>>? routes = [
@@ -36,7 +37,7 @@ List<GetPage<dynamic>>? routes = [
   /* GetPage(name: "/", page: () => const OnBoarding() , middlewares: [
   MyMiddleWare()
   ]),*/
-    GetPage(name: "/", page: () => SplashScreen()),
+    GetPage(name: "/", page: () => NBEApp()),
 
   GetPage(name: AppRoute.login, page: () =>  Login()),
   GetPage(name: AppRoute.signUp, page: () => const SignUp()),
@@ -47,7 +48,7 @@ List<GetPage<dynamic>>? routes = [
   GetPage(name: AppRoute.successSignUp, page: () => const SuccessSignUp()),
   GetPage(name: AppRoute.onBoarding, page: () => const OnBoarding()),
   GetPage(name: AppRoute.verfiyCodeSignUp, page: () => const VerfiyCodeSignUp()),
-  GetPage(name: AppRoute.home, page: () =>  HomePage()),
+  GetPage(name: AppRoute.home, page: () =>  NBEApp()),
   GetPage(name: AppRoute.items, page: () =>  Items()),
   GetPage(name: AppRoute.productdetail, page: () => const Productdetail()),
   GetPage(name: AppRoute.OnLinepay, page: () =>  OnLinepay()),
@@ -59,6 +60,6 @@ List<GetPage<dynamic>>? routes = [
   GetPage(name: AppRoute.showprice, page: () =>  showprice()),
   GetPage(name: AppRoute.ClaimpageResult, page: () =>  ClaimpageResult()),
   GetPage(name: AppRoute.claimpage, page: () =>  claimpage()),
-
+  GetPage(name: AppRoute.ourproduct, page: () =>  ourproduct()),
 ];
  

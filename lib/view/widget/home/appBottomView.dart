@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:path/path.dart';
 import 'package:suezproduction/core/localization/changelocal.dart';
+import 'package:suezproduction/core/services/services.dart';
 
 class appBottomView extends StatelessWidget implements PreferredSizeWidget {
   @override
@@ -20,7 +21,7 @@ class appBottomView extends StatelessWidget implements PreferredSizeWidget {
   Widget build(BuildContext context) {
 
     LocaleController localcontroller = Get.put(LocaleController());
-
+    MyServices myservice=Get.find();
     return AppBar(
 
       iconTheme: IconThemeData(color: Colors.white),
@@ -53,7 +54,7 @@ class appBottomView extends StatelessWidget implements PreferredSizeWidget {
       )*/
       actions: [
         Container(
-          padding: EdgeInsets.only(left: 30,top: 3),
+          padding:myservice.sharedPreferences.getString("lang")=="en"? EdgeInsets.only(right: 30,top: 3):EdgeInsets.only(left: 30,top: 3),
           child: InkWell(child: Icon(Icons.language,color: Colors.white,),onTap: (){
             final double screenWidth = MediaQuery.of(context).size.width;
 
@@ -145,14 +146,14 @@ class appBottomView extends StatelessWidget implements PreferredSizeWidget {
                   ],
 
                 ),
-                Text(
+          /*      Text(
                   'sci@sci-egypt.com',
                   style:  TextStyle(color: Colors.white, fontSize: screenWidth * 0.03),
                 ),
                 Text(
                   '16569',
                   style:  TextStyle(color: Colors.white, fontSize: screenWidth * 0.03),
-                ),
+                ),*/
               ],
             ),
           )

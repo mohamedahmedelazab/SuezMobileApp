@@ -15,76 +15,50 @@ abstract class LoginController extends GetxController {
 }
 
 class LoginControllerImp extends LoginController {
-  final  GlobalKey<FormState> formstate_login = GlobalKey<FormState>();
 
-  late TextEditingController email;
-  late TextEditingController password;
+
 
   SigninData signindata = new SigninData(Get.find());
   bool isshowpassword = true;
   StatusRequest statusRequest = StatusRequest.none;
   MyServices myServices = Get.find();
-    String? StoredEmail;
-    String? StoredPassword;
+  //  String? StoredEmail;
+   // String? StoredPassword;
   showPassword() {
     isshowpassword = isshowpassword == true ? false : true;
     update();
   }
 
-  Future<bool> showfinger() async {
-    SecureStorage storage = SecureStorage();
-
-    // Retrieve email and password
-    StoredEmail = await storage.getEmail();
-    StoredPassword = await storage.getPassword();
-
-print(StoredEmail);print(StoredPassword);
-    // Handle cases where data might be null
-    if (StoredEmail == null || StoredPassword == null) {
-      return false;
-    }
-    else
-      {
-        return true;
-      }
-    update();
-    }
+  var email = '';
+  var password = '';
 
 
+  void onEmailChanged(String value) {
+    email = value;
+  }
 
-
-    Future<void> getStoredData() async {
-      try {
-        SecureStorage storage = SecureStorage();
-
-        // Retrieve email and password
-        StoredEmail = await storage.getEmail();
-        StoredPassword = await storage.getPassword();
-
-
-        // Handle cases where data might be null
-        if (StoredEmail == null || StoredPassword == null) {
-          // Handle the case where email or password is not available
-          // For example, you can log a message or set default values
-          print('Stored email or password is not available.');
-          // Optionally, set default values or notify the user
-        }
-
-      } catch (e) {
-        // Handle any errors that occur during secure storage access
-        print('Error retrieving stored data: $e');
-      }
-    }
+  void onPasswordChanged(String value) {
+    password = value;
+  }
 
   @override
   login() async {
-    var formdata = formstate_login.currentState;
 
-    if (formdata!.validate()) {
+
+
+    if (email.isEmpty) {
+      Get.snackbar('Error', 'Email cannot be empty');
+      return;
+    }
+    if (password.isEmpty) {
+      Get.snackbar('Error', 'Password cannot be empty');
+      return;
+    }
+
       statusRequest = StatusRequest.loading;
       update();
 
-      var response = await signindata.postData(email.text, password.text);
+      var response = await signindata.postData(email, password);
 
       statusRequest = handlingData(response);
 
@@ -103,7 +77,7 @@ print(StoredEmail);print(StoredPassword);
               .setString("email", response['data']['users_email']);
           myServices.sharedPreferences.setBool("islog", true);
           myServices.sharedPreferences.setString("step", "3");
-          Get.offNamed(AppRoute.home, arguments: {"email": email.text});
+          Get.offNamed(AppRoute.home, arguments: {"email": email});
           statusRequest = StatusRequest.success;
           update();
         } else {
@@ -112,14 +86,14 @@ print(StoredEmail);print(StoredPassword);
           update();
           if (response['status'] == "المستخدم صحيح ولكنه غير مفعل") {
             Get.offNamed(AppRoute.ReActivation,
-                arguments: {"email": email.text});
+                arguments: {"email": email});
           }
         }
       } else {
         Get.defaultDialog(title: "Warring", middleText: "there is problem");
         statusRequest = StatusRequest.failure;
       }
-    } else {}
+
   }
 
   @override
@@ -129,17 +103,14 @@ print(StoredEmail);print(StoredPassword);
 
   @override
   void onInit() {
-    email = TextEditingController();
-    password = TextEditingController();
-    getStoredData();
+
     update();
     super.onInit();
   }
 
   @override
   void dispose() {
-    email.dispose();
-    password.dispose();
+
     super.dispose();
   }
 

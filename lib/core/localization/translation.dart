@@ -4,10 +4,10 @@ class MyTranslation extends Translations {
   @override
   Map<String, Map<String, String>> get keys => {
         "ar": {
-          "E_Pay":"سداد الوثيقة اون لاين",
-          "Validate_document":"التأكد من صحة الوثيقة",
-"claimtitle":"متابعة  تعويض سياراتك",
-        "contact":" إتصــل بنــا",
+          "E_Pay":"سداد الوثيقة",
+          "Validate_document":"الأستعلام عن الوثيقة",
+"claimtitle":"تعويض سياراتك",
+        "contact":"تواصل معنا",
 "polNo":"رقم الوثيقة",
           "1": "اختر اللغة",
           "2": "  راحة بالك أمانه عندنا في \n قناة السويس للتأمين . ",
@@ -66,7 +66,7 @@ class MyTranslation extends Translations {
           "branches":"مقرات الشركة",
           "BranchName1":"المركز الرئيسي",
           "BranchName2":"الملحق الإداري",
-          "BranchName3":"فرع القاهرة  الكبرى",
+          "BranchName3":"منطقة  القاهرة  الكبرى",
          "BranchName4":" الوجه البحرى",
          "BranchName5":"   الأسكندرية",
           "BranchName6":"   القنــاة",
@@ -313,6 +313,8 @@ class MyTranslation extends Translations {
           "aboutussub":"هي شـركة مسـاهمة مصـرية تأسست في 10أكتوبر لعام 1979، طبقًا لأحكام القانون رقم(159) لسنة 1981، وقانون الإشراف والرقابة رقم (10) لسنة 1981، وهي أول شركة تأمين من القطاع الخاص في مصر، تأسست تحت مظلة المقاولون العرب، وهيئة قناة السويس. \n   ومنذ تأسيس شركة قنـاة السويس للتأمين في السوق المصرية وهي تحقق النموذج الأمثل والخبرة الشاملة في تقديم الخدمات التأمينية المتميزة للمشروعات القومية، ومشروعات القطاع الخاص، والإستثمار، وغيرهم، لذا تمتد فروعها ل40 فرعًا في جميع محافظات جمهورية مصر العربية دعمًا وحرصًا على سلامة الاقتصاد القومي لتحقيق إنجازات عالية. \n  يبلغ رأس المال المصرح به للشركة 500 مليون جنيه مصري، ورأس المال المدفوع 5.203 مليون جنيه مصري، وإجمالي قيمة الأصول 1.892 مليار جنيه مصري، وبلغ إجمالي الاستثمارات 1.359 مليار جنيه مصري. \n   وحققت شركة قناة السويس صافي ربح قدره 8.38 مليون جنيه وعائد حقوق ملكية 2.14٪ للعام المالي 2020/2021.",
 
           "FOLLOW":"تابعنا علي الفيس بوك",
+          "FOLLOW_linkedin":"تابعنا علي   لينكدإن",
+          "FOLLOW_instagram":"تابعنا علي  إنستجرام",
           "Clients":"عملائنا",
           "Branches":"فروعنا",
           "profile":"بروفايل",
@@ -321,9 +323,16 @@ class MyTranslation extends Translations {
           "toactive":"للتفعيل إضغط هنا ",
           "msglogin":"لهذه الخدمة يرجى تسجيل الدخول أولا",
           "priceshow":"احصل علي التأمين اليوم",
-          "chassNo":"رقم الشاسية"
+          "chassNo":"رقم الشاسية",
+          "ourservices":"خدماتنا ",
+          "exit":"خروج",
+          "login":" دخول",
+          "loginin":" تسجيل الدخول"
         },
         "en": {
+          "loginin":"login in",
+  "login":"login in",
+          "exit":"exit",
   "claimtitle":"your car compensation",
   "msglogin":"To use this service , please login in",
           "checktitle":"You can verify the authenticity of your document by typing the document number and barcode number",
@@ -383,7 +392,7 @@ class MyTranslation extends Translations {
           "title":"  ",
           "cardhometitle":"Suez Canal Insurance ",
           "cardhomebody":"",
-          "exit":"login",
+          "exit":"exit",
           "home":"Home",
           "about":"About Us",
           "profile":"Profile",
@@ -640,11 +649,15 @@ class MyTranslation extends Translations {
           "aboutustitle":"SCI Company Is",
           "aboutussub":"An Egyptian joint stock company, established on October 10, 1979, following the provisions of Law No. 159 of 1981 and Law No. 10 of 1981. Being the first private sector insurance company in Egypt, established under the umbrella of Arab Contractors and the Suez Canal Authority. \n  Since the establishment of the Suez Canal Insurance Company in the Egyptian market, it has been achieving the optimal model and comprehensive experience in providing distinguished insurance services for national projects, private sector projects, investments, and others.\n Suez Canal Insurance Company’s branches extend to more than 40 branches and offices.",
           "FOLLOW":"FOLLOW Us On Facebook",
+          "FOLLOW_linkedin":"FOLLOW Us On Linkedin",
+          "FOLLOW_instagram":"FOLLOW Us On Instagram",
+
           "Clients":"Clients",
           "Branches":"Branches",
           "profile":"Profile",
           "hello":"Hello  :-",
-          "chassNo":"Chassis No "
+          "chassNo":"Chassis No ",
+          "ourservices":"our services "
         }
       };
 }

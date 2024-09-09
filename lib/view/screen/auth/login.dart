@@ -11,7 +11,7 @@ import 'package:suezproduction/view/widget/auth/logoauth.dart';
 import 'package:suezproduction/view/widget/auth/textsignup.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:suezproduction/view/widget/auth/touch_id_button.dart';
+
 
 class Login extends StatelessWidget {
   const Login({Key? key}) : super(key: key);
@@ -20,122 +20,103 @@ class Login extends StatelessWidget {
   Widget build(BuildContext context) {
 
 
-    LoginControllerImp logincontroller = Get.put(LoginControllerImp());
+
+    final    LoginControllerImp controller = Get.put(LoginControllerImp());
 
     final double screenWidth = MediaQuery.of(context).size.width;
 
 
-    return GetBuilder<LoginControllerImp>(
-      builder: (controller) => Scaffold(
-      appBar: AppBar(
-        centerTitle: true,
-        backgroundColor: AppColor.backgroundcolor,
-        elevation: 0.0,
-        title: Text('تسجيل الدخول',
-            style: Theme.of(context)
-                .textTheme
-                .headline1!
-                .copyWith(color: AppColor.grey)),
-      ),
-          floatingActionButton: FloatingActionButton.extended(
-            onPressed: () {
-              // Action to be taken when the button is pressed
-              controller.gotohome();
+    return  Scaffold(
+        appBar: AppBar(
+          centerTitle: true,
+          backgroundColor: AppColor.backgroundcolor,
+          elevation: 0.0,
+          title: Text("loginin".tr,
+              style: Theme.of(context)
+                  .textTheme
+                  .headline1!
+                  .copyWith(color: AppColor.grey)),
+        ),
+        floatingActionButton: FloatingActionButton.extended(
+          onPressed: () {
+            // Action to be taken when the button is pressed
+            controller.gotohome();
 
-            },
-            icon: Icon(Icons.account_circle),
-            label: Text( "39".tr,style: TextStyle(color: Colors.white, fontSize: screenWidth * 0.03)),
-            backgroundColor:  AppColor.kGreenColor, // Background color of the button
-          )
+          },
+          icon: Icon(Icons.account_circle),
+          label: Text( "39".tr,style: TextStyle(color: Colors.white, fontSize: screenWidth * 0.03)),
+          backgroundColor:  AppColor.kGreenColor, // Background color of the button
+        )
 
-    ,
-      body: WillPopScope(
+        ,
+        body: WillPopScope(
           onWillPop:ExitApp,
           child:  HandlingDataRequest(
               statusRequest: controller.statusRequest,
               widget:Container(
-            padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 30),
-            child: Form(
-              key: controller.formstate_login,
-              child:  ListView(children: [
-                        const LogoAuth(),
-                        const SizedBox(height: 20),
-                        CustomTextTitleAuth(text: "10".tr),
-                        const SizedBox(height: 10),
-                        CustomTextBodyAuth(text: "11".tr),
-                        const SizedBox(height: 15),
-                        CustomTextFormAuth(
-                          isNumber: false,
+                padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 30),
+                child: Form(
 
-                          valid: (val) {
-                            return validInput(val!, 5, 100, "email");
-                          },
-                          mycontroller: controller.email,
-                          hinttext: "12".tr,
-                          iconData: Icons.email_outlined,
-                          labeltext: "18".tr,
-                          // mycontroller: ,
+                    child:  ListView(children: [
+                      const LogoAuth(),
+                      const SizedBox(height: 20),
+                      CustomTextTitleAuth(text: "10".tr),
+                      const SizedBox(height: 10),
+                      CustomTextBodyAuth(text: "11".tr),
+                      const SizedBox(height: 15),
+                      TextField(
+                        decoration: InputDecoration(labelText: '18'.tr),
+                        onChanged: controller.onEmailChanged,
+                      ),
+                      TextField(
+                        decoration: InputDecoration(labelText: '19'.tr),
+                        obscureText: true,
+                        onChanged: controller.onPasswordChanged,
+                      ),
+
+                      InkWell(
+                        onTap: () {
+                          controller.goToForgetPassword();
+                        },
+                        child: Text(
+                          "14".tr,
+                          textAlign: TextAlign.right,
                         ),
-                        CustomTextFormAuth(
-                            obscureText: controller.isshowpassword,
-                            onTapIcon: () {
-                              controller.showPassword();
-                            },
-                            isNumber: false,
-                            valid: (val) {
-                              return validInput(val!, 5, 30, "password");
-                            },
-                            mycontroller: controller.password,
-                            hinttext: "13".tr,
-                            iconData: Icons.lock_outline,
-                            labeltext: "19".tr,
-                            // mycontroller: ,
-                          ),
+                      ),
 
-                        InkWell(
-                          onTap: () {
-                            controller.goToForgetPassword();
+
+                      CustomButtomAuth(
+                          text: "15".tr,
+                          onPressed: () {
+                            controller.login();
                           },
-                          child: Text(
-                            "14".tr,
-                            textAlign: TextAlign.right,
-                          ),
-                        ),
+                          color: AppColor.primaryColor),
+                      const SizedBox(height: 10),
 
-
-                            CustomButtomAuth(
-                                text: "15".tr,
-                                onPressed: () {
-                                  controller.login();
-                                },
-                                color: AppColor.primaryColor),
-                        const SizedBox(height: 10),
-
-                controller.StoredPassword !=null? LoginTouchIDButton():Row(),
+                      //     controller.StoredPassword !=null? LoginTouchIDButton():Row(),
 
 
 
 
-                        const SizedBox(height: 30),
-                        CustomTextSignUpOrSignIn(
-                          textone: "16".tr,
-                          texttwo: "17".tr,
-                          onTap: () {
-                            controller.goToSignUp();
-                          },
-                        ),
+                      const SizedBox(height: 30),
+                      CustomTextSignUpOrSignIn(
+                        textone: "16".tr,
+                        texttwo: "17".tr,
+                        onTap: () {
+                          controller.goToSignUp();
+                        },
+                      ),
 
 
-                /*        CustomTextSignUpOrSignIn(
+                      /*        CustomTextSignUpOrSignIn(
                           textone: "",
                           texttwo: "رجوع",
                           onTap: () {
                             controller.gotohome();
                           },
                         )*/
-                      ])),
-          ) ),
-          )),
-    );
+                    ])),
+              ) ),
+        ));
   }
 }

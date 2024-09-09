@@ -16,6 +16,7 @@ class AppImageAsset {
   static const String maincatimage3 = "$rootImages/item3.png";
   static const String maincatimage4 = "$rootImages/request.png";
   static const String logo2 = "$rootImages/logo.png";
+  static const String newlogo = "$rootImages/newlogo.png";
   static const String ar = "$rootImages/ar.png";
   static const String en = "$rootImages/en.png";
   static const String sign = "$rootImages/sign.png";
@@ -25,9 +26,19 @@ class AppImageAsset {
   static const String banner1 = "$rootImages/banner1.png";
   static const String banner2 = "$rootImages/banner2.png";
   static const String banner3 = "$rootImages/banner3.png";
-  static const String slidshow1 = "$rootImages/slidshow1.png";
-  static const String slidshow2 = "$rootImages/slidshow2.png";
-  static const String slidshow3 = "$rootImages/slidshow3.png";
+  static const String slidshow1 = "$rootImages/1.jpg";
+  static const String slidshow2 = "$rootImages/2.jpg";
+  static const String slidshow3 = "$rootImages/3.jpg";
+
+
+  static const String slidshow_en1 = "$rootImages/1eng.jpg";
+  static const String slidshow_en2 = "$rootImages/2eng.jpg";
+  static const String slidshow_en3 = "$rootImages/3eng.jpg";
+
+
+
+
+
   static const String locations = "$rootImages/locations.png";
   //static const String slidshow5 = "$rootslidshow/slidshow5.png";
   //static const String slidshow6 = "$rootslidshow/slidshow6.png";

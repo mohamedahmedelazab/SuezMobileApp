@@ -4,13 +4,13 @@ import 'package:get/get.dart';
 translateDatabase(columnar,columnen){
 
   MyServices myservice=Get.find();
-  if (myservice.sharedPreferences.getString("lang")=="ar" || myservice.sharedPreferences.getString("lang")==null) {
+  if (myservice.sharedPreferences.getString("lang")=="en" ) {
+    return  columnen;
 
-    return columnar;
   }
   else
     {
+      return columnar;
 
-     return  columnen;
     }
 }

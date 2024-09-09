@@ -6,6 +6,7 @@ import 'package:suezproduction/view/screen/contactus.dart';
 import 'package:suezproduction/view/screen/onlinepay.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:suezproduction/view/screen/ourproducts.dart';
 
 class Services2 extends StatelessWidget {
   @override
@@ -354,10 +355,65 @@ class Services2 extends StatelessWidget {
 
             ],
           ),
-/*
+
           Row(
             children: [
-
+              Expanded(
+                  child: Column(
+                    children: [
+                      InkWell(
+                          onTap: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => ourproduct()));
+                            //  _launchURL('mailto: info@sci-egypt.com ?subject=from user mobile application&body=Please contact me');
+                          },
+                          child: Center(
+                            child: Card(
+                              shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(10.0)),
+                              elevation: 5,
+                              child: AnimatedBuilder(
+                                  animation: mycontroller.myanimation,
+                                  builder: (BuildContext context, Widget? child) {
+                                    return Padding(
+                                      padding: const EdgeInsets.all(10.0),
+                                      child: Image.asset(
+                                        'assets/images/services.png',
+                                        width: mycontroller.myanimation.value,
+                                        height: mycontroller.myanimation.value,
+                                      ),
+                                    );
+                                  }),
+                            ),
+                          )),
+                      InkWell(
+                        onTap: () {
+                          Navigator.push(context,
+                              MaterialPageRoute(builder: (context) => ourproduct()));
+                          //  _launchURL('mailto: info@sci-egypt.com ?subject=from user mobile application&body=Please contact me');
+                        },
+                        child: Padding(
+                          padding: const EdgeInsets.all(10.0),
+                          child: Container(
+                              alignment: Alignment.bottomCenter,
+                              child: AnimatedBuilder(
+                                  animation: mycontroller.myanimation2,
+                                  builder: (BuildContext context, Widget? child) {
+                                    return Text(
+                                      "ourservices".tr,
+                                      textAlign: TextAlign.center,
+                                      style: TextStyle(
+                                          fontSize: mycontroller.myanimation2.value,
+                                          fontWeight: FontWeight.bold,
+                                          color: Colors.blue.shade900),
+                                    );
+                                  })),
+                        ),
+                      )
+                    ],
+                  )),
               Expanded(
                   child: Column(
                     children: [
@@ -413,9 +469,11 @@ class Services2 extends StatelessWidget {
                         ),
                       )
                     ],
-                  ))
-            ],
-          )*/
+                  )),
+
+
+            ]),
+
         ],
       ),
     );

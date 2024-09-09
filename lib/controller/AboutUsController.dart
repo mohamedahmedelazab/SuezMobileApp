@@ -29,6 +29,23 @@ class AboutUsControllerImp extends AboutUsController {
     }
   }
 
+  getoinstagram() async {
+    final Uri url = Uri.parse('https://www.instagram.com/sci.1979/');
+    if (!await launchUrl(url)) {
+      throw Exception('Could not launch $url');
+    }
+  }
+
+
+  getolinkedin() async {
+    final Uri url = Uri.parse('https://eg.linkedin.com/company/sci-1979');
+    if (!await launchUrl(url)) {
+      throw Exception('Could not launch $url');
+    }
+  }
+
+
+
   @override
   void onInit() {
     // TODO: implement onInit

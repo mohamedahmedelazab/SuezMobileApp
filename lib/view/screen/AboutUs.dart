@@ -75,6 +75,24 @@ class AboutUs extends StatelessWidget {
                     new SizedBox(width: _width/30,),
                     new Text('FOLLOW'.tr)
                   ],)),color: Colors.blue[50],),),
+
+                new Padding(padding: new EdgeInsets.only(left: _width/8, right: _width/8), child: new MaterialButton(onPressed: (){
+                  controller.getoinstagram();
+                },
+                  child: new Container(child: new Row(mainAxisAlignment: MainAxisAlignment.center,children: <Widget>[
+                    new Icon(FontAwesomeIcons.instagram),
+                    new SizedBox(width: _width/30,),
+                    new Text('FOLLOW_instagram'.tr)
+                  ],)),color: Colors.blue[50],),),
+
+                new Padding(padding: new EdgeInsets.only(left: _width/8, right: _width/8), child: new MaterialButton(onPressed: (){
+                  controller.getolinkedin();
+                },
+                  child: new Container(child: new Row(mainAxisAlignment: MainAxisAlignment.center,children: <Widget>[
+                    new Icon(FontAwesomeIcons.linkedin),
+                    new SizedBox(width: _width/30,),
+                    new Text('FOLLOW_linkedin'.tr)
+                  ],)),color: Colors.blue[50],),),
               ],
             ),
           ))

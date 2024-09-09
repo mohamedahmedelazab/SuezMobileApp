@@ -84,11 +84,10 @@ update();
         EndDate_res = claimmodel_model.endDate!;
         NetPrems_res = claimmodel_model.netPrems!;
         TotalPrems_res = claimmodel_model.totalPrems!;
-        note_res = claimmodel_model.note!;
-        IsOK_res = claimmodel_model.isOK!;
+
+
         INSREQST_res = claimmodel_model.iNSREQST!;
-        DateIn_res = claimmodel_model.dateIn!;
-        DepID_res = claimmodel_model.depID!;
+
         ClaimValue_res = claimmodel_model.claimValue!;
         payval_res = claimmodel_model.payval!;
         reserve_res = claimmodel_model.reserve!;

@@ -4,6 +4,7 @@ import 'package:suezproduction/controller/claimpagecontroller.dart';
 import 'package:suezproduction/core/constant/color.dart';
 import 'package:suezproduction/core/functions/validinput.dart';
 import 'package:suezproduction/view/screen/Home.dart';
+import 'package:suezproduction/view/screen/homescreen.dart';
 import 'package:suezproduction/view/widget/auth/custombuttonauth.dart';
 import 'package:suezproduction/view/widget/auth/customtextformauth.dart';
 

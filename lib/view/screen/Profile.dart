@@ -11,6 +11,7 @@ import 'package:suezproduction/core/functions/validinput.dart';
 import 'package:suezproduction/core/services/services.dart';
 import 'package:suezproduction/data/model/ProducerModel.dart';
 import 'package:suezproduction/view/screen/Home.dart';
+import 'package:suezproduction/view/screen/homescreen.dart';
 import 'package:suezproduction/view/widget/auth/custombuttonauth.dart';
 import 'package:suezproduction/view/widget/auth/customtextbodyauth.dart';
 import 'package:suezproduction/view/widget/auth/customtextformauth.dart';

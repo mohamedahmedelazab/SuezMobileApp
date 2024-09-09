@@ -21,4 +21,5 @@ class AppRoute {
   static const String showprice = "/showprice";
   static const String ClaimpageResult = "/ClaimpageResult";
   static const String claimpage = "/claimpage";
+  static const String ourproduct = "/ourproduct";
 }

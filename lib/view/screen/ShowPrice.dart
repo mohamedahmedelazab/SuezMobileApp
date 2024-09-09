@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:pinch_zoom/pinch_zoom.dart';
 import 'package:suezproduction/controller/ShowPriceController.dart';
 import 'package:suezproduction/view/screen/Home.dart';
+import 'package:suezproduction/view/screen/homescreen.dart';
 import 'package:suezproduction/view/screen/pol_pricing.dart';
 
 

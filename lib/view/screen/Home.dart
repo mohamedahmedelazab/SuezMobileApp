@@ -1,37 +1,33 @@
-import 'dart:async';
+
 
 import 'package:flutter/services.dart';
-import 'package:flutter_touch_ripple/components/behavior.dart';
-import 'package:flutter_touch_ripple/flutter_touch_ripple.dart';
-import 'package:google_maps_flutter/google_maps_flutter.dart';
+
 import 'package:suezproduction/controller/ServiceController.dart';
 import 'package:suezproduction/controller/home_controller.dart';
 import 'package:suezproduction/core/class/handlingdataview.dart';
 import 'package:suezproduction/core/constant/color.dart';
 
 import 'package:suezproduction/core/constant/routes.dart';
-import 'package:suezproduction/core/localization/changelocal.dart';
+
 import 'package:suezproduction/core/services/services.dart';
 
 import 'package:suezproduction/view/screen/AboutUs.dart';
 import 'package:suezproduction/view/screen/Profile.dart';
-import 'package:suezproduction/view/widget/auth/touch_id_button.dart';
+
 import 'package:suezproduction/view/widget/customeappbar.dart';
 
 import 'package:suezproduction/view/widget/home/NavDrawer.dart';
 
 import 'package:suezproduction/view/widget/home/Services2.dart';
 import 'package:suezproduction/view/widget/home/appBottomView.dart';
-import 'package:suezproduction/view/widget/home/events_and_experiences.dart';
 
-import 'package:suezproduction/view/widget/home/listcategorieshome.dart';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:flutter_phone_direct_caller/flutter_phone_direct_caller.dart';
-import 'package:suezproduction/view/widget/progressbar.dart';
 
 
+/*
 
 class HomePage extends StatelessWidget {
 
@@ -135,7 +131,7 @@ class HomePage extends StatelessWidget {
                             mainAxisSize: MainAxisSize.min,
                             children: [
                               Icon(Icons.output_sharp),
-                              Text("خروج",
+                              Text("exit".tr,
                                   style:   Theme.of(context).textTheme.bodyText1)
                             ],
                           ),
@@ -148,7 +144,7 @@ class HomePage extends StatelessWidget {
                             mainAxisSize: MainAxisSize.min,
                             children: [
                               Icon(Icons.account_circle_sharp),
-                              Text("exit".tr,
+                              Text("login".tr,
 
                                   style:  Theme.of(context).textTheme.bodyText1)
                             ],
@@ -164,12 +160,12 @@ class HomePage extends StatelessWidget {
             statusRequest: controller.statusRequest,
             widget: SingleChildScrollView(
                 child: Column(children: <Widget>[
-                  if(controller.StoredPassword == null && myServices.sharedPreferences.getBool("islog")==true )
+                /*  if(controller.StoredPassword == null && myServices.sharedPreferences.getBool("islog")==true )
                     TouchIDButton()
                   else
-                      Row() ,
+                      Row() ,*/
                   servicecontroller.isLogin()==true ?
-                  Container( child: Text("hello".tr+mycontroller.name.toString(),style: TextStyle(color: AppColor.primaryColor,fontSize: 14),)):
+                  Container( child: Text("hello".tr+mycontroller.name.toString(),style: TextStyle(fontWeight: FontWeight.bold, color: AppColor.primaryColor,fontSize: 14),)):
                   Row(),
               customappbar(
                 titleapp: "findproducts".tr,
@@ -179,7 +175,7 @@ class HomePage extends StatelessWidget {
                 },
               ),
               const SizedBox(
-                height: 10,
+                height: 5,
               ),
               Services2(),
                   const SizedBox(
@@ -192,7 +188,7 @@ class HomePage extends StatelessWidget {
 
 
                   ,
-                  EventsAndExperiences(),*/
+                  EventsAndExperiences(),
                     ProgramsBar(
                         title: "cat".tr,
                       ) // <- this your widget!
@@ -206,7 +202,7 @@ class HomePage extends StatelessWidget {
               ListCategoriesHome(),
               const SizedBox(
                 height: 10,
-              )
+              )*/
             ]))
           )
         ));});
@@ -214,3 +210,4 @@ class HomePage extends StatelessWidget {
   }
 
 }
+*/

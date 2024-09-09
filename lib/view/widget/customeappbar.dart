@@ -4,6 +4,7 @@ import 'package:suezproduction/core/constant/color.dart';
 import 'package:suezproduction/core/constant/imgaeasset.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_image_slideshow/flutter_image_slideshow.dart';
+import 'package:suezproduction/core/functions/translateDatabase.dart';
 
 class customappbar extends StatelessWidget {
  final String titleapp;
@@ -14,58 +15,88 @@ class customappbar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     HomecontrollerTmp mycontroller=  Get.put(HomecontrollerTmp());
-    return Container(
-      margin:const EdgeInsets.only(top: 15),
-      child: ImageSlideshow(
 
+    // Get the screen size
+    final screenSize = MediaQuery.of(context).size;
+
+// Calculate the aspect ratio of the image
+    final imageAspectRatio = 1727 / 660;
+
+// Set container width and height based on screen size and aspect ratio
+    final containerWidth = screenSize.width * .9; // 80% of screen width
+    final containerHeight = containerWidth / imageAspectRatio;
+
+    return Container(
+      margin: const EdgeInsets.only(top: 15),
+      width: containerWidth, // Adjust the width of the outer container
+      child: ImageSlideshow(
         /// Width of the [ImageSlideshow].
-        width: double.infinity,
+        width: containerWidth, // Set width to the calculated containerWidth
 
         /// Height of the [ImageSlideshow].
-        height: 200,
+        height: containerHeight, // Set height to the calculated containerHeight
 
         /// The page to show when first creating the [ImageSlideshow].
         initialPage: 0,
 
         /// The color to paint the indicator.
-        indicatorColor: Colors.blue,
+        indicatorColor: Colors.white,
 
-        /// The color to paint behind th indicator.
+        /// The color to paint behind the indicator.
         indicatorBackgroundColor: Colors.grey,
 
         /// The widgets to display in the [ImageSlideshow].
         /// Add the sample image file into the images folder
         children: [
           Container(
-            width: MediaQuery.of(context).size.width,
-
+            width: containerWidth,
+            height: containerHeight,
             decoration: BoxDecoration(
-                color: AppColor.primaryColor,
-                borderRadius: BorderRadius.circular(20)),
-                   child:  Image.asset(
-                AppImageAsset.slidshow2,
-                fit: BoxFit.fill,
+              color: AppColor.primaryColor,
+              borderRadius: BorderRadius.circular(20),
+            ),
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(20),
+              child: Image.asset(
+                translateDatabase(AppImageAsset.slidshow1, AppImageAsset.slidshow_en1),
+                fit: BoxFit.contain, // Maintain image quality
               ),
-
-          )
-         ,
-
-          Image.asset(
-            AppImageAsset.slidshow1,
-            fit: BoxFit.fill,
+            ),
           ),
-
-          Image.asset(
-            AppImageAsset.slidshow3,
-            fit: BoxFit.fill,
+          Container(
+            width: containerWidth,
+            height: containerHeight,
+            decoration: BoxDecoration(
+              color: AppColor.primaryColor,
+              borderRadius: BorderRadius.circular(20),
+            ),
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(20),
+              child: Image.asset(
+                translateDatabase(AppImageAsset.slidshow2, AppImageAsset.slidshow_en2),
+                fit: BoxFit.contain, // Maintain image quality
+              ),
+            ),
           ),
-
+          Container(
+            width: containerWidth,
+            height: containerHeight,
+            decoration: BoxDecoration(
+              color: AppColor.primaryColor,
+              borderRadius: BorderRadius.circular(20),
+            ),
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(20),
+              child: Image.asset(
+                translateDatabase(AppImageAsset.slidshow3, AppImageAsset.slidshow_en3),
+                fit: BoxFit.contain, // Maintain image quality
+              ),
+            ),
+          ),
         ],
 
         /// Called whenever the page in the center of the viewport changes.
-        onPageChanged: (value) {
-
-        },
+        onPageChanged: (value) {},
 
         /// Auto scroll interval.
         /// Do not auto scroll with null or 0.
@@ -74,7 +105,7 @@ class customappbar extends StatelessWidget {
         /// Loops back to first slide.
         isLoop: true,
       ),
-
     );
+
   }
 }

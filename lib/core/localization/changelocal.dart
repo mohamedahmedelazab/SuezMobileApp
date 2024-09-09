@@ -31,6 +31,10 @@ class LocaleController extends GetxController {
 
       appTheme=themeEnglish;
     }
+    else
+      {
+        appTheme=themeArabic;
+      }
     Get.updateLocale(local);
   }
   goToSignIn() {
