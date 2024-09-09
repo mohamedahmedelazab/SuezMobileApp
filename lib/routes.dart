@@ -37,7 +37,7 @@ List<GetPage<dynamic>>? routes = [
   /* GetPage(name: "/", page: () => const OnBoarding() , middlewares: [
   MyMiddleWare()
   ]),*/
-    GetPage(name: "/", page: () => NBEApp()),
+    GetPage(name: "/", page: () => OnBoarding()),
 
   GetPage(name: AppRoute.login, page: () =>  Login()),
   GetPage(name: AppRoute.signUp, page: () => const SignUp()),
