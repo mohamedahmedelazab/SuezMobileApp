@@ -7,6 +7,7 @@ import 'package:suezproduction/core/class/statusrequest.dart';
 import 'package:suezproduction/core/constant/color.dart';
 import 'package:suezproduction/view/screen/claimpage.dart';
 import 'package:empty_widget/empty_widget.dart';
+import 'package:suezproduction/view/screen/homescreen.dart';
 
 class ClaimpageResult extends StatelessWidget {
   ClaimPage_resultControllerImp controller =
@@ -96,7 +97,7 @@ class ClaimpageResult extends StatelessWidget {
                                   text: TextSpan(
                                     children: [
                                       TextSpan(
-                                        text: "تفاصيل الملف \n",
+                                        text:  "detail".tr+" \n",
                                         style: Theme.of(context)
                                             .textTheme
                                             .titleLarge
@@ -106,7 +107,7 @@ class ClaimpageResult extends StatelessWidget {
                                       ),
                                       TextSpan(
                                         text:
-                                            "رقم الحادث ${controller.AccNo_res}",
+                                            "accNo".tr+"${controller.AccNo_res}",
                                         style: Theme.of(context)
                                             .textTheme
                                             .titleLarge
@@ -136,8 +137,63 @@ class ClaimpageResult extends StatelessWidget {
                                     crossAxisAlignment:
                                         CrossAxisAlignment.start,
                                     children: [
+                                      SizedBox(height: 10.0),
                                       Text(
-                                        "التفاصيل",
+                                        "FileStatus".tr,
+                                        style: Theme.of(context)
+                                            .textTheme
+                                            .titleLarge
+                                            ?.copyWith(
+                                          color:        Colors.redAccent,
+                                          fontSize: 16.0,
+                                          fontWeight: FontWeight.w800,
+                                        ),
+                                      ),
+                                      RichText(
+                                          text:TextSpan(text: controller.file_state_res!,style: TextStyle(
+                                            color: AppColor.primaryColor,
+                                            fontWeight: FontWeight.w600,
+                                            fontSize: 16.0,
+                                          ))),
+                                      Divider(),
+                                      SizedBox(
+                                        height: 5.0,
+                                      ),
+                                      Text(
+                                        "FinancialData".tr,
+                                        style: Theme.of(context)
+                                            .textTheme
+                                            .titleLarge
+                                            ?.copyWith(
+                                          color:
+                                          Colors.redAccent,
+                                          fontSize: 16.0,
+                                          fontWeight: FontWeight.w800,
+                                        ),
+                                      ),
+                                      SizedBox(
+                                        height: 15.0,
+                                      ),
+                                      /*   getTotalRow("قسط صافي	",
+                                          "\L.E ${controller.NetPrems_res!}"),
+                                      getTotalRow("قسط إجمالي",
+                                          "\L.E ${controller.TotalPrems_res!}"),*/
+                                      getTotalRow("CompensationAmount".tr,
+                                          "\L.E ${controller.ClaimValue_res!}"),
+                                      /*      getTotalRow("الإحتياطي ",
+                                          "\L.E ${controller.reserve_res!}"),
+                                      getTotalRow("المدفوع",
+                                          "\L.E ${controller.payval_res!}"),*/
+                                      SizedBox(
+                                        height: 10.0,
+                                      ),
+
+
+
+
+                                      Divider(),
+                                      Text(
+                                        "detail".tr,
                                         style: Theme.of(context)
                                             .textTheme
                                             .titleLarge
@@ -154,81 +210,45 @@ class ClaimpageResult extends StatelessWidget {
 
 
 
-                                      getTotalRow("إسم المستفيد:-",
+                                      getTotalRow("Beneficiary".tr,
                                           controller.Benfishry_res!),
 
-                                      getTotalRow("إسم المؤمن له :-",
+                                      getTotalRow("Insured".tr,
                                           controller.INSREQST_res!),
 
 
                                       getTotalRow(
-                                          "الادارة		", controller.DepID_res!),
-                                      getTotalRow("الفرع المصدر	",
+                                          "Management".tr, controller.DepID_res!),
+                                      getTotalRow("Branch".tr,
                                           controller.branchName_res!),
-                                      getTotalRow("رقم الوثيقه			",
+                                      getTotalRow(  "PolicyNo".tr,
                                           controller.policyNo!),
-                                      getTotalRow("تاريخ الحادث		",
+                                      getTotalRow("AccDate".tr,
                                           controller.AccDate_res!),
-                                      getTotalRow("تاريخ الإصدار	",
+                                      getTotalRow("IsuuDate".tr,
                                           controller.IsuuDate_res!),
-                                      getTotalRow("تاريخ بداية سريان	",
+                                      getTotalRow("StartDate".tr,
                                           controller.IsuuDate_res!),
-                                      getTotalRow("تاريخ نهاية سريان	",
+                                      getTotalRow("EndDate".tr,
                                           controller.EndDate_res!),
                                       SizedBox(
                                         height: 10.0,
                                       ),
-                                      Divider(),
-                                      SizedBox(
-                                        height: 5.0,
-                                      ),
-                                      Text(
-                                        "بيانات مالية",
-                                        style: Theme.of(context)
-                                            .textTheme
-                                            .titleLarge
-                                            ?.copyWith(
-                                              color:
-                                                  Colors.redAccent,
-                                              fontSize: 16.0,
-                                              fontWeight: FontWeight.w800,
-                                            ),
-                                      ),
-                                      SizedBox(
-                                        height: 15.0,
-                                      ),
-                                      getTotalRow("قسط صافي	",
-                                          "\L.E ${controller.NetPrems_res!}"),
-                                      getTotalRow("قسط إجمالي",
-                                          "\L.E ${controller.TotalPrems_res!}"),
-                                      getTotalRow("مبلغ التعويض	",
-                                          "\L.E ${controller.ClaimValue_res!}"),
-                                      getTotalRow("الإحتياطي ",
-                                          "\L.E ${controller.reserve_res!}"),
-                                      getTotalRow("المدفوع",
-                                          "\L.E ${controller.payval_res!}"),
-                                      SizedBox(
-                                        height: 10.0,
-                                      ),
-                                      Divider(),
-                                      SizedBox(height: 10.0),
-                                      Text(
-                                        "موقف الملف  ",
-                                        style: Theme.of(context)
-                                            .textTheme
-                                            .titleLarge
-                                            ?.copyWith(
-                                              color:        Colors.redAccent,
-                                              fontSize: 16.0,
-                                              fontWeight: FontWeight.w800,
-                                            ),
-                                      ),
-                                  RichText(
-                                    text:TextSpan(text: controller.file_state_res!,style: TextStyle(
-                                      color: AppColor.primaryColor,
-                                      fontWeight: FontWeight.w600,
-                                      fontSize: 14.0,
-                                    )))
+
+                                      Center(
+                                        child: InkWell(
+                                          onTap: (){
+                                            Navigator.push(
+                                                context,
+                                                MaterialPageRoute(builder: (context) => HomePage()
+                                                ));},
+                                          child: Center(child:
+                                          Row(children: [
+                                            Icon(Icons.arrow_back, color: Colors.black),
+
+                                            Text("back".tr)],),),
+                                        ),
+                                      )
                                    
                                    /*   ListView.separated(
                                         primary: false,

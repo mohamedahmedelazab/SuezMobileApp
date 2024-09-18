@@ -32,20 +32,23 @@ class CustomTextFormAuth extends StatelessWidget {
             : TextInputType.text,
         validator: valid,
         controller: mycontroller,
-        obscureText: obscureText == null || obscureText == false  ? false : true,
+        obscureText: obscureText == null || obscureText == false ? false : true,
         decoration: InputDecoration(
-            hintText: hinttext,
-            hintStyle: const TextStyle(fontSize: 14),
-            floatingLabelBehavior: FloatingLabelBehavior.always,
-            contentPadding:
-                const EdgeInsets.symmetric(vertical: 5, horizontal: 30),
-            label: Container(
-                margin: const EdgeInsets.symmetric(horizontal: 9),
-                child: Text(labeltext)),
-            suffixIcon: InkWell(child: Icon(iconData), onTap: onTapIcon),
-            border:
-                OutlineInputBorder(borderRadius: BorderRadius.circular(30))),
-      ),
+          hintText: hinttext,
+          hintStyle: const TextStyle(fontSize: 14),
+          floatingLabelBehavior: FloatingLabelBehavior.always,
+          contentPadding: const EdgeInsets.symmetric(vertical: 5, horizontal: 30),
+          label: Container(
+            margin: const EdgeInsets.symmetric(horizontal: 9),
+            child: Text(labeltext,style:TextStyle(fontSize: 20,fontWeight: FontWeight.bold)),
+          ),
+          suffixIcon: InkWell(child: Icon(iconData), onTap: onTapIcon),
+          border: OutlineInputBorder(borderRadius: BorderRadius.circular(30)),
+          filled: true, // Enable the background color
+          fillColor: Colors.white, // Set the background color to white
+        ),
+      )
+      ,
     );
   }
 }

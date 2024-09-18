@@ -16,19 +16,20 @@ class ListCategoriesHome extends GetView<HomecontrollerTmp> {
     return
 
       StaggeredGridView.countBuilder(
-        physics: const NeverScrollableScrollPhysics(), //<--here
+        physics: const NeverScrollableScrollPhysics(), // Prevent scrolling
         shrinkWrap: true,
-      crossAxisCount: 4,
-      itemCount: controller.categories.length,
-      itemBuilder: (BuildContext context, int index) =>
-          DoctorBox(
-                  index: index, doctor: controller.categories[index]
-          ),
-      staggeredTileBuilder: (int index) =>
-      new StaggeredTile.count(2, index.isEven ? 2 : 2),
-      mainAxisSpacing: 4,
-      crossAxisSpacing: 4,
-    );
+        crossAxisCount: 3, // Three items in a row
+        itemCount: controller.categories.length,
+        itemBuilder: (BuildContext context, int index) =>
+            DoctorBox(
+                index: index, doctor: controller.categories[index]
+            ),
+        staggeredTileBuilder: (int index) =>
+            StaggeredTile.count(1, 1), // Each item takes 1x1 space
+        mainAxisSpacing: 6, // Vertical spacing
+        crossAxisSpacing: 2, // Horizontal spacing
+      );
+
   }
 }
 
@@ -68,7 +69,7 @@ class DoctorBox extends   GetView<HomecontrollerTmp>{
               Expanded(
                 child: Container(
                     height: index.isEven ? 100 : 100,
-
+width: 120,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(20),
                       image: DecorationImage(

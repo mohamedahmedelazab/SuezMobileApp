@@ -8,11 +8,12 @@ class policyInfoModel {
   String? insuName;
   String? printedSerials;
   String? polNo;
-
+  String? activecom1;
   policyInfoModel({this.paymentStatus,
     this.endDate,
     this.startDate,
     this.activecom,
+    this.activecom1,
     this.CurrName,
     this.nameFor,
     this.insuName,
@@ -27,6 +28,7 @@ class policyInfoModel {
    endDate = json['EndDate'];
     startDate = json['StartDate'];
     activecom = json['Activecom'];
+    activecom1 = json['Activecom1'];
     CurrName = json['CurrName'];
     nameFor = json['NameFor'];
     insuName = json['InsuName'];
@@ -40,6 +42,7 @@ class policyInfoModel {
     data['EndDate'] = this.endDate;
     data['StartDate'] = this.startDate;
     data['Activecom'] = this.activecom;
+    data['Activecom1'] = this.activecom1;
     data['CurrName'] = this.CurrName;
     data['NameFor'] = this.nameFor;
     data['InsuName'] = this.insuName;

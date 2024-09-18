@@ -3,8 +3,7 @@ import 'package:get/get.dart';
 import 'package:suezproduction/controller/claimpagecontroller.dart';
 import 'package:suezproduction/core/constant/color.dart';
 import 'package:suezproduction/core/functions/validinput.dart';
-import 'package:suezproduction/view/screen/Home.dart';
-import 'package:suezproduction/view/screen/homescreen.dart';
+ import 'package:suezproduction/view/screen/homescreen.dart';
 import 'package:suezproduction/view/widget/auth/custombuttonauth.dart';
 import 'package:suezproduction/view/widget/auth/customtextformauth.dart';
 
@@ -43,8 +42,12 @@ class claimpage extends StatelessWidget {
                 horizontal: 20.0,
                 vertical: 24.0,
               ),
+
               decoration: BoxDecoration(
-                color: AppColor.scaffoldBackgroundColor,
+                image: DecorationImage(
+                  image: AssetImage("assets/images/background.jpg"),
+                  fit: BoxFit.cover,
+                ),
                 borderRadius: BorderRadius.only(
                   topRight: Radius.circular(30.0),
                   topLeft: Radius.circular(30.0),
@@ -65,20 +68,20 @@ class claimpage extends StatelessWidget {
                     SizedBox(
                       height: 10.0,
                     ),
-                    Text(
+                 /*   Text(
                       "يمكنك عن طريق كتابة رقم الوثيقة ورقم الشاسية متابعة ملف التعويض الخاص بك وبيانات الصرف والمستندات المطلوبة",
                       style: TextStyle(
                         color: Color.fromRGBO(74, 77, 84, 1),
                         fontSize: 14.0,
                       ),
-                    ),
+                    )*/
 
                     SizedBox(
                       height: 40.0,
                     ),
                     CustomTextFormAuth(
 
-                      isNumber: true,
+                      isNumber: false,
                       valid: (val) {
                         return validInput(val!, 9, 15, "name");
                       },

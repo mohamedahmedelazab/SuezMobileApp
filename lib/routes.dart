@@ -34,9 +34,9 @@ import 'package:suezproduction/view/screen/ourproducts.dart';
 
 List<GetPage<dynamic>>? routes = [
 
-  /* GetPage(name: "/", page: () => const OnBoarding() , middlewares: [
+   GetPage(name: "/", page: () => const OnBoarding() , middlewares: [
   MyMiddleWare()
-  ]),*/
+  ]),
     GetPage(name: "/", page: () => OnBoarding()),
 
   GetPage(name: AppRoute.login, page: () =>  Login()),
@@ -48,7 +48,7 @@ List<GetPage<dynamic>>? routes = [
   GetPage(name: AppRoute.successSignUp, page: () => const SuccessSignUp()),
   GetPage(name: AppRoute.onBoarding, page: () => const OnBoarding()),
   GetPage(name: AppRoute.verfiyCodeSignUp, page: () => const VerfiyCodeSignUp()),
-  GetPage(name: AppRoute.home, page: () =>  NBEApp()),
+  GetPage(name: AppRoute.home, page: () =>  HomePage()),
   GetPage(name: AppRoute.items, page: () =>  Items()),
   GetPage(name: AppRoute.productdetail, page: () => const Productdetail()),
   GetPage(name: AppRoute.OnLinepay, page: () =>  OnLinepay()),

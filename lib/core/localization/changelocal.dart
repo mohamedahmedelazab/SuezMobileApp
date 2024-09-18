@@ -19,6 +19,7 @@ class LocaleController extends GetxController {
 
   changeLang(String langcode)
   {
+    appTheme=themeArabic;
     Locale local=Locale(langcode);
     myservices.sharedPreferences.setString("lang", langcode);
     if(langcode=="ar")
@@ -31,11 +32,10 @@ class LocaleController extends GetxController {
 
       appTheme=themeEnglish;
     }
-    else
-      {
-        appTheme=themeArabic;
-      }
+
+    update();
     Get.updateLocale(local);
+
   }
   goToSignIn() {
     Get.offNamed(AppRoute.login);
@@ -48,6 +48,8 @@ class LocaleController extends GetxController {
 
   void onInit() {
     // TODO: implement onInit
+    language=const Locale("ar");
+    appTheme=themeArabic;
     String? sharedrefLang=myServices.sharedPreferences.getString("lang");
     if(sharedrefLang=="ar")
     {
@@ -59,11 +61,9 @@ class LocaleController extends GetxController {
       language=const Locale("en");
       appTheme=themeEnglish;
     }
-    else
-    {
-      language=const Locale("ar");
-      appTheme=themeArabic;
-    }
+    print("theam");
+
+     update();
     super.onInit();
   }
 

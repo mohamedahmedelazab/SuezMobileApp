@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:suezproduction/bindings/intialbindings.dart';
+import 'package:suezproduction/core/constant/apptheme.dart';
 import 'package:suezproduction/core/localization/translation.dart';
 import 'package:suezproduction/core/services/services.dart';
 import 'package:suezproduction/routes.dart';
@@ -45,7 +46,7 @@ class MyApp extends StatelessWidget {
             debugShowCheckedModeBanner: false,
             title: 'Suez Canal Insurance',
             locale: Locale("ar"),
-            theme: controller.appTheme,
+            theme: themeArabic,
             initialBinding:InitialBindings() ,
             // routes: routes,
             getPages: routes,

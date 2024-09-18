@@ -50,8 +50,8 @@ late String INSREQSTres="";
     // TODO: implement initialData
     policyNo=Get.arguments["policyNo"];
     chassisNo=Get.arguments["chassisNo"];
-    print(policyNo);
-    print(chassisNo);
+
+
      getData(policyNo,chassisNo);
   //  papers_list= getpappers();
     update();
