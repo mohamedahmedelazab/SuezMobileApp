@@ -898,6 +898,9 @@ Container(
 
    @override
    Widget build(BuildContext context) {
+     final snackBar = SnackBar(
+       content: Text("loginfirst".tr), // Assuming 'loginfirst' is defined in your translations
+     );
      ServiceController mycontroller = Get.put(ServiceController());
      return GestureDetector(
        onTapDown: (_) {
@@ -919,11 +922,7 @@ Container(
          if(widget.newnumber=="1")
          {
            if (mycontroller.isLogin() == false) {
-             const snackBar = SnackBar(
-               content: Text(
-                 "يرجى تسجيل الدخول أولا ",
-               ),
-             );
+
 
              ScaffoldMessenger.of(context)
                  .showSnackBar(snackBar);
@@ -938,11 +937,7 @@ Container(
          else if(widget.newnumber=="2")
            {
              if (mycontroller.isLogin() == false) {
-               const snackBar = SnackBar(
-                 content: Text(
-                   "يرجى تسجيل الدخول أولا ",
-                 ),
-               );
+
 
                ScaffoldMessenger.of(context)
                    .showSnackBar(snackBar);
@@ -957,11 +952,7 @@ Container(
          else if(widget.newnumber=="3")
          {
            if (mycontroller.isLogin() == false) {
-             const snackBar = SnackBar(
-               content: Text(
-                 "يرجى تسجيل الدخول أولا ",
-               ),
-             );
+
 
              ScaffoldMessenger.of(context)
                  .showSnackBar(snackBar);
@@ -1014,7 +1005,7 @@ Container(
          width: 60,
          height: 100,
          decoration: BoxDecoration(
-           color: Colors.white,
+           color:  ((widget.newnumber=="1"  || widget.newnumber=="2"  || widget.newnumber=="3" ) && mycontroller.isLogin() == false) ? Colors.grey.shade300 :Colors.white ,
            boxShadow: [
              BoxShadow(
                color: Colors.grey.shade300,

@@ -1,19 +1,36 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:suezproduction/controller/ServiceController.dart';
 import 'package:suezproduction/controller/claimpagecontroller.dart';
+import 'package:suezproduction/controller/home_controller.dart';
 import 'package:suezproduction/core/constant/color.dart';
 import 'package:suezproduction/core/functions/validinput.dart';
+import 'package:suezproduction/core/localization/changelocal.dart';
+import 'package:suezproduction/core/services/services.dart';
  import 'package:suezproduction/view/screen/homescreen.dart';
+import 'package:suezproduction/view/widget/AppBar.dart';
 import 'package:suezproduction/view/widget/auth/custombuttonauth.dart';
 import 'package:suezproduction/view/widget/auth/customtextformauth.dart';
+import 'package:suezproduction/view/widget/header.dart';
+import 'package:suezproduction/view/widget/home/NavDrawer.dart';
 
 
 class claimpage extends StatelessWidget {
 
   ClaimPageControllerImp controller=Get.put(ClaimPageControllerImp());
+  ServiceController servicecontroller = Get.put(ServiceController());
+  LocaleController localcontroller = Get.put(LocaleController());
+  MyServices myServices = Get.find();
+  HomecontrollerTmp mycontroller = Get.put(HomecontrollerTmp());
   @override
   Widget build(BuildContext context) {
+    bool isLoggedIn = servicecontroller.isLogin();
     return Scaffold(
+      appBar: MainAppBar(
+        title: 'MY SCI',
+        localcontroller: localcontroller,
+      ),
+      drawer: NavDrawer(),
       backgroundColor: AppColor.primaryColor,
       body:GetBuilder<ClaimPageControllerImp>(builder: (controller)=>Form(child:  Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,

@@ -36,9 +36,9 @@ Future<bool> alertExitApp() {
 Future<bool> ExitApp() {
 
   Get.defaultDialog(
-      title: "تنبيه",
+      title: "Alert".tr,
       titleStyle:const  TextStyle(color: AppColor.primaryColor , fontWeight: FontWeight.bold),
-      middleText: "هل تريد الخروج من التطبيق",
+      middleText: "Alertsub".tr,
       actions: [
         ElevatedButton(
             style: ButtonStyle(
@@ -47,7 +47,7 @@ Future<bool> ExitApp() {
             onPressed: () {
               exit(0);
             },
-            child:const Text("تاكيد")),
+            child:  Text("Confirm".tr)),
         ElevatedButton(
             style: ButtonStyle(
                 backgroundColor:
@@ -55,7 +55,7 @@ Future<bool> ExitApp() {
             onPressed: () {
               Get.back();
             },
-            child:const Text("الغاء"))
+            child: Text("cancel".tr))
       ]);
 
   return Future.value(true);

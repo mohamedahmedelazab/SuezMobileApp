@@ -23,6 +23,7 @@ import 'package:suezproduction/view/screen/claimpage.dart';
 import 'package:suezproduction/view/screen/claimpage_result.dart';
 import 'package:suezproduction/view/screen/contactus.dart';
 import 'package:suezproduction/view/screen/homescreen.dart';
+import 'package:suezproduction/view/screen/language.dart';
 
 import 'package:suezproduction/view/screen/onboarding.dart';
 import 'package:suezproduction/view/screen/onlinepay.dart';
@@ -34,7 +35,7 @@ import 'package:suezproduction/view/screen/ourproducts.dart';
 
 List<GetPage<dynamic>>? routes = [
 
-   GetPage(name: "/", page: () => const OnBoarding() , middlewares: [
+   GetPage(name: "/", page: () =>  Language() , middlewares: [
   MyMiddleWare()
   ]),
     GetPage(name: "/", page: () => OnBoarding()),
@@ -61,5 +62,6 @@ List<GetPage<dynamic>>? routes = [
   GetPage(name: AppRoute.ClaimpageResult, page: () =>  ClaimpageResult()),
   GetPage(name: AppRoute.claimpage, page: () =>  claimpage()),
   GetPage(name: AppRoute.ourproduct, page: () =>  ourproduct()),
+  GetPage(name: AppRoute.Language, page: () =>  Language()),
 ];
  

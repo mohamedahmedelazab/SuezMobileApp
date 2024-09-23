@@ -85,13 +85,13 @@ class Header extends StatelessWidget {
           ),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
-            children: const [
+            children:   [
               Icon(Icons.lock, color: Colors.white),
               SizedBox(height: 10),
               SizedBox(
                 width: 110,
                 child: Text(
-                  'تسجيل الدخول',
+                  "9".tr,
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     fontWeight: FontWeight.bold,

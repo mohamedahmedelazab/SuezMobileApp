@@ -92,6 +92,20 @@ class customappbar extends StatelessWidget {
                 fit: BoxFit.contain, // Maintain image quality
               ),
             ),
+          ),      Container(
+            width: containerWidth,
+            height: containerHeight,
+            decoration: BoxDecoration(
+              color: AppColor.primaryColor,
+              borderRadius: BorderRadius.circular(20),
+            ),
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(20),
+              child: Image.asset(
+                translateDatabase(AppImageAsset.slidshow4, AppImageAsset.slidshow_en4),
+                fit: BoxFit.contain, // Maintain image quality
+              ),
+            ),
           ),
         ],
 

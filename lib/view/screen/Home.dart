@@ -155,8 +155,8 @@ class HomePage extends StatelessWidget {
             ],
           ),
         ),
-        body: SingleChildScrollView(
-            child: HandlingDataView(
+          body: SingleChildScrollView(
+              child: HandlingDataView(
             statusRequest: controller.statusRequest,
             widget: SingleChildScrollView(
                 child: Column(children: <Widget>[

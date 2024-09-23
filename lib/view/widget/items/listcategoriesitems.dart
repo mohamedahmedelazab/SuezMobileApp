@@ -44,7 +44,7 @@ class Categories extends GetView<ItemcontrollerTmp> {
     return InkWell(
       onTap: (){
 controller.changeCat(i,categoriesModel.categoriesId!);
-controller.animateToIndex(i);
+
 
       },
 

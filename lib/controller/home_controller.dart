@@ -109,5 +109,7 @@ getStoredData() async{
     "categoryname":categoryname,
     "email":email
   });
+
+  update();
   }
 }

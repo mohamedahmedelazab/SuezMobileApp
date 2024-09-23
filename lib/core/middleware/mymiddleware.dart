@@ -15,7 +15,7 @@ class MyMiddleWare extends GetMiddleware {
       return const RouteSettings(name: AppRoute.login) ;
     }
      if(myServices.sharedPreferences.getString("step") == "1"){
-      return const RouteSettings(name: AppRoute.onBoarding) ;
+      return const RouteSettings(name: AppRoute.Language) ;
      }
     if(myServices.sharedPreferences.getString("step") == "3"){
       return const RouteSettings(name: AppRoute.home) ;

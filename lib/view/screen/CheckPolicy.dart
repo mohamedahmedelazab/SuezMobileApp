@@ -141,11 +141,11 @@ class CheckPolicy extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        buildSuccessRow(Icons.safety_check, Colors.green, "الوثيقة صحيحة"),
+        buildSuccessRow(Icons.safety_check, Colors.green, "IsValid".tr),
         buildSuccessRow(Icons.padding_outlined, AppColor.primaryColor,
-            "رقم الوثيقة: ${controller.polNo_res}"),
+            "PolicyNo".tr+  "    ${controller.polNo_res}"),
         buildSuccessRow(Icons.sticky_note_2, AppColor.primaryColor,
-            "رقم الباركود: ${controller.PrintedSerials_res}"),
+            "barcode".tr +  " ${controller.PrintedSerials_res}"),
         Padding(
           padding: const EdgeInsets.symmetric(vertical: 4.0),
           child: Row(
@@ -160,7 +160,7 @@ class CheckPolicy extends StatelessWidget {
                     fontSize: 14,
                     color: AppColor.black,
                   ),
-                  "إسم المؤمن له: ${controller.InsuName_res}",
+                  "Insured".tr + "  ${controller.InsuName_res}",
                   maxLines: 2,
                   overflow: TextOverflow.ellipsis,
                 ),
@@ -170,16 +170,16 @@ class CheckPolicy extends StatelessWidget {
         )
    ,
         buildSuccessRow(Icons.date_range_rounded, AppColor.primaryColor,
-            "تاريخ بداية السريان: ${controller.StartDate_res}"),
+           "StartDate".tr+ "  ${controller.StartDate_res}"),
         buildSuccessRow(Icons.date_range_rounded, AppColor.primaryColor,
-            "تاريخ نهاية السريان: ${controller.EndDate_res}"),
+            "EndDate".tr+ " ${controller.EndDate_res}"),
         buildSuccessRow(Icons.monetization_on, AppColor.primaryColor,
-            "مبلغ التأمين: ${controller.Activecom_res1} ${controller.CurrName_res}"),
+           "Insuranceamount".tr+ "  ${controller.Activecom_res1} ${controller.CurrName_res}"),
 
         buildSuccessRow(Icons.monetization_on, AppColor.primaryColor,
-            "مبلغ القسط: ${controller.Activecom_res} ${controller.CurrName_res}"),
+          "Installmentamount".tr+  " ${controller.Activecom_res} ${controller.CurrName_res}"),
         buildSuccessRow(Icons.ac_unit_rounded, AppColor.primaryColor,
-            "حالة السداد: ${controller.PaymentStatus_res}"),
+           "Paymentstatus".tr + " ${controller.PaymentStatus_res}"),
       ],
     );
   }
@@ -191,7 +191,7 @@ class CheckPolicy extends StatelessWidget {
         Icon(Icons.error, color: Colors.red),
         SizedBox(width: 8),
         Text(
-          "الوثيقة غير موجودة",
+          "Thedocumentdoesnotexist".tr,
           style: TextStyle(
               fontSize: 18, color: Colors.red, fontWeight: FontWeight.bold),
         ),

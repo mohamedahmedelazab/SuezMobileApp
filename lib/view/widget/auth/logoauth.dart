@@ -19,3 +19,28 @@ class LogoAuth extends StatelessWidget {
         ));
   }
 }
+
+class NewLogoAuth extends StatelessWidget {
+  const NewLogoAuth({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return  Padding(
+      padding: const EdgeInsets.all(0), // Border radius
+      child: LayoutBuilder(
+        builder: (context, constraints) {
+          // Calculate the image width and height based on available space
+          double imageWidth = constraints.maxWidth * 0.5; // Adjust the multiplier (0.5) as needed for responsiveness
+
+          return Image.asset(
+            AppImageAsset.newlogo,
+            width: imageWidth, // Make image responsive
+            height: imageWidth, // Keep it proportional by using the same value for width and height
+            fit: BoxFit.contain, // Adjust how the image fits within its container
+          );
+        },
+      ),
+    );
+
+  }
+}
