@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:suezproduction/core/constant/imgaeasset.dart';
 import 'package:suezproduction/core/localization/changelocal.dart';
 import 'package:suezproduction/view/screen/AboutUs.dart';
+import 'package:suezproduction/view/screen/AccidentReport.dart';
 import 'package:suezproduction/view/screen/CheckPolicy.dart';
 import 'package:suezproduction/view/screen/NewBranches.dart';
 import 'package:suezproduction/view/screen/onlinepay.dart';
@@ -78,6 +79,20 @@ class NavDrawer extends StatelessWidget {
             ),
           ),
           SizedBox(height: 10),
+
+          ListTile(
+            leading: Icon(Icons.add_alert_rounded),
+            title: Text(
+              "acciedent".tr,
+              style: TextStyle(fontSize: screenWidth * 0.04),
+            ),
+            onTap: () => Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => AccidentReportForm()),
+            ),
+          ),
+          SizedBox(height: 10),
+
           ListTile(
             leading: ClipOval(
               child: Image.asset(

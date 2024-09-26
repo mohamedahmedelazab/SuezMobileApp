@@ -25,5 +25,5 @@ static const String producers = "$server2/producers";
  static const String priceme = "$server2/priceme";
  static const String getpolicyclaim = "$server2/getpolicyclaim";
  static const String send_email_to_edara = "$server/send_email_to_edara";
-
+ static const String send_email_to_acciedent = "$server/send_email_to_acciedent";
 }

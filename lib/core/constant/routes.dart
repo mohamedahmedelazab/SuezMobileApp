@@ -23,4 +23,6 @@ class AppRoute {
   static const String claimpage = "/claimpage";
   static const String ourproduct = "/ourproduct";
   static const String Language = "/Language";
+  static const String AccidentReportForm = "/AccidentReportForm";
+
 }

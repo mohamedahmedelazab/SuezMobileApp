@@ -16,4 +16,15 @@ class SendEmailToedara {
     });
     return response.fold((l) => l, (r) => r);
   }
+
+  postDataAcciedent( String name,String subject,String from,String to) async {
+    var response = await crud.postData(AppLink.send_email_to_acciedent, {
+      "name":name,
+      "subject":subject,
+      "from":from,
+      "to":to,
+
+    });
+    return response.fold((l) => l, (r) => r);
+  }
 }
