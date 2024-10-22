@@ -9,6 +9,10 @@ import 'package:suezproduction/data/datasource/remote/sendEmailToEdara.dart';
 class AccidentReportController extends GetxController {
   var acciedentname = '';
   var acciedentemail = '';
+
+  var acciedenttel = '';
+  var acciedentpolNo = '';
+
   var emailto = '';
 
   var acciedentsubject = '';
@@ -20,7 +24,7 @@ class AccidentReportController extends GetxController {
   SendEmailToedara sendemailtoedara=SendEmailToedara(Get.find());
   // This method will send the data to the API
   Future<void> sendAccidentReport() async {
-    var response = await sendemailtoedara.postDataAcciedent(acciedentname,acciedentsubject, acciedentemail,emailto);
+    var response = await sendemailtoedara.postDataAcciedent(acciedentname,acciedentsubject, acciedentemail,emailto,acciedenttel,acciedentpolNo);
     statusRequest = handlingData(response);
 
     if (statusRequest == StatusRequest.success) {
@@ -43,9 +47,19 @@ class AccidentReportController extends GetxController {
     acciedentemail = value;
   }
 
+  void onTelChanged(String value) {
+    acciedenttel = value;
+  }
+
+
   void onNameChanged(String value) {
     acciedentname = value;
   }
+
+  void onPolNoChanged(String value) {
+    acciedentpolNo = value;
+  }
+
   bool isEmailValid(String email) {
     String emailPattern = r'^[a-zA-Z0-9._]+@[a-zA-Z0-9]+\.[a-zA-Z]+';
     RegExp regExp = RegExp(emailPattern);
@@ -59,7 +73,7 @@ class AccidentReportController extends GetxController {
     }
 
     if (myServices.sharedPreferences.getString("username")!="") {
-      acciedentname = myServices.sharedPreferences.getString("username")!;
+    //  acciedentname = myServices.sharedPreferences.getString("username")!;
     }
 
   }

@@ -11,6 +11,7 @@ import 'package:suezproduction/core/services/services.dart';
 import 'package:suezproduction/view/widget/AppBar.dart';
 import 'package:suezproduction/view/widget/auth/custombuttonauth.dart';
 import 'package:suezproduction/view/widget/auth/customtextformauth.dart';
+import 'package:suezproduction/view/widget/auth/textsignup.dart';
 import 'package:suezproduction/view/widget/header.dart';
 import 'package:suezproduction/view/widget/home/NavDrawer.dart';
 
@@ -130,19 +131,20 @@ class claimpage extends StatelessWidget {
 
                       },
                       color: AppColor.primaryColor,),),
+                    SizedBox(height: 20,),
+                    CustomTextSignUpOrSignIn(
+                      textone: "",
+                      texttwo: "back".tr,
+                      onTap: () {
 
-                    InkWell(
-                      onTap: (){
                         Navigator.push(
                             context,
                             MaterialPageRoute(builder: (context) => HomePage()
-                            ));},
-                      child: Center(child:
-                      Row(children: [
-                        Icon(Icons.arrow_back, color: Colors.black),
-
-                        Text("back".tr)],),),
+                            ));
+                      },
                     )
+
+
 
                   ],
                 ),

@@ -24,5 +24,5 @@ class AppRoute {
   static const String ourproduct = "/ourproduct";
   static const String Language = "/Language";
   static const String AccidentReportForm = "/AccidentReportForm";
-
+  static const String ProductUrl = "/ProductUrl";
 }

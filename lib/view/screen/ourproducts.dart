@@ -7,6 +7,7 @@ import 'package:suezproduction/core/services/services.dart';
 import 'package:suezproduction/view/screen/homescreen.dart';
 import 'package:suezproduction/view/widget/AppBar.dart';
 import 'package:suezproduction/view/widget/CustomBottomAppBar.dart';
+import 'package:suezproduction/view/widget/auth/textsignup.dart';
 import 'package:suezproduction/view/widget/header.dart';
 import 'package:suezproduction/view/widget/home/NavDrawer.dart';
 import 'package:suezproduction/view/widget/home/listcategorieshome.dart';
@@ -42,6 +43,7 @@ class ourproduct extends StatelessWidget {
           child: SafeArea(
             child: ListView(
 
+
               children: [
                 SizedBox(height: 20), // Space at the top
                 Header(
@@ -51,19 +53,18 @@ class ourproduct extends StatelessWidget {
                 ),
 
                 ListCategoriesHome(),
+                CustomTextSignUpOrSignIn(
+                  textone: "",
+                  texttwo: "back".tr,
+                  onTap: () {
 
-                InkWell(
-                  onTap: (){
                     Navigator.push(
                         context,
                         MaterialPageRoute(builder: (context) => HomePage()
-                        ));},
-                  child: Center(child:
-                  Row(children: [
-                    Icon(Icons.arrow_back, color: Colors.black),
-
-                    Text("back".tr)],),),
+                        ));
+                  },
                 )
+
               ],
             ),
           ),

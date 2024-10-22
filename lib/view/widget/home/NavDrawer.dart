@@ -6,6 +6,9 @@ import 'package:suezproduction/view/screen/AboutUs.dart';
 import 'package:suezproduction/view/screen/AccidentReport.dart';
 import 'package:suezproduction/view/screen/CheckPolicy.dart';
 import 'package:suezproduction/view/screen/NewBranches.dart';
+import 'package:suezproduction/view/screen/PrivacyPolicy.dart';
+import 'package:suezproduction/view/screen/ProducersPortalonline.dart';
+import 'package:suezproduction/view/screen/contactus.dart';
 import 'package:suezproduction/view/screen/onlinepay.dart';
 
 class NavDrawer extends StatelessWidget {
@@ -33,6 +36,35 @@ class NavDrawer extends StatelessWidget {
             ),
           ),
           ListTile(
+            leading: Icon(Icons.account_box_outlined),
+            title: Text(
+              "ProducersPortalonline".tr,
+              style: TextStyle(fontSize: screenWidth * 0.04),
+            ),
+            onTap: () => Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => ProducersPortalonline()),
+            ),
+          ),
+          SizedBox(height: 10),
+
+          ListTile(
+            leading:  Image.asset(
+              'assets/images/call.png',
+              fit: BoxFit.cover,
+              height: 22,
+              width: 22, // You can set the width for a consistent size
+            ),
+            title: Text(
+              "contact".tr,
+              style: TextStyle(fontSize: screenWidth * 0.04),
+            ),
+            onTap: () => Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => contactus()),
+            ),
+          ),
+         /* ListTile(
             leading: Icon(Icons.view_compact),
             title: Text(
               "about".tr,
@@ -90,9 +122,21 @@ class NavDrawer extends StatelessWidget {
               context,
               MaterialPageRoute(builder: (context) => AccidentReportForm()),
             ),
-          ),
+          ),*/
           SizedBox(height: 10),
 
+          ListTile(
+            leading: Icon(Icons.privacy_tip),
+            title: Text(
+              "PrivacyPolicy".tr,
+              style: TextStyle(fontSize: screenWidth * 0.04),
+            ),
+            onTap: () => Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => PrivacyPolicy()),
+            ),
+          ),
+          SizedBox(height: 10),
           ListTile(
             leading: ClipOval(
               child: Image.asset(

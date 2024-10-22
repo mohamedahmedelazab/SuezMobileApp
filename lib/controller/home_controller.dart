@@ -112,4 +112,16 @@ getStoredData() async{
 
   update();
   }
+
+  producerurl(categories_name, categories_name_en, url,enurl,email) {
+    // TODO: implement gotoitems
+   Get.toNamed(AppRoute.ProductUrl, arguments: {
+      "categories_name":categories_name,
+      "categories_name_en":categories_name_en,
+      "url": url,
+      "enurl":enurl,"email":email
+    });
+
+    update();
+  }
 }

@@ -49,52 +49,60 @@ class DoctorBox extends   GetView<HomecontrollerTmp>{
   Widget build(BuildContext context) {
     return InkWell(
       onTap: (){
-        controller.gotoitems(controller.categories,index!, doctor["categories_id"],doctor["categories_name"],doctor["email"]);
+      //  controller.gotoitems(controller.categories,index!, doctor["categories_id"],doctor["categories_name"],doctor["email"]);
+      controller.producerurl(doctor["categories_name"],doctor["categories_name_en"],doctor["url"],doctor["enurl"],doctor["email"]);
 
+       // print(doctor["categories_name_en"]);
       },
       child:Container(
-        margin: const EdgeInsets.only(right: 1, bottom: 10, top: 10),
+        margin: const EdgeInsets.only(right: 5, bottom: 0, top: 10, left: 5),
         width: 60,
-        height: 120,
+        height: 180,
         decoration: BoxDecoration(
-          color: Colors.white,
+          color: Colors.transparent, // إزالة اللون الأبيض من الخلفية
           boxShadow: [
             BoxShadow(
               color: Colors.grey.shade300,
               blurRadius: 10,
-            )
+            ),
           ],
           borderRadius: BorderRadius.circular(15),
+          border: Border.all( // إضافة الحد الأزرق
+            color: Colors.blue, // لون الحد
+            width: 2, // عرض الحد
+          ),
         ),
-        child: Center( // Ensure the content is centered in the container
+        child: Center(
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.center, // Center content vertically
-            crossAxisAlignment: CrossAxisAlignment.center, // Center content horizontally
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-          Container(
-          height: index.isEven ? 40 : 40,
-            width: 80,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(20),
-              image: DecorationImage(
-                image: NetworkImage("${AppLink.imagesCategories}/${doctor["categories_image"]}",),
-
+              Container(
+                height: 65,
+                width: 65,
+                decoration: BoxDecoration(
+                  image: DecorationImage(
+                    image: NetworkImage("${AppLink.imagesCategories}/${doctor["categories_image"]}"),
+                    fit: BoxFit.cover, // يمكنك ضبط هذا ليتناسب مع التصميم الخاص بك
+                  ),
+                  borderRadius: BorderRadius.circular(15), // إضافة هذا إذا كنت ترغب في أن يتبع الحد الخارجي
+                ),
               ),
-            )
-          )   ,
-              const SizedBox(height: 5), // Add space between image and text
-              Text( maxLines: 2,
-                "${translateDatabase(doctor["categories_name"],doctor["categories_name_en"])}",
+              SizedBox(height: 5), // إضافة مساحة بين الصورة والنص
+              Text(
+                "${translateDatabase(doctor["categories_name"], doctor["categories_name_en"])}",
+                maxLines: 2,
                 textAlign: TextAlign.center,
                 style: TextStyle(
-                  fontSize: 12.0, // Set your desired font size here
+                  fontSize: 12.0,
                   color: AppColor.SCIsecondaryColor,
                 ),
               ),
             ],
           ),
         ),
-      ) ,
+      )
+      ,
     );
   }
 }

@@ -4,6 +4,7 @@ import 'package:flutter_html/flutter_html.dart';
 import 'package:get/get.dart';
 import 'package:suezproduction/controller/ServiceController.dart';
 import 'package:suezproduction/core/constant/color.dart';
+import 'package:suezproduction/view/screen/AccidentReport.dart';
 import 'package:suezproduction/view/screen/CheckPolicy.dart';
 import 'package:suezproduction/view/screen/NewBranches.dart';
 import 'package:suezproduction/view/screen/claimpage.dart';
@@ -765,10 +766,11 @@ Container(
          padding: EdgeInsets.only(left: 5,right: 5),
          child: Wrap(
            spacing: 10, // Horizontal spacing between items
-           runSpacing: 10, // Vertical spacing between rows
+           runSpacing: 5, // Vertical spacing between rows
            children: [
              SizedBox(
-               width: MediaQuery.of(context).size.width / 3 - 10, // 1/3 of screen width minus spacing
+               width: 110,
+             //  width: MediaQuery.of(context).size.width / 3 - 10, // 1/3 of screen width minus spacing
                child: EventsAndExperiencesItems6(
                  newnumber: '1',
                  title: "Validate_document".tr,
@@ -779,7 +781,7 @@ Container(
                ),
              ),
              SizedBox(
-               width: MediaQuery.of(context).size.width / 3 - 10,
+               width: 110,
                child: EventsAndExperiencesItems6(
                  newnumber: '2',
                  title: "claimtitle".tr,
@@ -790,7 +792,8 @@ Container(
                ),
              ),
              SizedBox(
-               width: MediaQuery.of(context).size.width / 3 - 10,
+               width: 110,
+              // width: MediaQuery.of(context).size.width / 3 - 10,
                child: EventsAndExperiencesItems6(
                  newnumber: '3',
                  title: "E_Pay".tr,
@@ -822,18 +825,20 @@ Container(
            runSpacing: 10, // Vertical spacing between rows
            children: [
              SizedBox(
-               width: MediaQuery.of(context).size.width / 3 - 10, // 1/3 of screen width minus spacing
+               width: 110,
+             //  width: MediaQuery.of(context).size.width / 3 - 10, // 1/3 of screen width minus spacing
                child: EventsAndExperiencesItems6(
-                 newnumber: '4',
-                 title: "contact".tr,
+                 newnumber: '7',
+                 title: "anotheracciedent".tr,
                  description: '',
                  lessonsCount: '',
-                 imagePath: 'assets/images/call.png',
-                 gifPath: 'assets/images/call.gif',
+                 imagePath: 'assets/images/report.png',
+                 gifPath: 'assets/images/report.gif',
                ),
              ),
              SizedBox(
-               width: MediaQuery.of(context).size.width / 3 - 10,
+               width: 110,
+               //width: MediaQuery.of(context).size.width / 3 - 10,
                child: EventsAndExperiencesItems6(
                  newnumber: '5',
                  title: "cat".tr,
@@ -844,7 +849,8 @@ Container(
                ),
              ),
              SizedBox(
-               width: MediaQuery.of(context).size.width / 3 - 10,
+               width: 110,
+              // width: MediaQuery.of(context).size.width / 3 - 10,
                child: EventsAndExperiencesItems6(
                  newnumber: '6',
                  title: "branches".tr,
@@ -863,7 +869,43 @@ Container(
  }
 
 
+ class sci_service3 extends StatelessWidget {
+   const sci_service3({Key? key}) : super(key: key);
 
+   @override
+   Widget build(BuildContext context) {
+     return SingleChildScrollView(
+       scrollDirection: Axis.horizontal,
+       child: Container(
+         padding: EdgeInsets.only(left: 5, right: 5),
+         child: Row(
+           mainAxisAlignment: MainAxisAlignment.start, // Aligns items to the right
+           children: [
+             Wrap(
+               spacing: 10, // Horizontal spacing between items
+               runSpacing: 10, // Vertical spacing between rows
+               children: [
+                 SizedBox(
+                   width: MediaQuery.of(context).size.width / 3 - 10, // 1/3 of screen width minus spacing
+                   child: EventsAndExperiencesItems6(
+                     newnumber: '4',
+                     title: "contact".tr,
+                     description: '',
+                     lessonsCount: '',
+                     imagePath: 'assets/images/call.png',
+                     gifPath: 'assets/images/call.gif',
+                   ),
+                 ),
+               ],
+             ),
+           ],
+         ),
+       )
+       ,
+     )
+     ;
+   }
+ }
 
  class EventsAndExperiencesItems6 extends StatefulWidget {
    const EventsAndExperiencesItems6({
@@ -994,6 +1036,21 @@ Container(
            //  _launchURL('mailto: info@sci-egypt.com ?subject=from user mobile application&body=Please contact me');
 
          }
+         else if(widget.newnumber=="7")
+         {
+         if (mycontroller.isLogin() == false) {
+
+
+         ScaffoldMessenger.of(context)
+             .showSnackBar(snackBar);
+         } else {
+           Navigator.push(
+               context,
+               MaterialPageRoute(
+                   builder: (context) => AccidentReportForm()));
+           //  _launchURL('mailto: info@sci-egypt.com ?subject=from user mobile application&body=Please contact me');
+         }
+         }
          else
          {
 
@@ -1002,17 +1059,23 @@ Container(
        },
        child: Container(
          margin: const EdgeInsets.only(right: 1, bottom: 10, top: 10),
-         width: 60,
-         height: 100,
+         width: 100,
+         height: 80,
          decoration: BoxDecoration(
-           color:  ((widget.newnumber=="1"  || widget.newnumber=="2"  || widget.newnumber=="3" ) && mycontroller.isLogin() == false) ? Colors.grey.shade300 :Colors.white ,
+           color:  ((widget.newnumber=="1"  || widget.newnumber=="2"  || widget.newnumber=="3" || widget.newnumber=="7" ) && mycontroller.isLogin() == false) ? Colors.grey.shade300 :Colors.white ,
            boxShadow: [
              BoxShadow(
                color: Colors.grey.shade300,
                blurRadius: 10,
              )
            ],
+
            borderRadius: BorderRadius.circular(15),
+
+           border: Border.all( // إضافة الحد الأزرق
+             color:((widget.newnumber=="1"  || widget.newnumber=="2"  || widget.newnumber=="3" || widget.newnumber=="7" ) && mycontroller.isLogin() == false)? Colors.blue: Colors.white, // لون الحد
+             width: 2, // عرض الحد
+           ),
          ),
          child: Center( // Ensure the content is centered in the container
            child: Column(
@@ -1030,7 +1093,7 @@ Container(
                  widget.title,
                  textAlign: TextAlign.center,
                  style: TextStyle(
-                   fontSize: 12.0, // Set your desired font size here
+                   fontSize: 10.0, // Set your desired font size here
                    color: AppColor.SCIsecondaryColor,
                  ),
                ),

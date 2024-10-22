@@ -5,121 +5,116 @@ import 'package:suezproduction/core/constant/imgaeasset.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_image_slideshow/flutter_image_slideshow.dart';
 import 'package:suezproduction/core/functions/translateDatabase.dart';
-
+import 'package:url_launcher/url_launcher.dart';
 class customappbar extends StatelessWidget {
- final String titleapp;
- final void Function()  onPressedicon;
- final void Function()  onPressedsearch;
+  final String titleapp;
+  final void Function()  onPressedicon;
+  final void Function()  onPressedsearch;
   const customappbar({Key? key,required this.titleapp,required this.onPressedicon, required this.onPressedsearch}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
-    HomecontrollerTmp mycontroller=  Get.put(HomecontrollerTmp());
+    HomecontrollerTmp mycontroller = Get.put(HomecontrollerTmp());
+    final double imageSize = 230.0; // يمكنك تعديل هذا الحجم حسب الحاجة
+    final double imageSizeW = 350.0;
 
-    // Get the screen size
-    final screenSize = MediaQuery.of(context).size;
 
-// Calculate the aspect ratio of the image
-    final imageAspectRatio = 1727 / 660;
+    return ClipRRect(
+        borderRadius: BorderRadius.circular(20), // Set border radius for the slideshow
+        child:ImageSlideshow(
+      width: imageSizeW,
+      height: imageSize,
+      initialPage: 0,
 
-// Set container width and height based on screen size and aspect ratio
-    final containerWidth = screenSize.width * .9; // 80% of screen width
-    final containerHeight = containerWidth / imageAspectRatio;
+      children: [
+        GestureDetector(
+          onTap: () async {
+    /*        // روابط المتاجر لتنزيل تطبيق MyFawry
+            const appStoreLink = 'https://apps.apple.com/eg/app/myfawry/id1462911630'; // رابط iOS
+            const playStoreLink = 'https://play.google.com/store/apps/details?id=com.fawry.myfawry'; // رابط Android
 
-    return Container(
-      margin: const EdgeInsets.only(top: 15),
-      width: containerWidth, // Adjust the width of the outer container
-      child: ImageSlideshow(
-        /// Width of the [ImageSlideshow].
-        width: containerWidth, // Set width to the calculated containerWidth
+            try {
+              // التوجيه إلى المتجر المناسب بناءً على نظام التشغيل
+              if (Theme.of(context).platform == TargetPlatform.iOS) {
+                await launchUrl(Uri.parse(appStoreLink));
+              } else {
+                await launchUrl(Uri.parse(playStoreLink));
+              }
+            } catch (e) {
+              print('Error opening app store link: $e');
+            }*/
+          },
+          child:   Container(
+          width: imageSizeW,
+          height: imageSize,
+          decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(20), // حواف دائرية
+          boxShadow: [
+          BoxShadow(
+          color: Colors.black.withOpacity(0.6), // ظل بلون برتقالي
+          spreadRadius: 2, // انتشار الظل
+          blurRadius: 5, // ضبابية الظل
+          offset: Offset(0, 3), // اتجاه الظل
+          ),
+          ],
+          ),
+          child: ClipRRect(
+          borderRadius: BorderRadius.circular(20), // حواف دائرية للصورة
+          child: Image.asset(
+            translateDatabase(AppImageAsset.slidshow7, AppImageAsset.slidshow7),
+          fit: BoxFit.cover, // ملء الحاوية بالكامل
+          ),
+          ),
+          )),
 
-        /// Height of the [ImageSlideshow].
-        height: containerHeight, // Set height to the calculated containerHeight
-
-        /// The page to show when first creating the [ImageSlideshow].
-        initialPage: 0,
-
-        /// The color to paint the indicator.
-        indicatorColor: Colors.white,
-
-        /// The color to paint behind the indicator.
-        indicatorBackgroundColor: Colors.grey,
-
-        /// The widgets to display in the [ImageSlideshow].
-        /// Add the sample image file into the images folder
-        children: [
-          Container(
-            width: containerWidth,
-            height: containerHeight,
-            decoration: BoxDecoration(
-              color: AppColor.primaryColor,
-              borderRadius: BorderRadius.circular(20),
-            ),
-            child: ClipRRect(
-              borderRadius: BorderRadius.circular(20),
-              child: Image.asset(
-                translateDatabase(AppImageAsset.slidshow1, AppImageAsset.slidshow_en1),
-                fit: BoxFit.contain, // Maintain image quality
+        Container(
+          width: imageSizeW,
+          height: imageSize,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(20), // حواف دائرية
+            boxShadow: [
+              BoxShadow(
+                color: Colors.black.withOpacity(0.6), // ظل بلون برتقالي
+                spreadRadius: 2, // انتشار الظل
+                blurRadius: 5, // ضبابية الظل
+                offset: Offset(0, 3), // اتجاه الظل
               ),
+            ],
+          ),
+          child: ClipRRect(
+            borderRadius: BorderRadius.circular(20), // حواف دائرية للصورة
+            child: Image.asset(
+              translateDatabase(AppImageAsset.slidshow_en6, AppImageAsset.slidshow_en6),
+              fit: BoxFit.cover, // ملء الحاوية بالكامل
             ),
           ),
-          Container(
-            width: containerWidth,
-            height: containerHeight,
-            decoration: BoxDecoration(
-              color: AppColor.primaryColor,
-              borderRadius: BorderRadius.circular(20),
-            ),
-            child: ClipRRect(
-              borderRadius: BorderRadius.circular(20),
-              child: Image.asset(
-                translateDatabase(AppImageAsset.slidshow2, AppImageAsset.slidshow_en2),
-                fit: BoxFit.contain, // Maintain image quality
+        ),
+        Container(
+          width: imageSizeW,
+          height: imageSize,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(20), // حواف دائرية
+            boxShadow: [
+              BoxShadow(
+                color: Colors.black.withOpacity(0.6), // ظل بلون برتقالي
+                spreadRadius: 2, // انتشار الظل
+                blurRadius: 5, // ضبابية الظل
+                offset: Offset(0, 3), // اتجاه الظل
               ),
+            ],
+          ),
+          child: ClipRRect(
+            borderRadius: BorderRadius.circular(20), // حواف دائرية للصورة
+            child: Image.asset(
+              AppImageAsset.slidshow5,
+              fit: BoxFit.cover, // ملء الحاوية بالكامل
             ),
           ),
-          Container(
-            width: containerWidth,
-            height: containerHeight,
-            decoration: BoxDecoration(
-              color: AppColor.primaryColor,
-              borderRadius: BorderRadius.circular(20),
-            ),
-            child: ClipRRect(
-              borderRadius: BorderRadius.circular(20),
-              child: Image.asset(
-                translateDatabase(AppImageAsset.slidshow3, AppImageAsset.slidshow_en3),
-                fit: BoxFit.contain, // Maintain image quality
-              ),
-            ),
-          ),      Container(
-            width: containerWidth,
-            height: containerHeight,
-            decoration: BoxDecoration(
-              color: AppColor.primaryColor,
-              borderRadius: BorderRadius.circular(20),
-            ),
-            child: ClipRRect(
-              borderRadius: BorderRadius.circular(20),
-              child: Image.asset(
-                translateDatabase(AppImageAsset.slidshow4, AppImageAsset.slidshow_en4),
-                fit: BoxFit.contain, // Maintain image quality
-              ),
-            ),
-          ),
-        ],
-
-        /// Called whenever the page in the center of the viewport changes.
-        onPageChanged: (value) {},
-
-        /// Auto scroll interval.
-        /// Do not auto scroll with null or 0.
-        autoPlayInterval: 3000,
-
-        /// Loops back to first slide.
-        isLoop: true,
-      ),
-    );
-
+        )
+      ],
+      onPageChanged: (value) {},
+      autoPlayInterval: 3000,
+      isLoop: true,
+    ));
   }
+
 }

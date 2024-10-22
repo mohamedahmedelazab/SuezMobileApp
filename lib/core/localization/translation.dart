@@ -92,9 +92,9 @@ class MyTranslation extends Translations {
           "alex2name": "فرع   العامرية  ",
           "alex3name": "فرع برج العرب",
           "alex4name": "فرع دمنهور  ",
-          "alex5name": "    ملحق دمنهور",
+          "alex5name": "    فرع دمنهور2 ",
           "canal1name": "فرع الإسماعيلية",
-          "canal2name": "ملحق الإسماعيلية",
+          "canal2name": "فرع الإسماعيلية 2",
           "canal3name": "مكتب هيئة الاستثمار بالإسماعيلية",
           "canal4name": "فرع السويس",
           "canal5name": "مكتب ميناء الأدبية",
@@ -130,7 +130,7 @@ class MyTranslation extends Translations {
           "alex3address":
               "العنوان: شارع بن ابي طالب – الحي الأول – \n  برج العرب – الإسكندرية",
           "alex4address":
-              "العنوان: برج عدوي – أمام استراحة المحافظ \n  – دمنهور – البحيرة",
+              "العنوان: برج عدوي –\n  أمام استراحة المحافظ ",
           "alex5address":
               "العنوان: 2ميدان توفيق الحكيم – \n – دمنهور – البحيرة",
           "cario1address":
@@ -257,7 +257,7 @@ class MyTranslation extends Translations {
               "العنوان : 16 شارع محمد حافظ –متفرع من ش الثورة \n الدقي – الجيزة",
           "edary2tel": "تليفون: 33381720 – 37491359",
           "edary2fax": "",
-          "edary3name": "إصدار تأمينات السيارات",
+          "edary3name": "إصدار تأمين السيارات",
           "edary3address":
               "العنوان : 16 شارع محمد حافظ –متفرع من ش الثورة \n الدقي – الجيزة",
           "edary3tel": "تليفون: 01001798904-37491396",
@@ -292,8 +292,7 @@ class MyTranslation extends Translations {
           "wait": 'جاري تحميل البيانات...',
           "about": "من نحن",
           "aboutustitle": "نبذة عن شركة قناة السويس للتأمين",
-          "aboutussub":
-              "هي شـركة مسـاهمة مصـرية تأسست في 10أكتوبر لعام 1979، طبقًا لأحكام القانون رقم(159) لسنة 1981، وقانون الإشراف والرقابة رقم (10) لسنة 1981، وهي أول شركة تأمين من القطاع الخاص في مصر، تأسست تحت مظلة المقاولون العرب، وهيئة قناة السويس. \n   ومنذ تأسيس شركة قنـاة السويس للتأمين في السوق المصرية وهي تحقق النموذج الأمثل والخبرة الشاملة في تقديم الخدمات التأمينية المتميزة للمشروعات القومية، ومشروعات القطاع الخاص، والإستثمار، وغيرهم، لذا تمتد فروعها ل40 فرعًا في جميع محافظات جمهورية مصر العربية دعمًا وحرصًا على سلامة الاقتصاد القومي لتحقيق إنجازات عالية  ",
+          "aboutussub": " هي شـركة مسـاهمة مصرية تأسست في 10أكتوبر لعام 1979، طبقًا لأحكام القانون رقم(159) لسنة 1981، وقانون الإشراف والرقابة رقم (10) لسنة 1981، وهي أول شركة تأمين من القطاع الخاص في مصر، تأسست تحت مظلة المقاولون العرب، وهيئة قناة السويس.\nومنذ تأسيس شركة قنـاة السويس للتأمين في السوق المصرية وهي تحقق النموذج الأمثل والخبرة الشاملة في تقديم الخدمات التأمينية المتميزة للمشروعات القومية، ومشروعات القطاع الخاص، والإستثمار، وغيرهم، لذا تمتد فروعها ل40 فرعًا في جميع محافظات جمهورية مصر العربية دعمًا وحرصًا على سلامة الاقتصاد القومي لتحقيق إنجازات عالية.   \n  يبلغ رأس المال المدفوع  275 مليون جنيه  ",
           "FOLLOW": "تابعنا علي الفيس بوك",
           "FOLLOW_linkedin": "تابعنا علي   لينكدإن",
           "FOLLOW_instagram": "تابعنا علي  إنستجرام",
@@ -338,14 +337,16 @@ class MyTranslation extends Translations {
           "Confirm": "تأكيد",
           "cancel": "إلغاء",
           "loginfirst": "يرجى تسجيل الدخول أولا ",
-          "BranchNamesub1": " اصدار التأمينات الهندسية",
-          "BranchNamesub2": "اعادة التأمين",
-          "BranchNamesub3": "تعويضات  البحرى",
-          "BranchNamesub4": "اصدار اجسام سفن",
+          "BranchNamesub1": "إدارة التأمينات الهندسية",
+
+
+          "BranchNamesub2": "إدارة اعادة التأمين",
+          "BranchNamesub3": "إدارة  البحرى",
+          "BranchNamesub4": "إدارة اجسام سفن",
           "BranchNamesub5": "تعويضات اجسام سفن",
-          "BranchNamesub6": "الحريق والسطو الإصدار",
+          "BranchNamesub6": "إدارة الحريق والسطو ",
           "BranchNamesub7": "التأمينات الهندسية /تعويضات",
-          "BranchNamesub8": " الحوادث المتنوعة / تعويضات",
+          "BranchNamesub8": "إدارة الحوادث المتنوعة",
           "BranchNamesub9": "ادارة المخاطر",
           "BranchNamesub10": "تعويضات السيارات",
           "BranchNamesub11": "اصدار السيارات",
@@ -357,24 +358,95 @@ class MyTranslation extends Translations {
           "anotheracciedent": "إبلاغ حادث جديد",
           "send":"إرسال",
           "edara":"الإدارة",
-          "name":"الإسم"
+          "name":"الإسم",
+          "ProducersPortalonline":"بوابة المنتجين",
+          "branchno1":"--",
+          "branchno2":"---",
+         "sendsucess" :"تم إرسال الرسالة بنجاح",
+          "Pleaseenterthename":"من فضلك أدخل الإسم",
+          "message":"موضوع الرسالة",
+          "Pleaseenterthemessage":"من فضلك أدخل الرسالة",
+          "Sendmessage":"إرسال رسالة لإدارة",
+          "registerFirst":"يجب عليك تسجيل الدخول أولاَ",
+          "PrivacyPolicy":"سياسة الخصوصية",
+          "Policysub": '''
+سياسة الخصوصية
+
+المقدمة
+نحن ملتزمون بحماية خصوصية مستخدمينا. توضح هذه السياسة كيفية جمع واستخدام وحماية بياناتك الشخصية عند استخدام تطبيقنا.
+
+جمع المعلومات
+نقوم بجمع المعلومات الشخصية التي تقدمها لنا عند التسجيل في التطبيق أو استخدام ميزاته المختلفة، مثل:
+- الاسم
+- البريد الإلكتروني
+- رقم الهاتف
+
+قد نقوم أيضًا بجمع معلومات غير شخصية، مثل:
+- معلومات الجهاز (نظام التشغيل، النوع)
+- عنوان IP
+- بيانات الاستخدام
+
+استخدام المعلومات
+نستخدم المعلومات التي نجمعها لتحقيق الأغراض التالية:
+- تحسين تجربة المستخدم
+- معالجة الطلبات أو الاستفسارات
+- تقديم الدعم الفني
+- إرسال تحديثات التطبيق والإشعارات
+                      ''',
+          "subIssuance1":"إصدار",
+          "subIssuance2":"تعويضات",
+
         },
         "en": {
+  "PrivacyPolicy":"Privacy Policy",
+  "Policysub": '''Privacy Policy
+ 
+        Introduction
+        We are committed to protecting the privacy of our users. This Privacy Policy explains how we collect, use, and protect your personal data when you use our app.
+
+        Data Collection
+        We collect personal data that you provide to us when you register in the app or use its features, such as:
+        - Name
+        - Email address
+        - Phone number
+
+        We may also collect non-personal data, such as:
+        - Device information (OS, type)
+        - IP address
+        - Usage data
+
+        Use of Information
+        We use the information we collect for the following purposes:
+        - Improve user experience
+        - Process requests or inquiries
+        - Provide technical support
+        - Send app updates and notifications ''',
+          "registerFirst":"Log in first.",
+  "Sendmessage":"Send Message",
+          "Pleaseenterthename":"Please enter the name",
+          "message":"   message",
+          "Pleaseenterthemessage":"Please enter the message.",
+  "sendsucess" :"The message was sent successfully.",
+  "branchno1":"--",
+  "branchno2":"---",
+          "ProducersPortalonline":"Producers Portal online",
           "name":"Name",
-          "edara":"section",
+          "edara":"Department",
           "send":"إرسال",
-          "anotheracciedent": "Submit Another Report",
+          "anotheracciedent": "Report ِA Claim",
           "acciedentsuccess": "Accident Report Sent Successfully!",
           "acciedentsubject": "acciedent subject",
-          "acciedent": "Report an Acciedent",
-          "BranchNamesub1": "Engineering Insurance Issuance",
+          "acciedent": "Report ِA Claim ",
+          "BranchNamesub1": "Engineering Insurance ",
+          "subIssuance1":"Issuance",
+          "subIssuance2":"Claims",
           "BranchNamesub2": "Reinsurance",
-          "BranchNamesub3": "Marine Claims",
-          "BranchNamesub4": "Ship Hull Issuance",
-          "BranchNamesub5": "Ship Hull Claims",
-          "BranchNamesub6": "Fire and Theft Issuance",
-          "BranchNamesub7": "Engineering Insurance / Claims",
-          "BranchNamesub8": "Miscellaneous Accidents / Claims",
+          "BranchNamesub3": "Marine cargo ",
+          "BranchNamesub4": "Marine Hull ",
+          "BranchNamesub5": "Marine Cargo ",
+          "BranchNamesub6": "Fire & Burglary ",
+          "BranchNamesub7": "Engineering  / Claims",
+          "BranchNamesub8": "Miscellaneous",
           "BranchNamesub9": "Risk Management",
           "BranchNamesub10": "Car Claims",
           "BranchNamesub11": "Car Issuance",
@@ -404,10 +476,10 @@ class MyTranslation extends Translations {
           "Insured": "Insured",
           "Beneficiary": "Beneficiary :- ",
           "detail": "Details",
-          "loginin": "login in",
-          "login": "login in",
+          "loginin": "sign in",
+          "login": "sign in",
           "exit": "exit",
-          "claimtitle": "   Motors claims",
+          "claimtitle": " Your  Motor claim",
           "msglogin": "To use this service , please login in",
           "checktitle":
               "You can verify the authenticity of your document by typing the document number and barcode number",
@@ -476,48 +548,48 @@ class MyTranslation extends Translations {
           "profile": "Profile",
           "news": "news",
           "toactive": "Active Your Account",
-          "BranchName1": "Head Quarters",
-          "BranchName2": "Annex Building",
-          "BranchName3": "Greater Cairo",
-          "BranchName4": "Lower Egypt  ",
-          "BranchName5": " Alexandria",
-          "BranchName6": "Canal Cities",
-          "BranchName7": "Upper Egypt",
-          "cario1name": "Business Men",
-          "cario2name": "Mossadaq",
-          "cario3name": "Shobra",
-          "cario4name": "Nobar",
-          "cario5name": "Maadi",
-          "cario6name": "Heliopolis   Triumph",
-          "cario7name": "Heliopolis El Ahram",
-          "cario8name": "6th of October",
-          "cario9name": "10th of Ramadan  ",
-          "bahary1name": "Banha",
-          "bahary2name": "Shebeen El Kom  ",
-          "bahary3name": "Tanta",
-          "bahary4name": "El Mansoura  ",
+          "BranchName1": "Head quarter",
+          "BranchName2": "Annex building",
+          "BranchName3": "Cairo branches",
+          "BranchName4": "Lower Egypt  branches",
+          "BranchName5": "Alexandria branches",
+          "BranchName6": "Canal Cities branches",
+          "BranchName7": "Upper Egypt branches",
+          "cario1name": "Business Men branch",
+          "cario2name": "Mossadaq branch",
+          "cario3name": "Shobra branch",
+          "cario4name": "Nobar branch",
+          "cario5name": "Maadi branch",
+          "cario6name": "Heliopolis   Triumph branch",
+          "cario7name": "Heliopolis El Ahram branch",
+          "cario8name": "6th of October branch",
+          "cario9name": "10th of Ramadan  branch",
+          "bahary1name": "Banha branch",
+          "bahary2name": "Shebeen El Kom branch ",
+          "bahary3name": "Tanta branch",
+          "bahary4name": "El Mansoura branch ",
           "bahary5name": "Kafr El Sheikh",
-          "bahary6name": "Zagazig",
-          "alex1name": "El Azarita",
-          "alex2name": "El Amreya  ",
-          "alex3name": "Borg El Arab",
-          "alex4name": "Damanhour  ",
-          "alex5name": "Damanhour Attaché",
-          "canal1name": "Ismailia",
-          "canal2name": "Ismailia Attaché",
-          "canal3name": "General Authority for Invesments in Ismailia",
-          "canal4name": "Suez",
-          "canal5name": "Adabya Port Office",
-          "canal6name": "Port Said",
-          "canal7name": "New Damietta",
-          "canal8name": "Hurghada",
-          "qbly1name": "Fayoum",
-          "qbly2name": "Beni Suef",
-          "qbly3name": "Minya",
-          "qbly4name": "Assiut",
-          "qbly5name": "Suhag",
-          "qbly6name": "Luxor",
-          "qbly7name": "Aswan",
+          "bahary6name": "Zagazig branch",
+          "alex1name": "El Azarita branch",
+          "alex2name": "El Amreya  branch",
+          "alex3name": "Borg El Arab branch",
+          "alex4name": "Damanhour  branch",
+          "alex5name": "Damanhour 2 branch",
+          "canal1name": "Ismailia branch",
+          "canal2name": "Ismailia 2 branch",
+          "canal3name": "General Authority for Invesments in Ismailia branch",
+          "canal4name": "Suez branch",
+          "canal5name": "Adabya Port Office branch",
+          "canal6name": "Port Said branch",
+          "canal7name": "New Damietta branch",
+          "canal8name": "Hurghada branch",
+          "qbly1name": "Fayoum branch",
+          "qbly2name": "Beni Suef branch",
+          "qbly3name": "Minya branch",
+          "qbly4name": "Assiut branch",
+          "qbly5name": "Suhag branch",
+          "qbly6name": "Luxor branch",
+          "qbly7name": "Aswan branch",
           "address1":
               "31 Mohamed Kamel Morsi St. \n El Batal Ahmed Abdelaziz St.  Mohandeseen – Giz ",
           "address2":
@@ -549,7 +621,7 @@ class MyTranslation extends Translations {
           "cario6address":
               "2 Sayed Abo Shady St. \n Behind Lycee El Horeya School  Heliopolis  ",
           "cario7address":
-              "Building No. 9 - \nPanorama Mountain Green Buildings \n on Al-Nasr Road",
+              "Building No. 9 \n- Panorama Al Jabal Al Akhdar Buildings on \n Al Nasr Road ",
           "cario8address":
               "Silver Mall  \n   Next to City Scape Square October",
           "cario9address":
@@ -575,7 +647,7 @@ class MyTranslation extends Translations {
               "Fayrouz Luxor Project \n El Awamya Zone  Unit #1  Luxor",
           "qbly7address":
               "Ali Eissa St. \n Infront of the Security Bldgs  Aswan",
-          "tel1": " Tel :   37601056   02-   37491365 02",
+          "tel1": " Tel :   37601056   02",
           "tel2": "Tel :   37492703 02-  37492703 02",
           "tel3": "Tel :   33382543 02-  37601789 02",
           "tel5": "Tel: 035820589  – 035845818",
@@ -665,7 +737,7 @@ class MyTranslation extends Translations {
           "alex3fax": "Fax: 034481451",
           "alex4fax": "Fax: 045333856",
           "alex5fax": "",
-          "edary4name": "Car Compensation",
+          "edary4name": "car indemnity",
           "edary4address": "",
           "edary4tel": "Tel: 33365517 – 37617135",
           "edary4fax": "Fax: 37617133",
@@ -686,7 +758,7 @@ class MyTranslation extends Translations {
           "about": "About Us",
           "aboutustitle": "SCI Company Is",
           "aboutussub":
-              "An Egyptian joint stock company, established on October 10, 1979, following the provisions of Law No. 159 of 1981 and Law No. 10 of 1981. Being the first private sector insurance company in Egypt, established under the umbrella of Arab Contractors and the Suez Canal Authority. \n  Since the establishment of the Suez Canal Insurance Company in the Egyptian market, it has been achieving the optimal model and comprehensive experience in providing distinguished insurance services for national projects, private sector projects, investments, and others.\n Suez Canal Insurance Company’s branches extend to more than 40 branches and offices.",
+              "An Egyptian joint stock company, established on October 10, 1979, following the provisions of Law No. 159 of 1981 and Law No. 10 of 1981. Being the first private sector insurance company in Egypt, established under the umbrella of Arab Contractors and the Suez Canal Authority.\n Since the establishment of the Suez Canal Insurance Company in the Egyptian market, it has been achieving the optimal model and comprehensive experience in providing distinguished insurance services for national projects, private sector projects, investments, and others.\n Suez Canal Insurance Company’s branches extend to more than 40 branches and offices.The paid-up capital amounts to 275 million pounds",
           "FOLLOW": "FOLLOW Us On Facebook",
           "FOLLOW_linkedin": "FOLLOW Us On Linkedin",
           "FOLLOW_instagram": "FOLLOW Us On Instagram",

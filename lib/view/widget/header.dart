@@ -109,12 +109,9 @@ class Header extends StatelessWidget {
 
   // Widget for the logo
   Widget _buildLogo() {
-    return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 20),
-      child: Image.asset(
-        'assets/images/newlogo.png', // Replace with your asset path
-        height: 100,
-      ),
+    return Image.asset(
+      'assets/images/finalnewlogo.png', // Replace with your asset path
+      height: 180,
     );
   }
 }

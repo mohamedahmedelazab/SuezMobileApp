@@ -30,13 +30,17 @@ class AppImageAsset {
   static const String slidshow2 = "$rootImages/2.jpg";
   static const String slidshow3 = "$rootImages/3.jpg";
   static const String slidshow4 = "$rootImages/4.jpg";
-
+  static const String slidshow5 = "$rootImages/carr.png";
+  static const String slidshow6 = "$rootImages/mony.png";
+  static const String slidshow7 = "$rootImages/page-8.png";
   static const String slidshow_en1 = "$rootImages/1eng.jpg";
   static const String slidshow_en2 = "$rootImages/2eng.jpg";
   static const String slidshow_en3 = "$rootImages/3eng.jpg";
   static const String slidshow_en4 = "$rootImages/4eng.jpg";
+  static const String slidshow_en5 = "$rootImages/carr.jpg";
 
-
+  static const String slidshow_en6 = "$rootImages/mony.png";
+  static const String slidshow_en7 = "$rootImages/page-8.png";
 
 
   static const String locations = "$rootImages/locations.png";

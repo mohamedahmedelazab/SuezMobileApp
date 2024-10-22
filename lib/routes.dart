@@ -2,6 +2,7 @@ import 'package:suezproduction/controller/stepper_controller.dart';
 import 'package:suezproduction/view/fingerprint.dart';
 import 'package:suezproduction/view/screen/AccidentReport.dart';
 import 'package:suezproduction/view/screen/GoogleMap.dart';
+import 'package:suezproduction/view/screen/ProductUrl.dart';
 import 'package:suezproduction/view/screen/ShowPrice.dart';
 import 'package:suezproduction/view/screen/auth/re_activation.dart';
 import 'package:suezproduction/core/constant/routes.dart';
@@ -65,6 +66,6 @@ List<GetPage<dynamic>>? routes = [
   GetPage(name: AppRoute.ourproduct, page: () =>  ourproduct()),
   GetPage(name: AppRoute.Language, page: () =>  Language()),
   GetPage(name: AppRoute.AccidentReportForm, page: () =>  AccidentReportForm()),
-
+  GetPage(name: AppRoute.ProductUrl, page: () =>  ProductUrl()),
 ];
  

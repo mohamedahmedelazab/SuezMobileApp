@@ -26,11 +26,12 @@ class ItemcontrollerTmp extends Itemscontroller
   ItemData itemData=ItemData(Get.find());
   SendEmailToedara sendemailtoedara=SendEmailToedara(Get.find());
   late StatusRequest statusRequest;
+  MyServices myServices = Get.find();
   int? selectedCat;
   String? catid;
   String? categoryname;
   String? email;
-  MyServices myServices = Get.find();
+
 
   @override
   void onInit() {
