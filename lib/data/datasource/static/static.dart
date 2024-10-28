@@ -27,6 +27,56 @@ List menuList = [
 
 
 
+final List<Map<String, String>> InsList = [
+  {'InsKind': '11', 'InsName': 'حريق'},
+  {'InsKind': '12', 'InsName': 'سطو'},
+  {'InsKind': '31A', 'InsName': 'سيارات تجارى'},
+  {'InsKind': '31B', 'InsName': 'سيارات خصوصى'},
+  {'InsKind': '32', 'InsName': 'سيارات إجبارى'},
+  {'InsKind': '41', 'InsName': 'نقل بحري'},
+  {'InsKind': '42', 'InsName': 'نقل داخلى'},
+  {'InsKind': '51', 'InsName': 'وحدات بحرية'},
+  {'InsKind': '60', 'InsName': 'حوادث'},
+  {'InsKind': '61', 'InsName': 'حوادث شخصية'},
+  {'InsKind': '62', 'InsName': 'مسئولية مدنية'},
+  {'InsKind': '621', 'InsName': 'عائمات'},
+
+  {'InsKind': '63', 'InsName': 'نقل نقدية'},
+  {'InsKind': '64', 'InsName': 'أختلاس'},
+
+
+  {'InsKind': '65', 'InsName': 'كسر زجاج'},
+  {'InsKind': '66', 'InsName': 'حماية أسرة'},
+  {'InsKind': '67', 'InsName': 'جميع أخطار نفوق الماشية'},
+  {'InsKind': '68', 'InsName': 'مساعدات السفر'},
+
+  {'InsKind': '80', 'InsName': 'هندسى'},
+  {'InsKind': '801', 'InsName': 'مسئولية مدنية هندسي'},
+  {'InsKind': '802', 'InsName': 'مسئوليةأخطاءالمهنة هندسي'},
+  {'InsKind': '803', 'InsName': 'مسئولية المنتجات هندسي'},
+  {'InsKind': '804', 'InsName': 'جميع أخطارالبنوك هندسي'},
+  {'InsKind': '805', 'InsName': 'حوادث شخصية هندسي'},
+  {'InsKind': '806', 'InsName': 'جميع الأخطارهندسي'},
+  {'InsKind': '807', 'InsName': 'وثيقة أعمال مدنية متكاملة'},
+  {'InsKind': '81', 'InsName': 'ألات ومعدات'},
+  {'InsKind': '82', 'InsName': 'أخطار المقاولون'},
+  {'InsKind': '83', 'InsName': 'أخطار التركيب'},
+  {'InsKind': '84', 'InsName': 'أعطال الماكينات'},
+  {'InsKind': '85', 'InsName': 'فقد أرباح'},
+  {'InsKind': '86', 'InsName': 'فساد المخزون'},
+  {'InsKind': '87', 'InsName': 'أجهزة إلكترونية'},
+  {'InsKind': '91', 'InsName': 'تأمين صحى'},
+  {'InsKind': '92', 'InsName': 'م.م.عشرية'},
+  {'InsKind': '111', 'InsName': 'حريق شامل'},
+  {'InsKind': '112', 'InsName': 'الشغب والاضطرابات'},
+  {'InsKind': '69', 'InsName': 'الحوادث الشخصية للمقترضين'},
+  {'InsKind': '89', 'InsName': 'العنف السياسي'},
+  {'InsKind': '611', 'InsName': 'ضمان عدم سداد'},
+
+  {'InsKind': '93', 'InsName': 'تأمين البترول'},
+  {'InsKind': '612', 'InsName': 'حوادث اشخصية غوص وسنوركل'},
+
+];
 
 List<CarBrand> carBrands = <CarBrand>[
   CarBrand(brandMain: 33,

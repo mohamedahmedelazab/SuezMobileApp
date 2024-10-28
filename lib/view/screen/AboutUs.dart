@@ -161,7 +161,7 @@ class AboutUs extends StatelessWidget {
       children: <Widget>[
         Text(
           '$count',
-          style: TextStyle(color: Colors.blue),
+          style: TextStyle(color: Colors.white),
         ),
         Text(
           type,

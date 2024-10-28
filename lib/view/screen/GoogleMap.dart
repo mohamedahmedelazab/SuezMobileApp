@@ -6,6 +6,7 @@ import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:path/path.dart';
 import 'package:get/get.dart';
 import 'package:suezproduction/controller/MapSampleController.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class MapSample extends StatelessWidget {
   MapSamplecontrollerTmp mycontroller = Get.put(MapSamplecontrollerTmp());
@@ -13,6 +14,8 @@ class MapSample extends StatelessWidget {
       Completer<GoogleMapController>();
 
   void _onMarkerTapped(LatLng position, BuildContext context) async {
+
+
     // Fetch place details using Google Places API
     List<Placemark> placemarkers =
         await placemarkFromCoordinates(30.051490, 31.208620);
@@ -58,7 +61,9 @@ class MapSample extends StatelessWidget {
                               fontWeight: FontWeight.bold,
                               color: Colors.blue.shade900)),
                     ],
-                  ) /*,
+                  ) ,
+
+                  /*,
                   Text(placemarkers[0].administrativeArea.toString(),
                       style: TextStyle(
                           fontSize: 12,
@@ -105,15 +110,18 @@ class MapSample extends StatelessWidget {
           ))
         ],
       ),
-   /*   floatingActionButton: FloatingActionButton.extended(
+    floatingActionButton: FloatingActionButton.extended(
         onPressed: () async {
-          final GoogleMapController controller = await _controller.future;
-          await controller.animateCamera(
-              CameraUpdate.newCameraPosition(mycontroller.kLake));
+          final url = 'https://www.google.com/maps/search/?api=1&query=${mycontroller.lat},${mycontroller.lnd}';
+          if (await canLaunch(url)) {
+            await launch(url);
+          } else {
+            throw 'Could not launch $url';
+          }
         },
-        label: const Text('Zoom'),
-        icon: const Icon(Icons.directions_boat),
-      )*/
+        label:  Text('directions'.tr),
+        icon: const Icon(Icons.directions),
+      )
     );
   }
 }

@@ -32,7 +32,10 @@ class AppImageAsset {
   static const String slidshow4 = "$rootImages/4.jpg";
   static const String slidshow5 = "$rootImages/carr.png";
   static const String slidshow6 = "$rootImages/mony.png";
+
+
   static const String slidshow7 = "$rootImages/page-8.png";
+  static const String slidshow8 = "$rootImages/9.png";
   static const String slidshow_en1 = "$rootImages/1eng.jpg";
   static const String slidshow_en2 = "$rootImages/2eng.jpg";
   static const String slidshow_en3 = "$rootImages/3eng.jpg";

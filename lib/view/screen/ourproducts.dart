@@ -33,15 +33,14 @@ class ourproduct extends StatelessWidget {
           localcontroller: localcontroller,
         ),
         drawer: NavDrawer(),
-        body: Container(
+        body: SingleChildScrollView(child: Container(
           decoration: BoxDecoration(
             image: DecorationImage(
               image: AssetImage("assets/images/background.jpg"),
               fit: BoxFit.cover,
             ),
           ),
-          child: SafeArea(
-            child: ListView(
+          child:  Column(
 
 
               children: [
@@ -51,8 +50,8 @@ class ourproduct extends StatelessWidget {
                   mycontroller: mycontroller,
                   servicecontroller: myServices,
                 ),
-
                 ListCategoriesHome(),
+
                 CustomTextSignUpOrSignIn(
                   textone: "",
                   texttwo: "back".tr,
@@ -68,7 +67,7 @@ class ourproduct extends StatelessWidget {
               ],
             ),
           ),
-        ),
+        )  ,
         bottomNavigationBar: CustomBottomAppBar(
           mycontroller: mycontroller,
           servicecontroller: servicecontroller,

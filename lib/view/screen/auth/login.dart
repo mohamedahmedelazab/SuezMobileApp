@@ -3,6 +3,8 @@ import 'package:suezproduction/core/class/handlingdataview.dart';
 import 'package:suezproduction/core/constant/color.dart';
 import 'package:suezproduction/core/functions/alertexitapp.dart';
 import 'package:suezproduction/core/functions/validinput.dart';
+import 'package:suezproduction/core/localization/changelocal.dart';
+import 'package:suezproduction/view/widget/AppBar.dart';
 import 'package:suezproduction/view/widget/auth/custombuttonauth.dart';
 import 'package:suezproduction/view/widget/auth/customtextbodyauth.dart';
 import 'package:suezproduction/view/widget/auth/customtextformauth.dart';
@@ -25,20 +27,15 @@ class Login extends StatelessWidget {
 
     final double screenWidth = MediaQuery.of(context).size.width;
 
+    LocaleController localcontroller = Get.put(LocaleController());
 
     return  Scaffold(
-        appBar: AppBar(
-          centerTitle: true,
-          backgroundColor: AppColor.backgroundcolor,
-          elevation: 0.0,
-          title: Text("loginin".tr,
-              style: Theme.of(context)
-                  .textTheme
-                  .headline1!
-                  .copyWith(color: AppColor.grey)),
+        appBar:
+
+        MainAppBar(
+          title: "loginin".tr,
+          localcontroller: localcontroller,
         ),
-
-
 
         body: WillPopScope(
           onWillPop:ExitApp,
@@ -90,7 +87,7 @@ class Login extends StatelessWidget {
 
 
                       const SizedBox(height: 30),
-                      CustomTextSignUpOrSignIn(
+                      CustomTextSignUpOrSignIn2(
                         textone: "16".tr,
                         texttwo: "17".tr,
                         onTap: () {

@@ -12,31 +12,85 @@ import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 class ListCategoriesHome extends GetView<HomecontrollerTmp> {
   const ListCategoriesHome({Key? key}) : super(key: key);
 
-  @override
   Widget build(BuildContext context) {
     return GetBuilder<HomecontrollerTmp>(
-        builder:
-        (controller)=>HandlingDataView(
+      builder: (controller) => HandlingDataView(
         statusRequest: controller.statusRequest,
-        widget:
-
-        StaggeredGridView.countBuilder(
-          physics: const NeverScrollableScrollPhysics(), //<--here
+        widget: ListView.builder(
+          physics: const NeverScrollableScrollPhysics(),
           shrinkWrap: true,
-          crossAxisCount: 6,
           itemCount: controller.categories.length,
-          itemBuilder: (BuildContext context, int index) =>
-              DoctorBox(
-                  index: index, doctor: controller.categories[index]
-              ),
-          staggeredTileBuilder: (int index) =>
-          new StaggeredTile.count(2, index.isEven ? 2 : 2),
-          mainAxisSpacing: 4,
-          crossAxisSpacing: 4,
-        ) ));
+          itemBuilder: (BuildContext context, int index) {
+            return viewdemo(
+              index: index,
+              doctor: controller.categories[index],
+            );
+          },
+        ),
+      ),
+    );
   }
 }
 
+class viewdemo extends   GetView<HomecontrollerTmp>{
+  viewdemo({ Key? key, required this.index, required this.doctor}) : super(key: key);
+final int index;
+final doctor;
+
+
+  @override
+  Widget build(BuildContext context) {
+  return   InkWell(
+      onTap: (){
+        //  controller.gotoitems(controller.categories,index!, doctor["categories_id"],doctor["categories_name"],doctor["email"]);
+        controller.producerurl(doctor["categories_name"],doctor["categories_name_en"],doctor["url"],doctor["enurl"],doctor["email"]);
+
+        // print(doctor["categories_name_en"]);
+      },
+      child: Column(children: [
+      Container(
+      width: 350,
+      height: 300,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(15),
+        color: Colors.white,
+        boxShadow: [
+          BoxShadow(
+            color: Colors.grey.withOpacity(0.5),
+            spreadRadius: 5,
+            blurRadius: 7,
+            offset: Offset(0, 3),
+          ),
+        ],
+      ),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          ClipRRect(
+            borderRadius: BorderRadius.circular(15),
+            child: Image.network(
+              "${AppLink.imagesCategories}/${doctor["categories_image"]}", // Replace with your image URL
+              fit: BoxFit.cover,
+              width: 300,
+              height: 200,
+            ),
+          ),
+          SizedBox(height: 10),
+          Text(
+            "${translateDatabase(doctor["categories_name"], doctor["categories_name_en"])}",
+            style: TextStyle(
+              fontSize: 20,
+              fontWeight: FontWeight.bold,
+              color: AppColor.primaryColor,
+            ),
+          ),
+
+        ],
+      ),
+    ),SizedBox(height: 10,)
+    ],));
+  }
+  }
 
 
 class DoctorBox extends   GetView<HomecontrollerTmp>{
@@ -59,7 +113,7 @@ class DoctorBox extends   GetView<HomecontrollerTmp>{
         width: 60,
         height: 180,
         decoration: BoxDecoration(
-          color: Colors.transparent, // إزالة اللون الأبيض من الخلفية
+          color: Colors.white, // إزالة اللون الأبيض من الخلفية
           boxShadow: [
             BoxShadow(
               color: Colors.grey.shade300,

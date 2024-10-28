@@ -18,7 +18,7 @@ class _OnlinePayState extends State<OnLinepay> {
     super.initState();
 
     controller..setJavaScriptMode(JavaScriptMode.unrestricted);
-    controller..setBackgroundColor(const Color(0x0ff888ff));
+    controller..setBackgroundColor(const Color(0xff9dd6fc));
     controller..setNavigationDelegate(
         NavigationDelegate(
           onProgress: (int progress) {

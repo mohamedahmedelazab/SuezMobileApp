@@ -6,6 +6,7 @@ import 'package:suezproduction/view/screen/AboutUs.dart';
 import 'package:suezproduction/view/screen/AccidentReport.dart';
 import 'package:suezproduction/view/screen/CheckPolicy.dart';
 import 'package:suezproduction/view/screen/NewBranches.dart';
+import 'package:suezproduction/view/screen/PriceOffer.dart';
 import 'package:suezproduction/view/screen/PrivacyPolicy.dart';
 import 'package:suezproduction/view/screen/ProducersPortalonline.dart';
 import 'package:suezproduction/view/screen/contactus.dart';
@@ -33,6 +34,17 @@ class NavDrawer extends StatelessWidget {
                 fit: BoxFit.cover,
                 image: AssetImage('assets/images/cover.jpg'),
               ),
+            ),
+          ),
+          ListTile(
+            leading: Icon(Icons.paid_outlined),
+            title: Text(
+              "offer".tr,
+              style: TextStyle(fontSize: screenWidth * 0.04),
+            ),
+            onTap: () => Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => PriceOffer()),
             ),
           ),
           ListTile(

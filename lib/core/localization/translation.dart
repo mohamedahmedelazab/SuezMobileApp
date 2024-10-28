@@ -69,6 +69,7 @@ class MyTranslation extends Translations {
           "BranchName1": "المركز الرئيسي",
           "BranchName2": "الملحق الإداري",
           "BranchName3": "منطقة  القاهرة  الكبرى",
+          "cario0name":"فرع القاهرة",
           "BranchName4": " الوجه البحرى",
           "BranchName5": "   الأسكندرية",
           "BranchName6": "   القنــاة",
@@ -88,6 +89,7 @@ class MyTranslation extends Translations {
           "bahary4name": "فرع المنصورة  ",
           "bahary5name": "فرع كفر الشيخ",
           "bahary6name": "فرع  الزقازيق",
+          "alex0name": " فرع الاسكندرية ",
           "alex1name": "فرع   الأزاريطة",
           "alex2name": "فرع   العامرية  ",
           "alex3name": "فرع برج العرب",
@@ -113,13 +115,13 @@ class MyTranslation extends Translations {
               "العنوان : 16 شارع محمد حافظ –متفرع من ش الثورة \n الدقي – الجيزة",
           "address3": "العنوان :10 شارع ايران الدقى ",
           "address5": "العنوان: 539 مكرر – طريق الحرية –\n  جليم – الاسكندرية",
-          "bahary1address": "العنوان: 3 شارع سعد زغلول – بنها – القليوبية",
+          "bahary1address": "العنوان: 3 شارع سعد زغلول \n– بنها – القليوبية",
           "bahary2address":
               "العنوان: ميدان شرف- برج الكوثر-\n  شبين الكوم – المنوفية",
           "bahary3address":
               "العنوان: برج السرايا -ش البحر \n   – طنطا – الغربية",
           "bahary4address":
-              "العنوان: 25 شارع الجيش- أمام مسجد النصر-\n  المنصورة – الدقهلية",
+              "العنوان: 25 شارع الجيش- \nأمام مسجد النصر",
           "bahary5address":
               "العنوان: عمارة رقم6 \n – شارع صلاح سالم – كفر الشيخ",
           "bahary6address": "العنوان: 91 شارع سعد زغلول  \n– الزقازيق",
@@ -136,18 +138,18 @@ class MyTranslation extends Translations {
           "cario1address":
               "العنوان : 4 شارع ابن الوليد \n ميدان ابن عفان- الدقي",
           "cario2address":
-              "العنوان: 5 شارع النهضة عمارات هئية التدريس – \ الدقي",
+              "العنوان: 5 شارع النهضة \nعمارات هئية التدريس – \ الدقي",
           "cario3address":
               "العنوان : 17 ش دوليتان الدور الاول\n ميدان الخلفاوى - شبرا",
           "cario4address": "العنوان : 49شارع نوبار باب اللوق  ",
           "cario5address": "العنوان : 1 ش الجزاير الدور الثانى",
           "cario6address":
-              "العنوان : 2 شارع سيد أبو شادي –\n  خلف مدرسة ليسية الحرية –  مصر الجديدة",
+              "العنوان : 2 شارع سيد أبو شادي –\n  خلف مدرسة ليسية الحرية ",
           "cario7address":
               "العنوان:عمارة رقم 9 \n  – عمارات بانورما الجبل الاخضر علي طريق النصر",
           "cario8address": "العنوان: سلفر مول – الدور الرابع –  \n أكتوبر",
           "cario9address":
-              "المشروع الاستثماري الأردني رقم (2) عمارة رقم 11  \n العاشر من رمضان  ",
+              "المشروع الاستثماري الأردني\n رقم (2) عمارة رقم 11  \n العاشر من رمضان  ",
           "canal1address":
               "العنوان: 144 شارع التحرير –\n أمام بنك مصر  – الإسماعيلية",
           "canal2address":
@@ -173,7 +175,7 @@ class MyTranslation extends Translations {
               "العنوان: مشروع فيروز الأقصر \n – منطقة العوامية –  – الأقصر",
           "qbly7address":
               "العنوان: شارع علي عيسى –\n  أمام عمارات فرق الأمن – أسوان",
-          "tel1": " تليفون :   37601056   02-   37491365 02",
+          "tel1": "37491365 02",
           "tel2": "تليفون :   37492703 02-  37492703 02",
           "tel3": "تليفون :   33382543 02-  37601789 02",
           "tel5": "التليفون: 035820589  – 035845818",
@@ -227,10 +229,10 @@ class MyTranslation extends Translations {
           "qbly5fax": "فاكس: 0932160275",
           "qbly6fax": "فاكس: 0952273959",
           "qbly7fax": "",
-          "email1": "فاكس : 33350981 – 33354070",
-          "email2": "فاكس :   37602734  ",
-          "email3": "فاكس :  33371794 02",
-          "email5": "فاكس: 035836783",
+          "fax1": "فاكس : 33350981 – 33354070",
+          "fax2": "فاكس :   37602734  ",
+          "fax3": "فاكس :  33371794 02",
+          "fax5": "فاكس: 035836783",
           "cario1fax": "فاكس: 33360682",
           "cario2fax": "فاكس :   33366859 02",
           "cario3fax": "فاكس :   21960342 02",
@@ -257,7 +259,7 @@ class MyTranslation extends Translations {
               "العنوان : 16 شارع محمد حافظ –متفرع من ش الثورة \n الدقي – الجيزة",
           "edary2tel": "تليفون: 33381720 – 37491359",
           "edary2fax": "",
-          "edary3name": "إصدار تأمين السيارات",
+          "edary3name": " تأمين السيارات",
           "edary3address":
               "العنوان : 16 شارع محمد حافظ –متفرع من ش الثورة \n الدقي – الجيزة",
           "edary3tel": "تليفون: 01001798904-37491396",
@@ -352,10 +354,25 @@ class MyTranslation extends Translations {
           "BranchNamesub11": "اصدار السيارات",
           "BranchNamesub12": "الرعاية الصحية",
           "BranchNamesub13": "المراجعة الفنية",
+          "BranchNamesub14": "إدارة كبار العملاء",
+          "BranchNamesub15": "إدارة  التحصيل",
+          "BranchNamesub16": "إدارة متابعة التحصيل",
+
+
           "acciedent": "إبلاغ عن حادث",
           "acciedentsubject": "تفاصيل الحادث",
           "acciedentsuccess": "تم ارسال بيانات الحادث بنجاح",
           "anotheracciedent": "إبلاغ حادث جديد",
+
+          "insurance":"نوع التأمين",
+          "offer": "طلب عرض سعر",
+          "offersubject": "تفاصيل ",
+          "offersuccess": "تم ارسال بيانات العرض بنجاح",
+          "anotheroffer": "طلب عرض سعر جديد",
+          "address":"العنوان",
+          "amount":"مبلغ التأمين",
+
+
           "send":"إرسال",
           "edara":"الإدارة",
           "name":"الإسم",
@@ -395,9 +412,20 @@ class MyTranslation extends Translations {
                       ''',
           "subIssuance1":"إصدار",
           "subIssuance2":"تعويضات",
+          "directions":"الإتجاهات",
+          "card":"رقم البطاقة"
 
         },
         "en": {
+          "card":"Card Id",
+          "directions":"directions",
+          "insurance":"Insurance type",
+          "offer": "Price Offer Request",
+          "offersubject": "detail ",
+          "offersuccess": "The offer data has been sent successfully",
+          "anotheroffer": "New Request",
+          "address":"address",
+          "amount":"  Sum insured",
   "PrivacyPolicy":"Privacy Policy",
   "Policysub": '''Privacy Policy
  
@@ -452,6 +480,10 @@ class MyTranslation extends Translations {
           "BranchNamesub11": "Car Issuance",
           "BranchNamesub12": "Healthcare",
           "BranchNamesub13": "Technical Review",
+          "BranchNamesub14": "Customer Relation (CRM)",
+          "BranchNamesub15": "collection",
+          "BranchNamesub16": "collection follow up",
+
           "loginfirst": "Please log in first",
           "Alert": "Alert",
           "Alertsub": " Do you want to exit the app ?",
@@ -520,7 +552,7 @@ class MyTranslation extends Translations {
           "24": "Sign Up With Your Email And Password ",
           "25": " have an account ? ",
           "active": "Your account Not Active",
-          "26": "SignIn",
+          "26": "Sign In",
           "suez": "Suez Canal Insurance",
           "27": "Check Email",
           "28": "Account successfully created",
@@ -551,6 +583,7 @@ class MyTranslation extends Translations {
           "BranchName1": "Head quarter",
           "BranchName2": "Annex building",
           "BranchName3": "Cairo branches",
+          "cario0name":"Cairo branch ",
           "BranchName4": "Lower Egypt  branches",
           "BranchName5": "Alexandria branches",
           "BranchName6": "Canal Cities branches",
@@ -570,6 +603,8 @@ class MyTranslation extends Translations {
           "bahary4name": "El Mansoura branch ",
           "bahary5name": "Kafr El Sheikh",
           "bahary6name": "Zagazig branch",
+          "alex0name": "Alexandria branch",
+
           "alex1name": "El Azarita branch",
           "alex2name": "El Amreya  branch",
           "alex3name": "Borg El Arab branch",
@@ -701,10 +736,10 @@ class MyTranslation extends Translations {
           "qbly5fax": "Fax: 0932160275",
           "qbly6fax": "Fax: 0952273959",
           "qbly7fax": "",
-          "email1": "Fax : 33350981 – 33354070",
-          "email2": "Fax :   37602734  ",
-          "email3": "Fax :  33371794 02",
-          "email5": "Fax: 035836783",
+          "fax1": "Fax : 33350981 – 33354070",
+          "fax2": "Fax :   37602734  ",
+          "fax3": "Fax :  33371794 02",
+          "fax5": "Fax: 035836783",
           "cario1fax": "Fax: 33360682",
           "cario2fax": "Fax :   33366859 02",
           "cario3fax": "Fax :   21960342 02",
@@ -728,7 +763,7 @@ class MyTranslation extends Translations {
           "edary2address": "",
           "edary2tel": "Tel: 33381720 – 37491359",
           "edary2fax": "",
-          "edary3name": "Car Insurance Issuance",
+          "edary3name": "Car Insurance ",
           "edary3address": "",
           "edary3tel": "Tel: 01001798904-37491396",
           "edary3fax": "Fax: 37602734",

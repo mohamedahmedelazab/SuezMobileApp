@@ -109,7 +109,39 @@ class customappbar extends StatelessWidget {
               fit: BoxFit.cover, // ملء الحاوية بالكامل
             ),
           ),
-        )
+        ),
+    GestureDetector(
+    onTap: () async {
+
+            const appStoreLink = 'https://news.ambest.com/PR/PressContent.aspx?refnum=34040&altsrc=9#:~:text=AM%20Best%20has%20affirmed%20the,Ratings%20(ratings)%20is%20negative'; // رابط iOS
+
+
+
+                await launchUrl(Uri.parse(appStoreLink));
+
+    },
+    child: Container(
+          width: imageSizeW,
+          height: imageSize,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(20), // حواف دائرية
+            boxShadow: [
+              BoxShadow(
+                color: Colors.black.withOpacity(0.6), // ظل بلون برتقالي
+                spreadRadius: 2, // انتشار الظل
+                blurRadius: 5, // ضبابية الظل
+                offset: Offset(0, 3), // اتجاه الظل
+              ),
+            ],
+          ),
+          child: ClipRRect(
+            borderRadius: BorderRadius.circular(20), // حواف دائرية للصورة
+            child: Image.asset(
+              AppImageAsset.slidshow8,
+              fit: BoxFit.cover, // ملء الحاوية بالكامل
+            ),
+          ),
+    )  )
       ],
       onPageChanged: (value) {},
       autoPlayInterval: 3000,
