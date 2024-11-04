@@ -25,7 +25,13 @@ class Language extends GetView<LocaleController> {
             children: [
               const NewLogoAuth(),
               SizedBox(height: 50,),
-              Text("اختر اللغة    Choose Language  ", style: Theme.of(context).textTheme.headline1),
+              Row(
+                children: [
+
+                  Text("       Choose Language  ", style: Theme.of(context).textTheme.headline1),
+                  Text("       إختر اللغة  ", style: Theme.of(context).textTheme.headline1),
+                ],
+              ),
               const SizedBox(height: 20),
               CustomButtonLang(
                   textbutton: "Ar",

@@ -24,9 +24,12 @@ class AccidentReportController extends GetxController {
   SendEmailToedara sendemailtoedara=SendEmailToedara(Get.find());
   // This method will send the data to the API
   Future<void> sendAccidentReport() async {
+    statusRequest = StatusRequest.loading;
+    update();
     var response = await sendemailtoedara.postDataAcciedent(acciedentname,acciedentsubject, acciedentemail,emailto,acciedenttel,acciedentpolNo);
     statusRequest = handlingData(response);
 
+    update();
     if (statusRequest == StatusRequest.success) {
       // On success, set isSuccess to true and hide the form
       isSuccess.value = true;
@@ -60,16 +63,13 @@ class AccidentReportController extends GetxController {
     acciedentpolNo = value;
   }
 
-  bool isEmailValid(String email) {
-    String emailPattern = r'^[a-zA-Z0-9._]+@[a-zA-Z0-9]+\.[a-zA-Z]+';
-    RegExp regExp = RegExp(emailPattern);
-    return regExp.hasMatch(email);
-  }
+
   Future<void> _loadEmailFromSharedPreferences() async {
 
 
     if (myServices.sharedPreferences.getString("email")!="") {
       acciedentemail = myServices.sharedPreferences.getString("email")!;
+      update();
     }
 
     if (myServices.sharedPreferences.getString("username")!="") {

@@ -144,7 +144,7 @@ class customappbar extends StatelessWidget {
     )  )
       ],
       onPageChanged: (value) {},
-      autoPlayInterval: 3000,
+      autoPlayInterval: 4000,
       isLoop: true,
     ));
   }

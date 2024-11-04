@@ -80,7 +80,7 @@ class MyTranslation extends Translations {
           "cario4name": "مكتب نوبـــــــار",
           "cario5name": "فرع المعادي",
           "cario6name": "فرع مصر الجـديدة تريومف",
-          "cario7name": "فرع مصر الجـديدة الأهــرام",
+          "cario7name": "فرع البانورما",
           "cario8name": "فرع 6 أكتوبر",
           "cario9name": "فرع العاشر  ",
           "bahary1name": "فرع   بنها",
@@ -360,7 +360,7 @@ class MyTranslation extends Translations {
 
 
           "acciedent": "إبلاغ عن حادث",
-          "acciedentsubject": "تفاصيل الحادث",
+          "acciedentsubject": "تفاصيل ",
           "acciedentsuccess": "تم ارسال بيانات الحادث بنجاح",
           "anotheracciedent": "إبلاغ حادث جديد",
 
@@ -413,20 +413,105 @@ class MyTranslation extends Translations {
           "subIssuance1":"إصدار",
           "subIssuance2":"تعويضات",
           "directions":"الإتجاهات",
-          "card":"رقم البطاقة"
+          "card":"رقم البطاقة/جواز السفر",
+          "sucessmessage":"تم استلام طلبكم بنجاح ، \nسيقوم احد موظفينا بالتواصل معكم قريبا",
+          "sendbtn":"إرسال",
+          "Erroroffertel":"من فضلك أدخل رقم الهاتف",
+          "ErrorofferInsName":"من فضلك إختر الإدارة",
+          "Erroroffername":"من فضلك أدخل الإسم",
+          "ErroroffercardId":"من فضلك أدخل رقم البطاقة/جواز السفر",
+          "Errorofferemail1":"من فضلك أدخل البريد الالكترونى",
+          "Errorofferemail2":"من فضلك أدخل البريد الالكتروني بشكل صحيح",
+          "Error":"خطأ",
+          "OK":"موافق",
+          "agree":" أنا موافق علي  ",
+          "Terms":"الشروط والأحكام",
+          "and":" و ",
+          "termssub":   '''الشروط والأحكام
 
+مقدمة
+مرحبًا بك في شركة التأمين الخاصة بنا. من خلال الوصول إلى خدماتنا واستخدامها، فإنك توافق على الالتزام بالشروط والأحكام التالية. يرجى قراءتها بعناية.
+
+التغطية التأمينية
+تشمل بوليصة التأمين الخاصة بك التفاصيل المحددة للتغطية التأمينية التي نقدمها. يُرجى الرجوع إلى بوليصة التأمين الخاصة بك للحصول على معلومات دقيقة حول التغطية والمزايا.
+
+دفع الأقساط
+يجب دفع أقساط التأمين في المواعيد المحددة لضمان استمرار التغطية التأمينية. إذا لم يتم دفع الأقساط في الموعد المحدد، فقد يتم تعليق أو إنهاء التغطية التأمينية.
+
+تقديم المطالبات
+لتقديم مطالبة، يجب عليك إخطارنا في أقرب وقت ممكن بعد وقوع الحادث أو الحالة المؤمن عليها. يُرجى تقديم جميع المستندات المطلوبة لدعم المطالبة.
+
+الإلغاء
+يمكنك إلغاء بوليصة التأمين في أي وقت عن طريق إخطارنا كتابيًا. قد يتم تطبيق رسوم الإلغاء وفقًا لشروط بوليصة التأمين.
+
+التعديلات
+نحتفظ بالحق في تعديل هذه الشروط والأحكام في أي وقت. سيتم إخطارك بأي تغييرات مهمة قد تؤثر على حقوقك أو التزاماتك.
+
+القانون الواجب التطبيق
+تخضع هذه الشروط والأحكام وتفسر وفقًا للقوانين المعمول بها في الولاية أو البلد الذي نعمل فيه.
+
+الاتصال بنا
+إذا كان لديك أي أسئلة أو استفسارات حول هذه الشروط والأحكام، يرجى الاتصال بنا عبر البريد الإلكتروني أو الهاتف.''',
+          "ErrorSingup1":"كلمة المرور مطلوبة",
+          "ErrorSingup2":"جب أن تكون كلمة المرور مكونة من 8 أحرف على الأقل",
+          "ErrorSingup3":"يجب أن تحتوي كلمة المرور على أحرف وأرقام",
+          "ErrorSingup4":"كلمة المرور وتأكيد كلمة المرور غير متطابقتين",
+          "ReenterPassword":"تأكيد كلمة المرور"
         },
         "en": {
-          "card":"Card Id",
+  "ErrorSingup1":"Password is required",
+  "ErrorSingup2":"Password must be at least 8 characters long",
+  "ErrorSingup3":"Password must contain both letters and numbers",
+  "ErrorSingup4":"Password do not match with Re-Password",
+          "agree":"I agree to ",
+  "ReenterPassword":"Re-enter Password",
+          "and":" and ",
+          "Terms":"Terms and Conditions",
+          "termssub":            '''Terms and Conditions
+
+Introduction
+Welcome to our insurance company. By accessing and using our services, you agree to be bound by the following terms and conditions. Please read them carefully.
+
+Insurance Coverage
+Your insurance policy includes specific details of the coverage we provide. Please refer to your insurance policy for accurate information regarding coverage and benefits.
+
+Payment of Premiums
+Insurance premiums must be paid on time to ensure continuous coverage. If premiums are not paid on time, coverage may be suspended or terminated.
+
+Filing Claims
+To file a claim, you must notify us as soon as possible after the incident or covered event occurs. Please provide all necessary documents to support the claim.
+
+Cancellation
+You can cancel your insurance policy at any time by notifying us in writing. Cancellation fees may apply according to the terms of the insurance policy.
+
+Amendments
+We reserve the right to amend these terms and conditions at any time. You will be notified of any significant changes that may affect your rights or obligations.
+
+Governing Law
+These terms and conditions are governed by and interpreted in accordance with the laws of the state or country in which we operate.
+
+Contact Us
+If you have any questions or inquiries regarding these terms and conditions, please contact us via email or phone.''',
+          "Erroroffertel":"Please fill in   ( phone)",
+  "ErrorofferInsName":"Please choose Department",
+  "Erroroffername":"Please fill   (Name)",
+  "ErroroffercardId":"Please enter a valid ID/Passport No.",
+  "Errorofferemail1":"Please fill in   (Email )",
+  "Errorofferemail2":"Please enter a valid email",
+  "Error":"Error",
+  "sendbtn":"send",
+  "sucessmessage":"Successfully submitted ,\n one of our team members will contact you shortly",
+          "card":"ID/Passport No.",
           "directions":"directions",
-          "insurance":"Insurance type",
-          "offer": "Price Offer Request",
-          "offersubject": "detail ",
-          "offersuccess": "The offer data has been sent successfully",
+          "insurance":"type of Insurance",
+          "offer": "Get Your Offer ",
+          "offersubject": "Details ",
+          "offersuccess": "Successfully submitted ,\n one of our team members will contact you shortly",
           "anotheroffer": "New Request",
           "address":"address",
           "amount":"  Sum insured",
   "PrivacyPolicy":"Privacy Policy",
+          "OK":"OK",
   "Policysub": '''Privacy Policy
  
         Introduction
@@ -460,10 +545,10 @@ class MyTranslation extends Translations {
           "ProducersPortalonline":"Producers Portal online",
           "name":"Name",
           "edara":"Department",
-          "send":"إرسال",
+          "send":"send",
           "anotheracciedent": "Report ِA Claim",
           "acciedentsuccess": "Accident Report Sent Successfully!",
-          "acciedentsubject": "acciedent subject",
+          "acciedentsubject": "Details",
           "acciedent": "Report ِA Claim ",
           "BranchNamesub1": "Engineering Insurance ",
           "subIssuance1":"Issuance",

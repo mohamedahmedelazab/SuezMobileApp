@@ -52,16 +52,12 @@ final doctor;
       width: 350,
       height: 300,
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(15),
-        color: Colors.white,
-        boxShadow: [
-          BoxShadow(
-            color: Colors.grey.withOpacity(0.5),
-            spreadRadius: 5,
-            blurRadius: 7,
-            offset: Offset(0, 3),
-          ),
-        ],
+          borderRadius: BorderRadius.circular(15),
+     /*     border: Border.all( // إضافة الحد الأزرق
+            color: Colors.blue, // لون الحد
+            width: 0, // عرض الحد
+          )*/
+
       ),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -113,7 +109,7 @@ class DoctorBox extends   GetView<HomecontrollerTmp>{
         width: 60,
         height: 180,
         decoration: BoxDecoration(
-          color: Colors.white, // إزالة اللون الأبيض من الخلفية
+          color: Colors.transparent, // إزالة اللون الأبيض من الخلفية
           boxShadow: [
             BoxShadow(
               color: Colors.grey.shade300,

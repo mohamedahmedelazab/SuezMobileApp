@@ -1,3 +1,4 @@
+
 import 'dart:ui' as ui;
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -14,7 +15,8 @@ import 'package:suezproduction/view/widget/customeappbar.dart';
 import 'package:suezproduction/view/widget/header.dart';
 import 'package:suezproduction/view/widget/home/NavDrawer.dart';
 
-class PrivacyPolicy extends StatelessWidget {
+
+class Terms extends StatelessWidget {
   AboutUsControllerImp controller = Get.put(AboutUsControllerImp());
   MyServices myServices = Get.find();
   HomecontrollerTmp mycontroller = Get.put(HomecontrollerTmp());
@@ -64,7 +66,7 @@ class PrivacyPolicy extends StatelessWidget {
                   children: <Widget>[
                     Center(
                       child: Text(
-                        'PrivacyPolicy'.tr,
+                        'Terms'.tr,
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
                           fontSize: 18,
@@ -75,7 +77,7 @@ class PrivacyPolicy extends StatelessWidget {
                     Padding(
                       padding: EdgeInsets.only(top: _height / 30, left: _width / 20, right: _width / 20),
                       child: Text(
-                        "Policysub".tr,
+                        "termssub".tr,
                         style: TextStyle(
                           fontWeight: FontWeight.normal,
                           fontSize: 14,
@@ -114,6 +116,3 @@ class PrivacyPolicy extends StatelessWidget {
     ),
   );
 }
-
-
-

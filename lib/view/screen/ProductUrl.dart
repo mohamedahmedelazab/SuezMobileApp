@@ -13,7 +13,7 @@ class ProductUrl extends StatelessWidget {
   Widget build(BuildContext context) {
 
     return Scaffold(
-      floatingActionButton: FloatingActionButton.extended(
+/*      floatingActionButton: FloatingActionButton.extended(
         onPressed: () {
           // Action to be taken when the button is pressed
           if (  servicecontroller.isLogin()== true) {
@@ -34,7 +34,7 @@ class ProductUrl extends StatelessWidget {
         icon: Icon(Icons.email),
         label: Text("Sendmessage".tr,style: TextStyle(color: Colors.white,fontSize:12)),
         backgroundColor: Colors.blue, // Background color of the button
-      ),
+      ),*/
       appBar: AppBar(
 
       //  title: Text(controller.categoryname!), // GetX localized string

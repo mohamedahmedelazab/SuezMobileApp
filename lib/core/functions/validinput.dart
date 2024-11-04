@@ -19,7 +19,7 @@ validInput(String val, int min, int max, String type) {
   }
 
   if (val.isEmpty) {
-    return "لا يجب أن يكون فارغا";
+    return "Not Empty";
   }
 
   if (val.length < min) {

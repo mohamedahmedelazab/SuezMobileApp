@@ -19,6 +19,12 @@ var offeramount='0';
 var offersubject='';
 var emailto = 'crm@sci-egypt.net';
 
+
+List<Map<String, String>> selectedInsurances = [
+
+
+];
+
   var acciedentsubject = '';
   StatusRequest statusRequest = StatusRequest.none;
 
@@ -30,12 +36,17 @@ PriceOfferData priceofferdata=PriceOfferData(Get.find());
   Future<void> sendOfferPrice() async {
     statusRequest = StatusRequest.loading;
     update();
-    var response = await priceofferdata.postData(offername,offercardId,offeremail,offeraddress==''?'_':offeraddress,offertel==''?'_':offertel==''?'_':offertel,offerInsKind,offerInsName,offeramount,offersubject==''?'_':offersubject,emailto);
+    //var response = await priceofferdata.postData(offername,offercardId,offeremail,offeraddress==''?'_':offeraddress,offertel==''?'_':offertel==''?'_':offertel,offerInsKind,offerInsName,offeramount,offersubject==''?'_':offersubject,emailto);
     //statusRequest = handlingData(response);
 
-    if (response['status'] =="sucess") {
 
-        response = await priceofferdata.postDataEmail(offername,offercardId,offeremail,offeraddress==''?'_':offeraddress,offertel==''?'_':offertel==''?'_':offertel,offerInsKind,offerInsName,offeramount,offersubject==''?'_':offersubject,emailto);
+
+
+
+  var  response = await priceofferdata.postDataEmail(offername,offercardId,offeremail,offeraddress==''?'_':offeraddress,offertel==''?'_':offertel==''?'_':offertel,offerInsKind,offerInsName,offeramount,offersubject==''?'_':offersubject,emailto);
+
+    if (response['status'] =="success") {
+
         statusRequest = StatusRequest.success;
         update();
       // On success, set isSuccess to true and hide the form

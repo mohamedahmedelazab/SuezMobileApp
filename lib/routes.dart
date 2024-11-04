@@ -43,7 +43,7 @@ List<GetPage<dynamic>>? routes = [
     GetPage(name: "/", page: () => OnBoarding()),
 
   GetPage(name: AppRoute.login, page: () =>  Login()),
-  GetPage(name: AppRoute.signUp, page: () => const SignUp()),
+  GetPage(name: AppRoute.signUp, page: () =>  SignUp()),
   GetPage(name: AppRoute.forgetPassword, page: () => const ForgetPassword()),
   GetPage(name: AppRoute.verfiyCode, page: () => const VerfiyCode()),
   GetPage(name: AppRoute.resetPassword, page: () => const ResetPassword()),

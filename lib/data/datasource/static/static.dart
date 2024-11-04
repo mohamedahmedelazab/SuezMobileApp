@@ -25,8 +25,17 @@ List menuList = [
   MenuItemModel(Image.asset('assets/images/supportIcon.png', width: 50,    height: 50,), 'إتصل بنا'),
 ];
 
+final List<Map<String, String>> InsList = [
+{'InsKind': 'Ac','InsName': ' الحوادث','InsName_en':'Miscellaneous ', 'email': 'g.accidents@sci-egypt.com'},
+{'InsKind': '31A','InsName': ' السيارات','InsName_en':'Motors ', 'email': 'claim.motors@sci-egypt.net'},
+{'InsKind': 'Fr','InsName': 'الحريق','InsName_en':'Fire & burglary ', 'email': 'fire@sci-egypt.com'},
+{'InsKind': '80','InsName': ' الهندسي','InsName_en':'Engineering ', 'email': 'eng@sci-egypt.com'},
+{'InsKind': 'Hu','InsName': ' أجسام السفن','InsName_en':'Marine Hull ', 'email': 'hull@sci-egypt.com'},
+{'InsKind': 'Ca','InsName': 'البحري','InsName_en':'Marine cargo ', 'email': 'cargo@sci-egypt.com'},
+  {'InsKind': 'Do','InsName': ' الطبي','InsName_en':'Medical ', 'email': 'cargo@sci-egypt.com'},
+];
 
-
+/*
 final List<Map<String, String>> InsList = [
   {'InsKind': '11', 'InsName': 'حريق'},
   {'InsKind': '12', 'InsName': 'سطو'},
@@ -77,7 +86,7 @@ final List<Map<String, String>> InsList = [
   {'InsKind': '612', 'InsName': 'حوادث اشخصية غوص وسنوركل'},
 
 ];
-
+*/
 List<CarBrand> carBrands = <CarBrand>[
   CarBrand(brandMain: 33,
       brandSub: 7,

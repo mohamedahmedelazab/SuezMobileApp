@@ -16,10 +16,24 @@ class SignUpControllerImp extends SignUpController {
   late TextEditingController email;
   late TextEditingController phone;
   late TextEditingController password;
+  late TextEditingController rePassword;
+
   List data = [];
   SignupData signupdata = new SignupData(Get.find());
   StatusRequest? statusRequest;
+  bool isChecked = false;
 
+  void toggleCheckbox(bool? value) {
+    isChecked = value ?? false;
+    update();
+  }
+  bool isPasswordVisible = true;
+
+  // دالة لتبديل رؤية كلمة المرور
+  void togglePasswordVisibility() {
+    isPasswordVisible = !isPasswordVisible;
+    update(); // تحديث الواجهة
+  }
   @override
   signUp() async {
     if (formstate_signup.currentState!.validate()) {
@@ -59,6 +73,7 @@ class SignUpControllerImp extends SignUpController {
     phone = TextEditingController();
     email = TextEditingController();
     password = TextEditingController();
+    rePassword=TextEditingController();
     super.onInit();
   }
 

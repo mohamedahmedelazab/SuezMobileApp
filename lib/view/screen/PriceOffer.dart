@@ -19,6 +19,9 @@ import 'package:suezproduction/view/widget/auth/customtexttitleauth.dart';
 import 'package:suezproduction/view/widget/auth/textsignup.dart';
 import 'package:suezproduction/view/widget/header.dart';
 import 'package:suezproduction/view/widget/home/NavDrawer.dart';
+import 'package:multi_select_flutter/multi_select_flutter.dart';
+
+
 
 
 class PriceOffer extends StatelessWidget {
@@ -77,7 +80,7 @@ class PriceOffer extends StatelessWidget {
                                 Icon(Icons.check_circle_outline, color: Colors.green, size: 100),
                                 SizedBox(height: 20),
                                 Text(
-                                  'offersuccess'.tr,
+                                  'sucessmessage'.tr,
                                   style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Colors.green),
                                 ),
                                 SizedBox(height: 20),
@@ -90,7 +93,7 @@ class PriceOffer extends StatelessWidget {
                                     controller.offeraddress = '';
                                     controller.offeramount = '';
                                     controller.offersubject = '';
-
+                                    controller.offercardId= '';
                                   },
                                   child: Text('anotheroffer'.tr),
                                 ),
@@ -98,23 +101,27 @@ class PriceOffer extends StatelessWidget {
                             ),
                           );
                         }
+
                         return Column(
                           children: [
-                            DropdownButtonFormField<Map<String, String>>(
-                              decoration: InputDecoration(labelText: 'insurance'.tr),
-                              items: InsList.map((item) {
-                                return DropdownMenuItem<Map<String, String>>(
-                                  value: item,
-                                  child: Text('${translateDatabase(item['InsName'],item['InsName'])}'),
-                                );
-                              }).toList(),
-                              onChanged: (value) {
-                                if (value != null) {
-                                  controller.offerInsKind = value['InsKind'] ?? '';
-                                  controller.offerInsName = value['InsName'] ?? '';
-                                }
-                              },
+                            Text(
+                              'insurance'.tr,
+                              style: TextStyle(color: Colors.black),
                             ),
+                            MultiSelectDialogField(
+                              items: InsList
+                                  .map((item) => MultiSelectItem(item, '${translateDatabase(item['InsName'], item['InsName_en'])}'))
+                                  .toList(),
+                              title: Text('insurance'.tr),
+                              selectedColor: Colors.blue,
+                              onConfirm: (results) {
+                                controller.selectedInsurances = List<Map<String, String>>.from(results);
+                                // Handle selected data
+                                controller.offerInsKind = controller.selectedInsurances.map((item) => item['InsKind'] ?? '').join(", ");
+                                controller.offerInsName = controller.selectedInsurances.map((item) => item['InsName'] ?? '').join(", ");
+                              },
+                            )
+                            ,
                             TextField(
                               decoration: InputDecoration(labelText: "name".tr),
                               controller: TextEditingController(text: controller.offername),
@@ -123,10 +130,7 @@ class PriceOffer extends StatelessWidget {
                               TextField(
 
                                 decoration: InputDecoration(labelText: "card".tr),
-                                keyboardType: TextInputType.number, // يظهر لوحة المفاتيح الرقمية
-                                inputFormatters: <TextInputFormatter>[
-                                  FilteringTextInputFormatter.digitsOnly, // يسمح فقط بالأرقام
-                                ],
+
                                 controller: TextEditingController(text: controller.offercardId),
                                 onChanged: controller.onoffercardIdChanged,
                               ),
@@ -144,12 +148,12 @@ class PriceOffer extends StatelessWidget {
                               controller: TextEditingController(text: controller.offertel),
                               onChanged: controller.onOfferTelChanged,
                             ),
-                            TextField(
+                            /*  TextField(
                               decoration: InputDecoration(labelText: "address".tr),
                               controller: TextEditingController(text: controller.offeraddress),
                               onChanged: controller.onOfferAddressChanged,
                             ),
-                            TextField(
+                           TextField(
                               decoration: InputDecoration(labelText: "amount".tr),
                               keyboardType: TextInputType.number, // يظهر لوحة المفاتيح الرقمية
                               inputFormatters: <TextInputFormatter>[
@@ -157,7 +161,7 @@ class PriceOffer extends StatelessWidget {
                               ],
                               controller: TextEditingController(text: controller.offeraddress),
                               onChanged: controller.onOfferAmountChanged,
-                            ),
+                            ),*/
                             TextField(
                               decoration: InputDecoration(
                                 labelText: "offersubject".tr,
@@ -173,26 +177,24 @@ class PriceOffer extends StatelessWidget {
                               text: "send".tr,
                               onPressed: () {
                                 if (controller.offerInsName.isEmpty ) {
-                                  Get.snackbar('Error', 'Please fill in   (Insurance Name )', backgroundColor: Colors.red, colorText: Colors.white);
+                                  Get.snackbar('Error'.tr, 'ErrorofferInsName'.tr, backgroundColor: Colors.red, colorText: Colors.white);
                                 }
 
                                 else if (controller.offername.isEmpty ) {
-                                  Get.snackbar('Error', 'Please fill   (Name)', backgroundColor: Colors.red, colorText: Colors.white);
+                                  Get.snackbar('Error'.tr, 'Erroroffername'.tr, backgroundColor: Colors.red, colorText: Colors.white);
                                 }
 
-                                else if (isEgyptianIDValid(controller.offercardId)==false) {
-                                  Get.snackbar('Error', 'Please enter a valid Card Id', backgroundColor: Colors.red, colorText: Colors.white);
-                                }
+
                                 else if ( controller.offeremail.isEmpty ) {
-                                  Get.snackbar('Error', 'Please fill in   (Email )', backgroundColor: Colors.red, colorText: Colors.white);
+                                  Get.snackbar('Error'.tr, 'Errorofferemail1'.tr, backgroundColor: Colors.red, colorText: Colors.white);
                                 }
                                 else  if ( controller.offertel.isEmpty) {
-                                  Get.snackbar('Error', 'Please fill in   ( phone)', backgroundColor: Colors.red, colorText: Colors.white);
+                                  Get.snackbar('Error'.tr, 'Erroroffertel'.tr, backgroundColor: Colors.red, colorText: Colors.white);
                                 }
 
 
                                 else if (isEmailValid(controller.offeremail)==false) {
-                                  Get.snackbar('Error', 'Please enter a valid email', backgroundColor: Colors.red, colorText: Colors.white);
+                                  Get.snackbar('Error'.tr, 'Errorofferemail2'.tr, backgroundColor: Colors.red, colorText: Colors.white);
                                 } else {
                                   controller.sendOfferPrice();
                                 }
@@ -237,11 +239,7 @@ class PriceOffer extends StatelessWidget {
 
   bool isEgyptianIDValid(String id) {
     // Check if the ID is exactly 14 digits long and contains only digits
-    if (id.length != 14) {
-      return false;
-    }
-
-    // Check if all characters are digits
+       // Check if all characters are digits
     return RegExp(r'^\d+$').hasMatch(id);
   }
 }

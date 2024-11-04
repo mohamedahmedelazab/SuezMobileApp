@@ -21,7 +21,7 @@ class SignupData {
       "phone":phone
         });
 
-
+print(response);
     return response.fold((l) => l, (r) => r);
   }
 }

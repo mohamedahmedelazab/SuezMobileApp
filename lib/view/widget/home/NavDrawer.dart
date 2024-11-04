@@ -11,6 +11,7 @@ import 'package:suezproduction/view/screen/PrivacyPolicy.dart';
 import 'package:suezproduction/view/screen/ProducersPortalonline.dart';
 import 'package:suezproduction/view/screen/contactus.dart';
 import 'package:suezproduction/view/screen/onlinepay.dart';
+import 'package:suezproduction/view/screen/termssub.dart';
 
 class NavDrawer extends StatelessWidget {
   final LocaleController localcontroller = Get.find();
@@ -146,6 +147,20 @@ class NavDrawer extends StatelessWidget {
             onTap: () => Navigator.push(
               context,
               MaterialPageRoute(builder: (context) => PrivacyPolicy()),
+            ),
+          ),
+          SizedBox(height: 10),
+
+
+          ListTile(
+            leading: Icon(Icons.privacy_tip),
+            title: Text(
+              "Terms".tr,
+              style: TextStyle(fontSize: screenWidth * 0.04),
+            ),
+            onTap: () => Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => Terms()),
             ),
           ),
           SizedBox(height: 10),

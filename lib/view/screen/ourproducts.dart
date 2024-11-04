@@ -34,12 +34,7 @@ class ourproduct extends StatelessWidget {
         ),
         drawer: NavDrawer(),
         body: SingleChildScrollView(child: Container(
-          decoration: BoxDecoration(
-            image: DecorationImage(
-              image: AssetImage("assets/images/background.jpg"),
-              fit: BoxFit.cover,
-            ),
-          ),
+
           child:  Column(
 
 

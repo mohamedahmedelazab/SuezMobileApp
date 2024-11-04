@@ -40,7 +40,7 @@ class Items extends StatelessWidget {
 
       bool isLoggedIn = servicecontroller.isLogin();
       return  Scaffold(
-          floatingActionButton: FloatingActionButton.extended(
+       /*  floatingActionButton: FloatingActionButton.extended(
             onPressed: () {
               // Action to be taken when the button is pressed
               if (  servicecontroller.isLogin()== true) {
@@ -61,7 +61,7 @@ class Items extends StatelessWidget {
             icon: Icon(Icons.email),
             label: Text(" ارسل رسالة",style: TextStyle(color: Colors.white,fontSize:12)),
             backgroundColor: Colors.blue, // Background color of the button
-          ),
+          )*/
           appBar: MainAppBar(
             title: 'MY SCI',
             localcontroller: localcontroller,

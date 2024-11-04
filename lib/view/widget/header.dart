@@ -1,7 +1,9 @@
+import 'package:dialog_flowtter/dialog_flowtter.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:suezproduction/controller/home_controller.dart';
-import 'package:suezproduction/core/services/services.dart'; // For GetX localization and navigation
+import 'package:suezproduction/core/services/services.dart';
+import 'package:suezproduction/view/screen/homescreen.dart'; // For GetX localization and navigation
 
 class Header extends StatelessWidget {
   final bool isLoggedIn;
@@ -19,7 +21,7 @@ class Header extends StatelessWidget {
             ? _buildLoggedInButton(context)
             : _buildLoginButton(context),
         SizedBox(width: 50),
-        _buildLogo(),
+        _buildLogo(context),
       ],
     );
   }
@@ -108,10 +110,15 @@ class Header extends StatelessWidget {
   }
 
   // Widget for the logo
-  Widget _buildLogo() {
-    return Image.asset(
+  Widget _buildLogo(BuildContext context) {
+    return InkWell(child: Image.asset(
       'assets/images/finalnewlogo.png', // Replace with your asset path
       height: 180,
-    );
+    ),onTap: ()=>{
+    Navigator.push(
+    context,
+    MaterialPageRoute(builder: (context) => HomePage()),
+    )
+    });
   }
 }
