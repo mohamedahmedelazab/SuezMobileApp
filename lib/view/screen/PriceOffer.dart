@@ -88,7 +88,7 @@ class PriceOffer extends StatelessWidget {
                                   onPressed: () {
                                     controller.isSuccess.value = false;
                                     controller.offername = '';
-                                    controller.offeremail = '';
+                                   // controller.offeremail = '';
                                     controller.offertel = '';
                                     controller.offeraddress = '';
                                     controller.offeramount = '';
@@ -143,7 +143,8 @@ class PriceOffer extends StatelessWidget {
                               decoration: InputDecoration(labelText: "21".tr),
                               keyboardType: TextInputType.number, // يظهر لوحة المفاتيح الرقمية
                               inputFormatters: <TextInputFormatter>[
-                                FilteringTextInputFormatter.digitsOnly, // يسمح فقط بالأرقام
+                                FilteringTextInputFormatter.digitsOnly,
+                                LengthLimitingTextInputFormatter(11),// يسمح فقط بالأرقام
                               ],
                               controller: TextEditingController(text: controller.offertel),
                               onChanged: controller.onOfferTelChanged,
@@ -191,7 +192,13 @@ class PriceOffer extends StatelessWidget {
                                 else  if ( controller.offertel.isEmpty) {
                                   Get.snackbar('Error'.tr, 'Erroroffertel'.tr, backgroundColor: Colors.red, colorText: Colors.white);
                                 }
-
+                                else if(validatePhoneNumber(controller.offertel!)!="")
+                                {
+                                  Get.snackbar(
+                                      'error'.tr, validatePhoneNumber(controller.offertel),
+                                      backgroundColor: Colors.red,
+                                      colorText: Colors.white);
+                                }
 
                                 else if (isEmailValid(controller.offeremail)==false) {
                                   Get.snackbar('Error'.tr, 'Errorofferemail2'.tr, backgroundColor: Colors.red, colorText: Colors.white);
@@ -241,5 +248,15 @@ class PriceOffer extends StatelessWidget {
     // Check if the ID is exactly 14 digits long and contains only digits
        // Check if all characters are digits
     return RegExp(r'^\d+$').hasMatch(id);
+  }
+
+  String validatePhoneNumber(String value) {
+    final RegExp phoneRegExp = RegExp(r'^(010|011|012|015)\d{8}$');
+    if (value.isEmpty) {
+      return ""; // No error if empty (optional to make it required)
+    } else if (!phoneRegExp.hasMatch(value)) {
+      return "telerror".tr;
+    }
+    return ""; // No error if valid
   }
 }

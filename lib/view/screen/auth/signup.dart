@@ -74,6 +74,7 @@ class SignUp extends StatelessWidget {
                       hinttext: "22".tr,
                       iconData: Icons.phone_android_outlined,
                       labeltext: "21".tr,
+
                     ),
                     CustomTextFormAuth(
                       obscureText: controller.isPasswordVisible,
