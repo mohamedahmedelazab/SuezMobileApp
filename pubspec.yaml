@@ -76,7 +76,6 @@ dependencies:
   dartz: ^0.10.1
   # Google Auth
   google_sign_in: ^6.0.2
-  device_preview: ^1.1.0
   responsive_builder: ^0.7.0
   flutter_image_slideshow: ^0.1.6
   flutter_svg: ^2.0.4
