@@ -1,5 +1,3 @@
-import 'package:suezproduction/controller/stepper_controller.dart';
-import 'package:suezproduction/view/fingerprint.dart';
 import 'package:suezproduction/view/screen/AccidentReport.dart';
 import 'package:suezproduction/view/screen/GoogleMap.dart';
 import 'package:suezproduction/view/screen/ProductUrl.dart';
@@ -9,7 +7,7 @@ import 'package:suezproduction/core/constant/routes.dart';
 import 'package:suezproduction/core/middleware/mymiddleware.dart';
 
 import 'package:suezproduction/view/screen/CheckPolicy_Result.dart';
-import 'package:suezproduction/view/screen/Home.dart';
+
 import 'package:suezproduction/view/screen/NewBranches.dart';
 
 import 'package:suezproduction/view/screen/Productdetail.dart';
