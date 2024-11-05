@@ -88,8 +88,8 @@ class PriceOffer extends StatelessWidget {
                                   onPressed: () {
                                     controller.isSuccess.value = false;
                                     controller.offername = '';
-                                   // controller.offeremail = '';
-                                    controller.offertel = '';
+                                     controller.offerPassport = '';
+                                  //  controller.offertel = '';
                                     controller.offeraddress = '';
                                     controller.offeramount = '';
                                     controller.offersubject = '';
@@ -130,10 +130,21 @@ class PriceOffer extends StatelessWidget {
                               TextField(
 
                                 decoration: InputDecoration(labelText: "card".tr),
-
+                                keyboardType: TextInputType.number, // يظهر لوحة المفاتيح الرقمية
+                                inputFormatters: <TextInputFormatter>[
+                                  FilteringTextInputFormatter.digitsOnly,
+                                  LengthLimitingTextInputFormatter(14),// يسمح فقط بالأرقام
+                                ],
                                 controller: TextEditingController(text: controller.offercardId),
                                 onChanged: controller.onoffercardIdChanged,
                               ),
+                            TextField(
+
+                              decoration: InputDecoration(labelText: "passport".tr),
+
+                              controller: TextEditingController(text: controller.offerPassport),
+                              onChanged: controller.onofferPassportChanged,
+                            ),
                             TextField(
                               decoration: InputDecoration(labelText: "18".tr),
                               controller: TextEditingController(text: controller.offeremail),
@@ -189,6 +200,17 @@ class PriceOffer extends StatelessWidget {
                                 else if ( controller.offeremail.isEmpty ) {
                                   Get.snackbar('Error'.tr, 'Errorofferemail1'.tr, backgroundColor: Colors.red, colorText: Colors.white);
                                 }
+                                else if (isEmailValid(controller.offeremail)==false) {
+                                  Get.snackbar('Error'.tr, 'Errorofferemail2'.tr, backgroundColor: Colors.red, colorText: Colors.white);
+                                }
+                                else  if ( controller.offercardId.isEmpty && controller.offerPassport.isEmpty) {
+                                  Get.snackbar('Error'.tr, 'ErroroffercardId'.tr, backgroundColor: Colors.red, colorText: Colors.white);
+                                }
+
+                                else  if ( isEgyptianIDValid(controller.offercardId)  !="" && controller.offercardId.isNotEmpty) {
+                                  Get.snackbar('Error'.tr, 'Errorcard'.tr, backgroundColor: Colors.red, colorText: Colors.white);
+                                }
+
                                 else  if ( controller.offertel.isEmpty) {
                                   Get.snackbar('Error'.tr, 'Erroroffertel'.tr, backgroundColor: Colors.red, colorText: Colors.white);
                                 }
@@ -199,10 +221,14 @@ class PriceOffer extends StatelessWidget {
                                       backgroundColor: Colors.red,
                                       colorText: Colors.white);
                                 }
+                                else  if ( controller.offersubject.isEmpty) {
+                                  Get.snackbar('Error'.tr, 'Errorsubject'.tr, backgroundColor: Colors.red, colorText: Colors.white);
+                                }
 
-                                else if (isEmailValid(controller.offeremail)==false) {
-                                  Get.snackbar('Error'.tr, 'Errorofferemail2'.tr, backgroundColor: Colors.red, colorText: Colors.white);
-                                } else {
+
+
+
+                                else {
                                   controller.sendOfferPrice();
                                 }
                               },
@@ -244,10 +270,14 @@ class PriceOffer extends StatelessWidget {
     return regExp.hasMatch(email);
   }
 
-  bool isEgyptianIDValid(String id) {
+  String isEgyptianIDValid(String value) {
     // Check if the ID is exactly 14 digits long and contains only digits
        // Check if all characters are digits
-    return RegExp(r'^\d+$').hasMatch(id);
+    final RegExp cardRegExp = RegExp(r'^(1|2|3)\d{13}$');
+    if (!cardRegExp.hasMatch(value)) {
+      return "Errorcard".tr;
+    }
+    return "";
   }
 
   String validatePhoneNumber(String value) {

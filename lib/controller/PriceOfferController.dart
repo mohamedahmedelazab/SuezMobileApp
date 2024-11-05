@@ -10,6 +10,7 @@ import 'package:suezproduction/data/datasource/remote/sendEmailToEdara.dart';
 class PriceOfferController extends GetxController {
 var offername = '';
 var offercardId = '';
+var offerPassport='';
 var offeremail = '';
 var offertel = '';
 var offeraddress = '';
@@ -43,7 +44,7 @@ PriceOfferData priceofferdata=PriceOfferData(Get.find());
 
 
 
-  var  response = await priceofferdata.postDataEmail(offername,offercardId,offeremail,offeraddress==''?'_':offeraddress,offertel==''?'_':offertel==''?'_':offertel,offerInsKind,offerInsName,offeramount,offersubject==''?'_':offersubject,emailto);
+  var  response = await priceofferdata.postDataEmail(offername,offercardId,offerPassport,offeremail,offeraddress==''?'_':offeraddress,offertel==''?'_':offertel==''?'_':offertel,offerInsKind,offerInsName,offeramount,offersubject==''?'_':offersubject,emailto);
 
     if (response['status'] =="success") {
 
@@ -91,7 +92,9 @@ void onoffercardIdChanged(String value) {
   offercardId = value;
 }
 
-
+void onofferPassportChanged(String value) {
+  offerPassport = value;
+}
 
 
 
@@ -102,8 +105,8 @@ void onoffercardIdChanged(String value) {
       offeremail = myServices.sharedPreferences.getString("email")!;
     }
 
-    if (myServices.sharedPreferences.getString("username")!="") {
-      //  acciedentname = myServices.sharedPreferences.getString("username")!;
+    if (myServices.sharedPreferences.getString("phone")!="") {
+         offertel = myServices.sharedPreferences.getString("phone")!;
     }
 
   }

@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:suezproduction/controller/ServiceController.dart';
 import 'package:suezproduction/controller/auth/login_controller.dart';
 import 'package:suezproduction/controller/home_controller.dart';
+import 'package:mailto/mailto.dart';
 
 import 'package:suezproduction/core/localization/changelocal.dart';
 import 'package:suezproduction/core/services/services.dart';
@@ -13,6 +14,7 @@ import 'package:suezproduction/view/widget/home/NavDrawer.dart';
 
 import 'package:flutter_phone_direct_caller/flutter_phone_direct_caller.dart';
 import 'package:suezproduction/view/screen/homescreen.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 
 class contactus extends StatelessWidget {
@@ -92,12 +94,10 @@ class contactus extends StatelessWidget {
                       ),
                     ),
                   ),
-                  onTap: (){
-                    //  _launchURL('mailto: info@sci-egypt.com ?subject=from user mobile application&body=Please contact me');
+                  onTap:_sendEmail,
 
-                  },
                 ),
-                InkWell(
+              /*  InkWell(
                     child: Card(
                       margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 25.0),
                       child: ListTile(
@@ -118,7 +118,7 @@ class contactus extends StatelessWidget {
                     onTap: (){
                       //  _launchURL('tel:16569');
                     }
-                ),
+                ),*/
                 InkWell(
                   child: Card(
                     margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 25.0),
@@ -156,6 +156,17 @@ class contactus extends StatelessWidget {
         )
 
     );
+  }
+  void _sendEmail() async {
+    final mailtoLink = Mailto(
+      to: ['info@sci-egypt.com'],
+
+      subject: '',
+      body: '',
+    );
+
+    // Convert the mailtoLink to a Uri and then launch it
+    await launch('$mailtoLink');
   }
 }
 

@@ -72,8 +72,9 @@ class AccidentReportController extends GetxController {
       update();
     }
 
-    if (myServices.sharedPreferences.getString("username")!="") {
-    //  acciedentname = myServices.sharedPreferences.getString("username")!;
+    if (myServices.sharedPreferences.getString("phone")!="") {
+      acciedenttel = myServices.sharedPreferences.getString("phone")!;
+      update();
     }
 
   }

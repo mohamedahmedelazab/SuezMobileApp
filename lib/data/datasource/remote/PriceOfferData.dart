@@ -23,10 +23,11 @@ class PriceOfferData {
     return response.fold((l) => l, (r) => r);
   }
 
-  postDataEmail( String name,String cardId,String email,String address,String phone,String inskind,String offerInsName,String amount,String subject,String mailTo) async {
+  postDataEmail( String name,String cardId,String Passport,String email,String address,String phone,String inskind,String offerInsName,String amount,String subject,String mailTo) async {
     var response = await crud.postData(AppLink.send_email_offerprice, {
       "name":name,
       "cardId":cardId,
+      "passport":Passport,
       "email":email,
       "address":address,
       "phone":phone,
